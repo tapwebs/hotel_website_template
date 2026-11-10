@@ -1,0 +1,187 @@
+{
+  "logo-badge": {
+    "width": 1254,
+    "height": 1254,
+    "widths": [160, 320]
+  },
+  "exterior-front-steps": {
+    "width": 1086,
+    "height": 1448,
+    "widths": [640, 1024]
+  },
+  "exterior-angled-wing": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [640, 1024, 1600]
+  },
+  "exterior-gate-forecourt": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [640, 1024, 1600]
+  },
+  "exterior-wide-forecourt": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [640, 1024, 1600]
+  },
+  "hotel-exterior-modern-day": {
+    "width": 1536,
+    "height": 1024,
+    "widths": [640, 1024, 1536]
+  },
+  "lobby-reception-desk": {
+    "width": 2448,
+    "height": 3264,
+    "widths": [640, 1024, 1600]
+  },
+  "lobby-wood-ceiling-lift": {
+    "width": 2448,
+    "height": 3264,
+    "widths": [640, 1024, 1600]
+  },
+  "lobby-jali-chandelier": {
+    "width": 2448,
+    "height": 3264,
+    "widths": [640, 1024, 1600]
+  },
+  "corridor-wood-ceiling": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [640, 1024, 1600]
+  },
+  "corridor-chandelier": {
+    "width": 1086,
+    "height": 1448,
+    "widths": [640, 1024]
+  },
+  "corridor-oval-ceiling-lift": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [640, 1024, 1600]
+  },
+  "stairwell-looking-up": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [640, 1024, 1600]
+  },
+  "staircase-glass-rail": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [640, 1024, 1600]
+  },
+  "room-real-wide": {
+    "width": 2448,
+    "height": 3264,
+    "widths": [640, 1024, 1600]
+  },
+  "room-real-bed": {
+    "width": 2448,
+    "height": 3264,
+    "widths": [640, 1024, 1600]
+  },
+  "room-window-view": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [640, 1024, 1600]
+  },
+  "washroom-marble": {
+    "width": 1086,
+    "height": 1448,
+    "widths": [640, 1024]
+  },
+  "kitchen-steel-ranges": {
+    "width": 1448,
+    "height": 1086,
+    "widths": [640, 1024, 1448]
+  },
+  "banquet-murals-jali-ceiling": {
+    "width": 3264,
+    "height": 2448,
+    "widths": [640, 1024, 1600]
+  },
+  "banquet-marble-chandeliers": {
+    "width": 2448,
+    "height": 3264,
+    "widths": [640, 1024, 1600]
+  },
+  "banquet-hall-grand": {
+    "width": 1672,
+    "height": 941,
+    "widths": [640, 1024, 1600]
+  },
+  "banquet-long-view": {
+    "width": 2448,
+    "height": 3264,
+    "widths": [640, 1024, 1600]
+  },
+  "light-tulip-chandelier": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [640, 1024, 1600]
+  },
+  "light-crystal-pendant": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [640, 1024, 1600]
+  },
+  "light-lantern-walkway": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [640, 1024, 1600]
+  },
+  "light-wall-sconce": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [640, 1024, 1600]
+  },
+  "light-brass-lantern": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [640, 1024, 1600]
+  },
+  "mural-peacock-palace": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [640, 1024, 1600]
+  },
+  "mural-peony-birds": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [640, 1024, 1600]
+  },
+  "mural-wishing-tree": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [640, 1024, 1600]
+  },
+  "mural-sunrise-peaks": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [640, 1024, 1600]
+  },
+  "mural-palms": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [640, 1024, 1600]
+  },
+  "mural-lotus": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [640, 1024, 1600]
+  },
+  "bg-palms-cream": {
+    "width": 1448,
+    "height": 1086,
+    "widths": [640, 1024]
+  },
+  "bg-peonies-cream": {
+    "width": 1448,
+    "height": 1086,
+    "widths": [640, 1024]
+  },
+  "illustration-exterior-golden-hour": {
+    "width": 1672,
+    "height": 941,
+    "widths": [640, 1024, 1600]
+  }
+}

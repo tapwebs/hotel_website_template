@@ -1,0 +1,28 @@
+{
+  "name": "tapmenu-open-hospitality-platform",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "frontend/hms",
+    "frontend/website",
+    "backend/website"
+  ],
+  "scripts": {
+    "dev:all": "bash scripts/dev.sh",
+    "dev:win": "powershell -ExecutionPolicy Bypass -File scripts/dev.ps1",
+    "check:all": "bash scripts/check.sh",
+    "dev:hms": "npm --workspace=frontend/hms run dev",
+    "dev:staff": "npm --workspace=frontend/hms run dev",
+    "dev:website": "npm --workspace=frontend/website run dev",
+    "dev:website-api": "npm --workspace=backend/website run dev",
+    "build:hms": "npm --workspace=frontend/hms run build",
+    "build:staff": "npm --workspace=frontend/hms run build",
+    "build:website": "npm --workspace=frontend/website run build",
+    "build:website-api": "npm --workspace=backend/website run build",
+    "test:hms-app": "npm --workspace=frontend/hms run build",
+    "test:staff": "npm --workspace=frontend/hms run build",
+    "test:website": "npm --workspace=frontend/website run test",
+    "test:website-api": "npm --workspace=backend/website run test",
+    "test:hms": "cd backend && HMS_INTEGRATION_API_KEY=${HMS_INTEGRATION_API_KEY:-local-test-key} python3 -m pytest tests -n auto -q"
+  }
+}

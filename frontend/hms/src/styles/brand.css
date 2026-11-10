@@ -1,0 +1,94 @@
+/* Shared brand tokens: Tailwind @theme primitives, shadcn semantic layer and surface textures.
+   Imported by the main site (src/index.css) and by qr-hub/src/index.css so both look the same. */
+
+/* Brand tokens (DESIGN-PLAN §5). Primitive layer. */
+@theme {
+  --color-cream: #f6efe4;
+  --color-ivory: #fbf7f0;
+  --color-burgundy: #6e1e2b;
+  --color-burgundy-deep: #4a111b;
+  --color-gold: #c6a15b;
+  --color-gold-soft: #e3cf9f;
+  --color-walnut: #3b2a20;
+  --color-ink: #241812;
+
+  --font-display: 'Cormorant Garamond', 'Noto Serif Devanagari', Georgia, serif;
+  --font-sans: 'Manrope', 'Noto Serif Devanagari', system-ui, sans-serif;
+  --font-deva: 'Noto Serif Devanagari', 'Cormorant Garamond', serif;
+
+  /* Fluid type scale (min at 320px, max at 1440px). */
+  --text-display: clamp(2.125rem, 1.6rem + 3.6vw, 5.5rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.02em;
+  --text-h1: clamp(1.875rem, 1.5rem + 2.4vw, 4rem);
+  --text-h1--line-height: 1.06;
+  --text-h1--letter-spacing: -0.015em;
+  --text-h2: clamp(1.5rem, 1.3rem + 1.7vw, 3rem);
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.01em;
+  --text-h3: clamp(1.25rem, 1.15rem + 0.7vw, 1.875rem);
+  --text-h3--line-height: 1.2;
+  --text-lede: clamp(1rem, 0.97rem + 0.3vw, 1.25rem);
+  --text-lede--line-height: 1.6;
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* shadcn/ui semantic layer, mapped onto brand primitives. */
+:root {
+  --radius: 0.375rem;
+  --background: var(--color-cream);
+  --foreground: var(--color-walnut);
+  --card: var(--color-ivory);
+  --card-foreground: var(--color-walnut);
+  --popover: var(--color-ivory);
+  --popover-foreground: var(--color-walnut);
+  --primary: var(--color-burgundy);
+  --primary-foreground: var(--color-ivory);
+  --secondary: var(--color-gold-soft);
+  --secondary-foreground: var(--color-ink);
+  --muted: #ede3d4;
+  --muted-foreground: #5c4a3e;
+  --accent: var(--color-gold-soft);
+  --accent-foreground: var(--color-ink);
+  --destructive: #a1271b;
+  --border: #dccdb6;
+  --input: #a8946f;
+  --ring: var(--color-burgundy);
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+/* Surface texture tokens (jali, buti, paper grain). */
+:root {
+  /* Jali: an eight-point star lattice, as in a pierced stone screen. */
+  --tile-jali: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23000' stroke-width='1'%3E%3Cpath d='M24 13L25.9 19.4 31.8 16.2 28.6 22.1 35 24 28.6 25.9 31.8 31.8 25.9 28.6 24 35 22.1 28.6 16.2 31.8 19.4 25.9 13 24 19.4 22.1 16.2 16.2 22.1 19.4Z'/%3E%3Cpath d='M0 0L16.2 16.2M48 0L31.8 16.2M0 48L16.2 31.8M48 48L31.8 31.8M24 0V13M24 35V48M0 24H13M35 24H48'/%3E%3Ccircle cx='24' cy='24' r='2'/%3E%3Ccircle cx='0' cy='0' r='3'/%3E%3Ccircle cx='48' cy='0' r='3'/%3E%3Ccircle cx='0' cy='48' r='3'/%3E%3Ccircle cx='48' cy='48' r='3'/%3E%3C/svg%3E");
+  /* Buti: a Sanganeri block-print repeat of six-petal flowers and leaf sprigs. */
+  --tile-buti: url('data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2056%2056%27%3E%3Cg%20fill=%27%23000%27%3E%3Cg%20transform=%27translate(14%2014)%27%3E%3Cpath%20transform=%27rotate(0)%27%20d=%27M0%200c-2.2-2.6-2.4-5.6%200-8.2c2.4%202.6%202.2%205.6%200%208.2z%27/%3E%3Cpath%20transform=%27rotate(60)%27%20d=%27M0%200c-2.2-2.6-2.4-5.6%200-8.2c2.4%202.6%202.2%205.6%200%208.2z%27/%3E%3Cpath%20transform=%27rotate(120)%27%20d=%27M0%200c-2.2-2.6-2.4-5.6%200-8.2c2.4%202.6%202.2%205.6%200%208.2z%27/%3E%3Cpath%20transform=%27rotate(180)%27%20d=%27M0%200c-2.2-2.6-2.4-5.6%200-8.2c2.4%202.6%202.2%205.6%200%208.2z%27/%3E%3Cpath%20transform=%27rotate(240)%27%20d=%27M0%200c-2.2-2.6-2.4-5.6%200-8.2c2.4%202.6%202.2%205.6%200%208.2z%27/%3E%3Cpath%20transform=%27rotate(300)%27%20d=%27M0%200c-2.2-2.6-2.4-5.6%200-8.2c2.4%202.6%202.2%205.6%200%208.2z%27/%3E%3C/g%3E%3Cg%20transform=%27translate(42%2042)%27%3E%3Cpath%20d=%27M0%204c-3.4-.6-5-3.4-4.4-7c3.4.6%205%203.4%204.4%207z%27/%3E%3Cpath%20d=%27M0%204c3.4-.6%205-3.4%204.4-7c-3.4.6-5%203.4-4.4%207z%27/%3E%3Ccircle%20cy=%27-6.2%27%20r=%271.6%27/%3E%3C/g%3E%3Ccircle%20cx=%2742%27%20cy=%2714%27%20r=%271%27/%3E%3Ccircle%20cx=%2714%27%20cy=%2742%27%20r=%271%27/%3E%3C/g%3E%3C/svg%3E');
+  /* Handmade-paper grain in walnut, ~4% average opacity. */
+  --texture-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .23 0 0 0 0 .16 0 0 0 0 .12 .1 0 0 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --pattern-fade: radial-gradient(ellipse 70% 75% at 50% 50%, transparent 35%, #000 100%);
+}

@@ -1,0 +1,32 @@
+# TapMenu Grand Resort & Spa
+
+> TapMenu Grand Resort & Spa is a hospitality property located at 100 Hospitality Boulevard, Metropolis. Rooms start at ₹2,000 a night. Check-in and check-out are both at 11:00 AM. It features a multi-cuisine pure vegetarian restaurant, an indoor banquet hall for around 120 guests, and an outdoor function lawn for around 1,500 to 2,000 guests.
+
+Bookings can be initiated online or requested via messaging channels, where the front desk confirms availability and final pricing.
+
+## Pages
+
+- [Home](/): Overview of the resort, rooms, dining, events, facilities, guest reviews and location.
+- [Rooms](/rooms): Deluxe Room and Super Deluxe Room accommodation options with comparisons and amenities.
+- [Weddings & Events](/weddings-events): Banquet hall and function lawn venues for celebrations, corporate gatherings and weddings.
+- [Dining](/dining): Pure vegetarian North Indian, regional specialties and international dishes with full menu listings.
+- [Gallery](/gallery): Architectural photographs of the lobby, guest rooms, event spaces and grounds.
+- [About & Facilities](/about): Property architecture, operational amenities and guest services.
+- [Contact & FAQs](/contact): Contact numbers, messaging links, map directions, policies and guest FAQs.
+- [Privacy Policy](/privacy-policy): Transparent data protection, privacy terms and account management policies.
+
+## Key facts
+
+- Address: 100 Hospitality Boulevard, Grand Central Plaza, Metropolis 100001
+- Phone and WhatsApp: +91 98765 43210, +91 98765 43211
+- Email: contact@example.com
+- Rooms: Deluxe ₹2,000 a night, Super Deluxe ₹2,200 a night. Extra bed available on request.
+- Amenities: Air conditioning, Wi-Fi, television, ensuite bathroom, private balcony, hot-water geyser.
+- Check-in and check-out: 11:00 AM. Government-issued photo ID required at check-in.
+- Payments accepted: Cash, UPI, credit and debit cards.
+- Facilities: Restaurant, banquet hall, function lawn, on-site parking, guest elevator, room service, power backup, CCTV security.
+
+## Optional
+
+- [Full details](/llms-full.txt): Complete room, venue, dining, and policy specifications.
+- [Sitemap](/sitemap.xml): Public site directory.

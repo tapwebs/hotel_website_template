@@ -1,0 +1,159 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "./styles/brand.css";
+@import "./tapmenu/tapmenu.css";
+
+/* Dream Heaven's brand, applied to the whole HMS.
+   The HMS styles use Tailwind's slate (neutrals) and amber (accent) scales everywhere, so remapping those two scales to the
+   brand's warm neutrals and gold re-themes every page at once. Semantic status colours (emerald, rose, blue, purple) stay. */
+@theme {
+  --font-sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-slate-50: #fbf7f0;
+  --color-slate-100: #f6efe4;
+  --color-slate-200: #ece1cf;
+  --color-slate-300: #dccdb6;
+  --color-slate-400: #b3a28a;
+  --color-slate-500: #86756a;
+  --color-slate-600: #6a584c;
+  --color-slate-700: #5c4a3e;
+  --color-slate-800: #3b2a20;
+  --color-slate-900: #4a111b;
+  --color-slate-950: #241812;
+
+  --color-amber-50: #fbf6e8;
+  --color-amber-100: #f4e9cb;
+  --color-amber-200: #e3cf9f;
+  --color-amber-300: #d6bb7d;
+  --color-amber-400: #c6a15b;
+  --color-amber-500: #b08a45;
+  --color-amber-600: #8c6a2c;
+  --color-amber-700: #735620;
+  --color-amber-800: #5c4419;
+  --color-amber-900: #45330f;
+  --color-amber-950: #2b1f08;
+
+  /* Status colours, toned to sit with the cream background. */
+  --color-emerald-50: #eef6ef;
+  --color-emerald-100: #d9ebdc;
+  --color-emerald-200: #b6d8bc;
+  --color-emerald-500: #3f8a57;
+  --color-emerald-600: #2f7347;
+  --color-emerald-700: #265d3a;
+  --color-emerald-800: #1f4a2f;
+  --color-rose-50: #fbefec;
+  --color-rose-100: #f6dcd6;
+  --color-rose-200: #eec0b7;
+  --color-rose-400: #d0705f;
+  --color-rose-500: #b8402f;
+  --color-rose-600: #a1271b;
+  --color-rose-700: #85201a;
+}
+
+@layer base {
+  :root {
+    /* Legacy HMS tokens, now pointing at the brand. */
+    --hms-gold: var(--color-burgundy);
+    --hms-gold-hover: var(--color-burgundy-deep);
+    --hms-gold-light: #f4e9cb;
+    --hms-navy: var(--color-ink);
+    --hms-navy-secondary: var(--color-walnut);
+    --hms-workspace: var(--color-cream);
+    --hms-card: var(--color-ivory);
+    --hms-card-border: var(--border);
+    --hms-input-border: var(--input);
+    --hms-text: var(--color-walnut);
+    --hms-text-muted: var(--muted-foreground);
+    --hms-success: #2f7347;
+    --hms-warning: #8c6a2c;
+    --hms-danger: #a1271b;
+    --hms-info: #3b5f8a;
+    --sidebar-bg: var(--color-burgundy-deep);
+    --sidebar-hover: rgb(255 255 255 / 0.08);
+    --sidebar-text: #e3cf9f;
+    --sidebar-active-text: var(--color-ink);
+  }
+  html, body {
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: var(--color-walnut);
+    background-color: var(--color-cream);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'kern', 'liga';
+  }
+  /* Page and section titles use the brand serif. Small uppercase card labels (h3 and below) keep the sans. */
+  h1, h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-burgundy-deep);
+    text-wrap: balance;
+  }
+  button, input, select, textarea {
+    font-family: inherit;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-burgundy);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--color-burgundy);
+    color: var(--color-ivory);
+  }
+}
+
+/* Titles. The top bar shows the page name; a page's own h1 becomes a calm section heading, like the website admin's screens.
+   Unlayered on purpose, so it wins over the pages' own font-sans / text-2xl utility classes. */
+.topbar-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.15;
+  color: var(--color-burgundy-deep);
+}
+@media (min-width: 768px) {
+  .topbar-title { font-size: 1.5rem; }
+}
+main h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-h3);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  color: var(--color-walnut);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-input);
+}
+
+/* Print styles for Invoices, Folios, Registration Cards */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}

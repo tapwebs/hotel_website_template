@@ -1,0 +1,25 @@
+/* Helpers the copied TapMenu UI relies on (from TapMenu's index.css / tokens.css). */
+@theme {
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 1rem;
+}
+
+@custom-variant touch (@media (pointer: coarse));
+
+.no-scrollbar::-webkit-scrollbar { display: none; width: 0; height: 0; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.touch-scroll { -webkit-overflow-scrolling: touch; overscroll-behavior-y: contain; scroll-behavior: auto; }
+.content-deferred { content-visibility: auto; contain-intrinsic-size: auto 7.75rem; }
+.gpu-layer { transform: translateZ(0); backface-visibility: hidden; will-change: transform; }
+
+/* TapMenu staff-screen variables, mapped onto the Dream Heavens palette. */
+:root {
+  --color-border-subtle: var(--color-border);
+  --color-bg-surface: var(--color-ivory);
+  --color-bg-elevated: color-mix(in oklab, var(--color-gold-soft) 35%, var(--color-ivory));
+  --color-bg-canvas: var(--color-cream);
+  --color-text-primary: var(--color-ink);
+  --color-text-secondary: var(--color-walnut);
+  --color-text-tertiary: var(--color-muted-foreground);
+  --color-brand-primary: var(--color-burgundy);
+}

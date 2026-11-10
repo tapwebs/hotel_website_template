@@ -1,0 +1,139 @@
+# Hotel Dream Heaven’s: Hostinger shared hosting (Apache / LiteSpeed). Upload to public_html with the rest of dist/.
+# Directives are ignored (or ignored per-block) if the server is not Apache/LiteSpeed. See docs/DEPLOY.md.
+#
+# If an inline script in dist/index.html changes (hydration, gtag init, GTM loader), recompute its sha256 in the CSP below (docs/DEPLOY.md).
+# New third-party origins (auth/booking API, analytics) must be added to the CSP.
+
+Options -Indexes -MultiViews +FollowSymLinks
+DirectoryIndex index.html
+# Directory URLs are rewritten below; Apache must not add its own trailing-slash redirect (it would loop with ours).
+DirectorySlash Off
+AddDefaultCharset UTF-8
+ErrorDocument 404 /404.html
+
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+  AddType image/avif .avif
+  AddType image/webp .webp
+  AddType font/woff2 .woff2
+  AddType font/woff .woff
+</IfModule>
+
+# --- Block source maps (dotfiles are blocked in the rewrite section) ---
+<IfModule mod_authz_core.c>
+  <FilesMatch "\.map$">
+    Require all denied
+  </FilesMatch>
+</IfModule>
+
+# --- Redirects and clean URLs ---
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Merged pages: FAQs & Policies now lives on the Contact page.
+  RewriteRule ^faqs-policies(?:/|/index\.html)?$ /contact#faqs [R=301,NE,L]
+
+  # Canonical path for the host/scheme redirects below: /index.html and trailing slashes dropped.
+  RewriteRule ^ - [E=CANON_PATH:%{REQUEST_URI}]
+  RewriteCond %{ENV:CANON_PATH} ^(.*)/index\.html$
+  RewriteRule ^ - [E=CANON_PATH:%1/]
+  RewriteCond %{ENV:CANON_PATH} ^(.+?)/+$
+  RewriteRule ^ - [E=CANON_PATH:%1]
+
+  # www -> apex over https
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{ENV:CANON_PATH} [R=301,L]
+
+  # http -> https (X-Forwarded-Proto covers a proxy/CDN that terminates TLS, avoiding a redirect loop)
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+  RewriteRule ^ https://%{HTTP_HOST}%{ENV:CANON_PATH} [R=301,L]
+
+  # Dotfiles and dot-directories are not served (.well-known stays open for SSL validation)
+  RewriteRule (^|/)\.(?!well-known(/|$)) - [F,L]
+  # The launch page is gone. Old links /?opened and /opening go to the clean home page "/" (query dropped by the trailing "?").
+  RewriteCond %{QUERY_STRING} ^opened$
+  RewriteRule ^$ /? [R=301,L]
+  RewriteRule ^opening(?:/.*)?$ / [R=301,L]
+
+  # /index.html and /<route>/index.html -> /  and /<route>  (THE_REQUEST = the browser's request, so our internal rewrite below never re-triggers this)
+  RewriteCond %{THE_REQUEST} \s/(?:[^\s?]*/)?index\.html[\s?]
+  RewriteRule ^(?:(.+)/)?index\.html$ /$1 [R=301,L]
+
+  # No trailing slash: /rooms/ -> /rooms (canonicals and sitemap have none)
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+  # Prerendered route: /rooms -> rooms/index.html (internal, relative target on purpose)
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.+)$ $1/index.html [L]
+
+  # QR scans: /r/<slug>?p=<code> goes to the API, which logs the scan and 302s to /hub/<slug>?p=<code>.
+  RewriteRule ^r/(.+)$ /api/v1/r/$1 [R=302,L,QSA]
+  # Auth pages fall back to the SPA shell if they are not prerendered. /admin is never prerendered.
+  RewriteCond %{REQUEST_FILENAME}/index.html !-f
+  RewriteRule ^(login|signup|admin)$ index.html [L]
+  # /account/*, /book/*, /admin/* and /hub/* are never prerendered either: nested paths fall back to the SPA shell.
+  RewriteCond %{REQUEST_FILENAME}/index.html !-f
+  RewriteRule ^(account|book|admin|hub)(?:/.*)?$ index.html [L]
+
+  # NOTE: pre-compressed .br/.gz files are intentionally NOT served from here. On Hostinger the
+  # server compresses application/javascript again on top of the pre-compressed body, so every .js
+  # arrived double-encoded, the browser could not parse it, and no JavaScript ran (no hydration, no 3D).
+  # Compression is left to the mod_deflate / mod_brotli filters below.
+
+  # A directory with no index (/assets, /images) is a real 404, not a listing or a 403
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^.+$ - [R=404,L]
+
+  # Anything else that does not exist falls through to Apache's 404 -> ErrorDocument /404.html (status stays 404)
+</IfModule>
+
+# --- Compression ---
+<IfModule mod_filter.c>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml text/javascript application/javascript application/json application/ld+json application/xml application/manifest+json image/svg+xml
+</IfModule>
+</IfModule>
+<IfModule mod_filter.c>
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/plain text/xml text/javascript application/javascript application/json application/ld+json application/xml application/manifest+json image/svg+xml
+</IfModule>
+</IfModule>
+
+# --- Headers and caching ---
+<IfModule mod_setenvif.c>
+  SetEnvIf Request_URI "^/assets/" CACHE_IMMUTABLE=1
+  SetEnvIf Request_URI "^/images/" CACHE_IMAGES=1
+  SetEnvIf Request_URI "^/(favicon-32\.png|icon-192\.png|apple-touch-icon\.png|og-image\.jpg|banner\.jpeg)" CACHE_MEDIUM=1
+  SetEnvIf Request_URI "^/(login|signup|admin|account|book|hub)(/|$)" NOINDEX=1
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+  Header always set Strict-Transport-Security "max-age=31536000"
+  # CSP NOTE: connect-src is 'self' only. If the frontend is built with VITE_AUTH_API_URL, append that
+  # exact origin (scheme+host[+port], no path) to connect-src, e.g. connect-src 'self' https://api.example.com
+  # Otherwise the browser blocks login/signup/admin requests. The API must also allow credentialed CORS (cookies). Leave the sha256 script hash unchanged unless the
+  # hydration script changes.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://accounts.google.com https://www.googletagmanager.com 'sha256-gOx3nRh8znDQR7T1VkI+fFXDgsNzf5enQqdi7NP11Vk=' 'sha256-pqJOUC8H55tRwpBfFxrNOG3y5MKoKaN4W2zrJ8WeR4c=' 'sha256-EjnG+LpJSpL4jIr5tnqR89lFcHb98IjHvqajGg2+vXA='; style-src 'self' 'unsafe-inline' https://accounts.google.com https://fonts.googleapis.com; img-src 'self' data: blob: https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net https://www.googletagmanager.com https://*.googleusercontent.com https://upload.wikimedia.org https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://accounts.google.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net https://www.googletagmanager.com; frame-src https://www.googletagmanager.com https://www.google.com https://maps.google.com https://accounts.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://wa.me; object-src 'none'; manifest-src 'self'; upgrade-insecure-requests"
+
+  Header always set X-Robots-Tag "noindex, nofollow" env=NOINDEX
+
+  # Hashed Vite output (JS, CSS, fonts): never changes under the same name
+  Header set Cache-Control "public, max-age=31536000, immutable" env=CACHE_IMMUTABLE
+  # /images keep their names across edits: 30 days on the device, then serve stale for a year while revalidating.
+  # If a photo is replaced, give the new file a new name (or purge the CDN) so returning guests see it.
+  Header set Cache-Control "public, max-age=2592000, stale-while-revalidate=31536000" env=CACHE_IMAGES
+  # Root icons keep their names across edits: one day, then serve stale while revalidating
+  Header set Cache-Control "public, max-age=86400, stale-while-revalidate=604800" env=CACHE_MEDIUM
+
+  # HTML, sitemap, robots, llms*.txt, manifest: revalidate on every request (ETag keeps it cheap)
+  <FilesMatch "\.(html|xml|txt|webmanifest)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>

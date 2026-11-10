@@ -1,0 +1,7 @@
+dist
+dist-ssr
+public/images
+package-lock.json
+.agents
+.kiro/screenshots
+node_modules

@@ -1,0 +1,5 @@
+[
+  {"email": "owner1@example.com", "password": "<strong password>", "full_name": "Owner One", "kind": "superadmin"},
+  {"email": "manager@example.com", "password": "<strong password>", "full_name": "General Manager", "kind": "admin"},
+  {"email": "captain@example.com", "password": "<strong password>", "full_name": "Restaurant Captain", "kind": "captain"}
+]

@@ -1,0 +1,75 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-open_admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set strong POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB:-open_hospitality_db}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-open_admin} -d ${POSTGRES_DB:-open_hospitality_db}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  hms-api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      APP_ENV: production
+      DEBUG: "False"
+      ENABLE_DEMO_SEED: "false"
+      PROJECT_NAME: "TapMenu Open Hospitality Platform API"
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-open_admin}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-open_hospitality_db}
+      SECRET_KEY: ${HMS_SECRET_KEY:?Set HMS_SECRET_KEY (openssl rand -hex 32)}
+      ALGORITHM: HS256
+      ACCESS_TOKEN_EXPIRE_MINUTES: "480"
+      CORS_ORIGINS: ${CORS_ORIGINS:-["http://localhost:5173","http://localhost:5174"]}
+      HMS_INTEGRATION_API_KEY: ${SHARED_INTEGRATION_KEY:?Set SHARED_INTEGRATION_KEY (openssl rand -hex 32)}
+      WEBSITE_API_URL: http://website-api:3001
+      WEBSITE_ROOM_MAP: ${WEBSITE_ROOM_MAP:-deluxe:DLX_PALACE,super-deluxe:ROYAL_SUITE}
+      PUBLIC_API_BASE_URL: ${PUBLIC_API_BASE_URL:-http://localhost:8001}
+      WEB_CONCURRENCY: "2"
+      PAYMENT_PROVIDER: ${PAYMENT_PROVIDER:-demo}
+      RAZORPAY_KEY_ID: ${RAZORPAY_KEY_ID:-}
+      RAZORPAY_KEY_SECRET: ${RAZORPAY_KEY_SECRET:-}
+      RAZORPAY_WEBHOOK_SECRET: ${RAZORPAY_WEBHOOK_SECRET:-}
+      WHATSAPP_CLOUD_TOKEN: ${WHATSAPP_CLOUD_TOKEN:-}
+      WHATSAPP_CLOUD_PHONE_NUMBER_ID: ${WHATSAPP_CLOUD_PHONE_NUMBER_ID:-}
+      WHATSAPP_RECEIPT_TEMPLATE: ${WHATSAPP_RECEIPT_TEMPLATE:-}
+      MSG91_AUTH_KEY: ${MSG91_AUTH_KEY:-}
+      MSG91_RECEIPT_TEMPLATE_ID: ${MSG91_RECEIPT_TEMPLATE_ID:-}
+    ports:
+      - "127.0.0.1:8001:8001"
+
+  website-api:
+    build:
+      context: ./backend/website
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+      hms-api:
+        condition: service_started
+    environment:
+      PORT: "3001"
+      TRUST_PROXY: "1"
+      ALLOWED_ORIGIN: ${ALLOWED_ORIGIN:-http://localhost:5173}
+      SITE_URL: ${SITE_URL:-http://localhost:5173}
+      DATABASE_URL: postgres://${POSTGRES_USER:-open_admin}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-open_hospitality_db}?schema=website
+      HMS_BASE_URL: http://hms-api:8001
+      HMS_API_KEY: ${SHARED_INTEGRATION_KEY:?Set SHARED_INTEGRATION_KEY (openssl rand -hex 32)}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+    ports:
+      - "127.0.0.1:3001:3001"
+
+volumes:
+  pgdata:

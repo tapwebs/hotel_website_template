@@ -1,0 +1,30 @@
+{
+  "name": "tapmenu-website-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Authentication and guest experience API for TapMenu Open Hospitality Platform.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "node --watch --env-file-if-exists=.env src/server.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node --env-file-if-exists=.env dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "test": "node --env-file-if-exists=.env --test --test-concurrency=1",
+    "migrate": "node --env-file-if-exists=.env src/scripts/migrate.ts",
+    "create-admin": "node --env-file-if-exists=.env src/scripts/create-admin.ts"
+  },
+  "dependencies": {
+    "fastify": "5.12.7",
+    "google-auth-library": "^11.3.1",
+    "pg": "8.23.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "@types/pg": "8.23.1",
+    "typescript": "6.0.3"
+  }
+}

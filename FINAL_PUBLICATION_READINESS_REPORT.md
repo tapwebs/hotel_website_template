@@ -48,7 +48,7 @@ The cloned repository has undergone an end-to-end sanitization, privacy de-ident
 - [x] **Private Repos Protected:** Original private Git repository and remote servers were untouched.
 - [x] **Secrets Redacted:** No JWT keys, passwords, database URLs, or API tokens in any tracked file.
 - [x] **Environment Templates:** 9 generic `.env.example` templates created with safe placeholder values.
-- [x] **PII & Contact Data Anonymized:** Generic phones (`+91 98765 43210`), generic address (`100 Hospitality Boulevard, Metropolis`), and generic emails (`contact@example.com`).
+- [x] **PII & Contact Data Anonymized:** Generic placeholder phone numbers (`+91 00000 00000`), generic address (`100 Hospitality Boulevard, Metropolis`), and generic emails (`contact@example.com`). Google OAuth completely removed and disabled.
 - [x] **Commercial Photography Replaced:** Commercial photos replaced with lightweight WebP placeholders; brand assets regenerated with synthetic TapMenu logos.
 - [x] **Open Source Licensing:** MIT `LICENSE` and `ATTRIBUTION.md` created.
 - [x] **Public Documentation:** `README.md` and `SECURITY.md` rewritten for generic public consumption.

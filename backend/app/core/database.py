@@ -16,6 +16,12 @@ if "sqlite" in database_url:
         future=True,
         connect_args=connect_args
     )
+    from sqlalchemy import event
+    @event.listens_for(engine.sync_engine, "connect")
+    def _attach_sqlite_schemas(dbapi_con, con_record):
+        cur = dbapi_con.cursor()
+        cur.execute("ATTACH DATABASE ':memory:' AS website")
+        cur.close()
 else:
     # PostgreSQL asyncpg
     if database_url.startswith("postgres://"):

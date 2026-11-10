@@ -57,7 +57,7 @@ function validate(d: FnbConfig, pin: string): (SettingsIssue & { tab: TabId })[]
 export const FnbSettingsPage: React.FC = () => {
   const qc = useQueryClient();
   const isSuper = useAuthStore((s) => s.session?.role) === 'ROLE_SUPER_ADMIN';
-  const propertyName = useAuthStore((s) => s.session?.activePropertyName) ?? 'Dream Heavens';
+  const propertyName = useAuthStore((s) => s.session?.activePropertyName) ?? 'TapMenu';
   const cfg = useQuery({ queryKey: ['fnb', 'config'], queryFn: fnbService.config });
   const [draft, setDraft] = useState<FnbConfig | null>(null);
   const [pin, setPin] = useState('');

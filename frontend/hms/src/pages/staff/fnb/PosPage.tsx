@@ -44,7 +44,7 @@ const isNetworkError = (e: unknown) => !navigator.onLine || e instanceof TypeErr
 
 export const PosPage: React.FC = () => {
   const qc = useQueryClient();
-  const propertyName = useAuthStore((s) => s.session?.activePropertyName) ?? 'Dream Heavens';
+  const propertyName = useAuthStore((s) => s.session?.activePropertyName) ?? 'TapMenu';
   const canCancel = useAuthStore((s) => s.hasPermission('CANCEL_FNB_ORDERS'));
   const canAccept = useAuthStore((s) => s.hasPermission('ACCEPT_GUEST_ORDERS'));
   const canMove = useAuthStore((s) => s.hasPermission('MOVE_FNB_TABLES'));

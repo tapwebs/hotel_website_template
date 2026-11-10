@@ -24,7 +24,7 @@ const toPaise = (s: string) => Math.round((Number(s) || 0) * 100);
 
 /** Take payment for a dine-in, takeaway or counter bill: cash with change, UPI, card, split, or charge to an in-house room. */
 export const SettleModal: React.FC<{ order: POSOrder | null; cfg?: FnbConfig; onClose: () => void; onDone: (o: POSOrder) => void }> = ({ order, cfg, onClose, onDone }) => {
-  const propertyName = useAuthStore((s) => s.session?.activePropertyName) ?? 'Dream Heavens';
+  const propertyName = useAuthStore((s) => s.session?.activePropertyName) ?? 'TapMenu';
   // Captains and admins (APPLY_DISCOUNT) discount up to the no-PIN limit; waiters need the manager PIN for any discount.
   const canDiscount = useAuthStore((s) => s.hasPermission('APPLY_DISCOUNT'));
   const isAdmin = useAuthStore((s) => s.hasPermission('MANAGE_SETTINGS'));

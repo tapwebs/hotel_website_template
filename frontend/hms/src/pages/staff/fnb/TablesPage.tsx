@@ -50,7 +50,7 @@ export const TablesPage: React.FC = () => {
 const Floor: React.FC = () => {
   const qc = useQueryClient();
   const canEdit = useAuthStore((s) => s.hasPermission)('MANAGE_SETTINGS');
-  const propertyName = useAuthStore((s) => s.session?.activePropertyName) ?? 'Dream Heavens';
+  const propertyName = useAuthStore((s) => s.session?.activePropertyName) ?? 'TapMenu';
   const tables = useQuery({ queryKey: ['fnb', 'tables'], queryFn: fnbService.tables, refetchInterval: () => (document.hidden ? 45_000 : 10_000) });
   const sections = useQuery({ queryKey: ['fnb', 'sections'], queryFn: fnbService.sections });
   const [sectionFilter, setSectionFilter] = useState('all');

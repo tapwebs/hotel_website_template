@@ -54,7 +54,7 @@ export const LoginPage: React.FC = () => {
         <div className="text-center space-y-2">
           <img src="/logo-badge-320.webp" alt="" width={72} height={72} className="mx-auto size-[72px] rounded-full ring-2 ring-gold/70 shadow-lg shadow-black/30 mb-2" />
           <h1 className="font-display text-4xl font-semibold text-ivory tracking-tight">
-            Dream Heaven’s
+            TapMenu
           </h1>
           <p className="text-xs uppercase tracking-[0.2em] text-gold-soft font-semibold">
             Hotel Management System • Staff Portal

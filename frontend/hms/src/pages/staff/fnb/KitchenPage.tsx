@@ -54,7 +54,7 @@ export const KitchenPage: React.FC = () => {
   const hasPermission = useAuthStore((s) => s.hasPermission);
   const canCancel = hasPermission('CANCEL_FNB_ORDERS'); // captains and admins cancel; cooks start, finish and bump
   const cfg = useQuery({ queryKey: ['fnb', 'config'], queryFn: fnbService.config, staleTime: 60_000 });
-  const restaurant = session?.activePropertyName ?? 'Dream Heavens';
+  const restaurant = session?.activePropertyName ?? 'TapMenu';
   const device = useKotDevice();
   const [printError, setPrintError] = useState<string | null>(null);
 

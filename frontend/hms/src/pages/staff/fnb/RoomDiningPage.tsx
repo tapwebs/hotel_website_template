@@ -54,7 +54,7 @@ const RoomQrModal: React.FC<{ room: RoomQrCode | null; propertyName: string; onC
 /** Room QR codes: one permanent code per room, placed in the room. Scanning it orders to whoever is staying there. */
 export const RoomDiningPage: React.FC = () => {
   const qc = useQueryClient();
-  const propertyName = useAuthStore((s) => s.session?.activePropertyName) ?? 'Dream Heavens';
+  const propertyName = useAuthStore((s) => s.session?.activePropertyName) ?? 'TapMenu';
   const canReset = useAuthStore((s) => s.hasPermission('MANAGE_SETTINGS'));
   const rooms = useQuery({ queryKey: ['fnb', 'roomsQr'], queryFn: fnbService.roomsQr, refetchInterval: 60_000 });
   const [search, setSearch] = useState('');

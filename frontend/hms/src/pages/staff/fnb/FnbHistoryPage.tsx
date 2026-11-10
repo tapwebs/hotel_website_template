@@ -23,7 +23,7 @@ const startOfToday = () => { const d = new Date(); d.setHours(0, 0, 0, 0); retur
  */
 export const FnbHistoryPage: React.FC = () => {
   const hasPerm = useAuthStore((s) => s.hasPermission);
-  const propertyName = useAuthStore((s) => s.session?.activePropertyName) ?? 'Dream Heavens';
+  const propertyName = useAuthStore((s) => s.session?.activePropertyName) ?? 'TapMenu';
   const cfg = useQuery({ queryKey: ['fnb', 'config'], queryFn: fnbService.config, staleTime: 60_000 });
   const orders = useQuery({ queryKey: ['fnb', 'orders', 'history'], queryFn: () => fnbService.orders('all', undefined, 500) });
   const [range, setRange] = useState<Range>('today');

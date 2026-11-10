@@ -72,7 +72,7 @@ export function titleFor(pathname: string): string {
       if (path === i.path || path.startsWith(`${base}/`)) return i.label;
     }
   }
-  return 'Dream Heaven’s';
+  return 'TapMenu';
 }
 
 /** True when the user may see a nav item. */

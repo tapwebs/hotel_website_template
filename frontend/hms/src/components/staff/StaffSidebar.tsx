@@ -68,7 +68,7 @@ export const StaffSidebar: React.FC = () => {
           <img src="/logo-badge.webp" alt="" width={40} height={40} className="size-10 shrink-0 rounded-full" />
           {sidebarOpen && (
             <span className="grid min-w-0 leading-none">
-              <span className="truncate font-display text-xl font-semibold text-burgundy">Dream Heaven’s</span>
+              <span className="truncate font-display text-xl font-semibold text-burgundy">TapMenu</span>
               <span className="mt-1 truncate text-[11px] font-medium text-muted-foreground">Hotel management</span>
             </span>
           )}

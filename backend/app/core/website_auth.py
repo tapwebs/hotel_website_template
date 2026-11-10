@@ -182,66 +182,6 @@ class InMemoryRateLimiter:
 
 rate_limiter = InMemoryRateLimiter()
 
-# ---- Google ID Token Verification ----
-_google_jwk_client: Optional[jwt.PyJWKClient] = None
-_custom_google_verifier: Optional[Callable[[str], Dict[str, Any]]] = None
-
-
-def set_custom_google_verifier(verifier: Optional[Callable[[str], Dict[str, Any]]]) -> None:
-    """Injected verifier for test suites."""
-    global _custom_google_verifier
-    _custom_google_verifier = verifier
-
-
-def verify_google_id_token(id_token: str, client_id: Optional[str] = None) -> Dict[str, Any]:
-    """Verifies a Google ID token and returns payload containing sub, email, email_verified, name."""
-    global _google_jwk_client
-    if _custom_google_verifier:
-        try:
-            return _custom_google_verifier(id_token)
-        except Exception:
-            raise HTTPException(status_code=401, detail={"error": "invalid_token"})
-
-    expected_client_id = client_id or getattr(settings, "GOOGLE_CLIENT_ID", None)
-    if not expected_client_id:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail={"error": "google_auth_not_configured", "message": "Google Client ID is not configured on the server."}
-        )
-
-    if not _google_jwk_client:
-        _google_jwk_client = jwt.PyJWKClient(
-            "https://www.googleapis.com/oauth2/v3/certs",
-            cache_jwk_set=True,
-            lifespan=3600,
-        )
-
-    try:
-        signing_key = _google_jwk_client.get_signing_key_from_jwt(id_token)
-        payload = jwt.decode(
-            id_token,
-            signing_key.key,
-            algorithms=["RS256"],
-            audience=expected_client_id,
-            issuer=["https://accounts.google.com", "accounts.google.com"],
-            options={"verify_exp": True},
-        )
-    except Exception as e:
-        logger.warning("Google ID token verification failed: %s: %s", type(e).__name__, str(e))
-        raise HTTPException(status_code=401, detail={"error": "invalid_token"})
-
-    sub = payload.get("sub")
-    email = payload.get("email")
-    if not sub or not email:
-        raise HTTPException(status_code=400, detail={"error": "invalid_token"})
-
-    return {
-        "sub": str(sub),
-        "email": str(email).lower(),
-        "email_verified": bool(payload.get("email_verified") in (True, "true", "True")),
-        "name": payload.get("name"),
-    }
-
 
 def is_origin_allowed(origin: Optional[str]) -> bool:
     """CSRF: checks if the request origin matches allowed website origins."""

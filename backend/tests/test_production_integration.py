@@ -92,8 +92,6 @@ async def test_openapi_contains_exact_production_paths(client):
     assert "post" in paths["/api/v1/auth/switch-property"]
 
     # Public Guest Website paths
-    assert "/auth/google" in paths
-    assert "post" in paths["/auth/google"]
     assert "/auth/me" in paths
     assert "get" in paths["/auth/me"]
     assert "/auth/login" in paths
@@ -102,48 +100,3 @@ async def test_openapi_contains_exact_production_paths(client):
     assert "post" in paths["/auth/signup"]
     assert "/auth/logout" in paths
     assert "post" in paths["/auth/logout"]
-
-
-@pytest.mark.asyncio
-async def test_customer_google_auth_schema_validation(client):
-    """Verify /auth/google validates incoming payload schema (returns 400 or 422 for bad input, NOT 404)."""
-    # Empty body
-    res_empty = await client.post("/auth/google", json={})
-    assert res_empty.status_code in (400, 422)
-
-    # idToken too short
-    res_short = await client.post("/auth/google", json={"idToken": "abc"})
-    assert res_short.status_code in (400, 422)
-
-    # idToken wrong type
-    res_type = await client.post("/auth/google", json={"idToken": 12345})
-    assert res_type.status_code in (400, 422)
-
-
-@pytest.mark.asyncio
-async def test_customer_google_auth_forwarding(client, monkeypatch):
-    """Verify /auth/google accepts valid token and passes through session cookies."""
-    from backend.app.core.website_auth import set_custom_google_verifier
-
-    def mock_verifier(token: str):
-        return {
-            "sub": "usr-1",
-            "email": "guest@example.com",
-            "email_verified": True,
-            "name": "Guest",
-        }
-
-    set_custom_google_verifier(mock_verifier)
-    try:
-        res = await client.post(
-            "/auth/google",
-            json={"idToken": "valid-google-id-token-abc123xyz"},
-            headers={"Origin": "http://localhost:5173"}
-        )
-        assert res.status_code == 200
-        data = res.json()
-        assert data["ok"] is True
-        assert data["user"]["role"] == "guest"
-        assert "hdh_session" in res.headers.get("set-cookie", "")
-    finally:
-        set_custom_google_verifier(None)

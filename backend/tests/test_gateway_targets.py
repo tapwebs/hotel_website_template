@@ -29,8 +29,8 @@ def test_get_target_urls_with_website_api_primary():
 def test_get_target_urls_with_custom_host():
     """Verify custom host keeps only the primary target."""
     with patch.object(settings, "WEBSITE_API_URL", "https://api.external.com"):
-        urls = get_target_urls("/auth/google")
-        assert urls == ["https://api.external.com/auth/google"]
+        urls = get_target_urls("/auth/login")
+        assert urls == ["https://api.external.com/auth/login"]
 
 
 @pytest.mark.asyncio

@@ -1,7 +1,7 @@
-"""Customer authentication routes: Signup, Login, Google Sign-In, Session Check, Logout.
+"""Customer authentication routes: Signup, Login, Session Check, Logout.
 
 Directly replaces the Fastify auth endpoints while preserving:
-- All URLs (/auth/signup, /auth/login, /auth/google, /auth/me, /auth/logout)
+- All URLs (/auth/signup, /auth/login, /auth/me, /auth/logout)
 - Cookie session management (hdh_session)
 - Exact status codes and JSON error responses
 - Rate limiting with failed-login refund semantics
@@ -27,14 +27,12 @@ from backend.app.core.website_auth import (
     read_session_cookie,
     session_expiry,
     set_session_cookie,
-    verify_google_id_token,
     verify_password,
 )
 from backend.app.models.base import generate_uuid, utc_now
 from backend.app.models.website import WebsiteSession, WebsiteUser
 from backend.app.schemas.website import (
     AuthMeResponse,
-    GoogleAuthRequest,
     LoginRequest,
     LoginSuccessResponse,
     SessionUserInfo,
@@ -158,100 +156,7 @@ async def login(
     }
 
 
-@router.post("/google", summary="Customer Google Sign-In")
-async def google_auth(
-    request: Request,
-    response: Response,
-    db: AsyncSession = Depends(get_db),
-):
-    origin = request.headers.get("origin")
-    if origin and not is_origin_allowed(origin):
-        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail={"error": "forbidden_origin"})
 
-    ip = get_client_ip(request)
-    wait = rate_limiter.hit(f"google:{ip}", max_limit=10, window_ms=15 * 60 * 1000)
-    if wait:
-        raise HTTPException(
-            status_code=status.HTTP_429_TOO_MANY_REQUESTS,
-            detail={"error": "rate_limited"},
-            headers={"Retry-After": str(wait)},
-        )
-
-    try:
-        body_json = await request.json()
-        data = GoogleAuthRequest.model_validate(body_json)
-    except Exception:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail={"error": "invalid_request"})
-
-    token_payload = verify_google_id_token(data.idToken)
-    sub = token_payload["sub"]
-    email = token_payload["email"]
-    email_verified = token_payload.get("email_verified", False)
-    name = token_payload.get("name")
-
-    if not email_verified:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail={"error": "unverified_email"})
-
-    # 1. Look up existing user by google_sub
-    res_sub = await db.execute(select(WebsiteUser).where(WebsiteUser.google_sub == sub))
-    user = res_sub.scalars().first()
-
-    if user:
-        if user.role != "guest":
-            raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail={"error": "forbidden"})
-        if user.status == "disabled":
-            raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail={"error": "account_disabled"})
-    else:
-        # 2. Look up existing user by verified email
-        res_email = await db.execute(select(WebsiteUser).where(WebsiteUser.email == email))
-        existing_by_email = res_email.scalars().first()
-
-        if existing_by_email:
-            if existing_by_email.role != "guest":
-                raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail={"error": "forbidden"})
-            if existing_by_email.status == "disabled":
-                raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail={"error": "account_disabled"})
-            if existing_by_email.google_sub and existing_by_email.google_sub != sub:
-                raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail={"error": "account_conflict"})
-
-            existing_by_email.google_sub = sub
-            user = existing_by_email
-        else:
-            # 3. Create new customer with role 'guest'
-            user_id = generate_uuid()
-            customer_name = (name.strip() if name and name.strip() else email.split("@")[0])[:100]
-            user = WebsiteUser(
-                id=user_id,
-                name=customer_name,
-                email=email,
-                google_sub=sub,
-                role="guest",
-                status="active",
-            )
-            db.add(user)
-
-    token = new_session_token()
-    token_hash = hash_session_token(token)
-    expires = session_expiry(remember=True)
-    sess = WebsiteSession(
-        token_hash=token_hash,
-        user_id=user.id,
-        expires_at=expires,
-    )
-    db.add(sess)
-    user.last_login_at = utc_now()
-    await db.commit()
-
-    set_session_cookie(response, token, remember=True)
-    return {
-        "ok": True,
-        "user": {
-            "id": user.id,
-            "name": user.name,
-            "email": user.email,
-            "role": user.role,
-        },
-    }
 
 
 @router.get("/me", summary="Customer Session Restoration")

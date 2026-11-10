@@ -34,10 +34,6 @@ class LoginRequest(BaseModel):
     remember: Optional[bool] = False
 
 
-class GoogleAuthRequest(BaseModel):
-    idToken: str = Field(..., min_length=10, max_length=8192)
-
-
 class SessionUserInfo(BaseModel):
     id: str
     name: str

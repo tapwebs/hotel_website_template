@@ -108,9 +108,6 @@ class Settings(BaseSettings):
     WEBSITE_API_URL: str = "http://127.0.0.1:3001"
     # Website room_id -> HMS room_types.code, as "site-id:CODE,site-id:CODE"
     WEBSITE_ROOM_MAP: str = "deluxe:DLX_PALACE,super-deluxe:ROYAL_SUITE"
-    # Google OAuth Client ID for customer authentication (optional, set via env in production)
-    GOOGLE_CLIENT_ID: Optional[str] = None
-
     # Unified Payment Architecture Configuration: "demo", "razorpay", "bank"
     PAYMENT_PROVIDER: str = "demo"
 

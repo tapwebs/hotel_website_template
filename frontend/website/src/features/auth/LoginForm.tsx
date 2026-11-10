@@ -6,8 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Field } from '@/components/forms/Field'
 import { AuthUnavailable } from './AuthUnavailable'
 import { PasswordInput } from './PasswordInput'
-import { googleClientId, signIn, type SessionUser } from './authService'
-import { GoogleSignInButton } from './GoogleSignInButton'
+import { signIn } from './authService'
 import { loginSchema, type LoginValues } from './schemas'
 import { useAuthSubmit } from './useAuthSubmit'
 import { playError } from '@/lib/sounds'
@@ -18,13 +17,6 @@ export function LoginForm() {
   const { setUser } = useAuth()
   const navigate = useNavigate()
   const location = useLocation()
-  const hasGoogleAuth = Boolean(googleClientId())
-  const onGoogleSuccess = (user: SessionUser) => {
-    setUser(user)
-    const next = safeNext(new URLSearchParams(location.search).get('next'))
-    const from = safeNext((location.state as { from?: unknown } | null)?.from)
-    void navigate(from ?? (user.role === 'admin' ? next : null) ?? (user.role === 'admin' ? '/admin' : '/account'), { replace: true })
-  }
   const { status, submit } = useAuthSubmit<LoginValues>(
     (v) => signIn(v),
     (r) => {

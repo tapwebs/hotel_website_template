@@ -46,7 +46,6 @@ const { hms } = integrationConfig()
 const app = buildApp({
   store, allowedOrigin, trustProxy, logger: true, qr: qrStore, siteUrl: process.env.SITE_URL,
   hms, bookingSync: hms ? hmsSyncHooks(hms, store) : undefined,
-  googleClientId: process.env.GOOGLE_CLIENT_ID,
 })
 if (!trustProxy) {
   app.log.warn(

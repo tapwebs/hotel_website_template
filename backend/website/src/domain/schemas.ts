@@ -16,10 +16,6 @@ export const signupSchema = z.object({
   consent: z.literal(true),
 })
 
-export const googleAuthSchema = z.object({
-  idToken: z.string().min(10).max(8192),
-})
-
 
 const roles = z.enum(['guest', 'staff', 'admin'])
 const statuses = z.enum(['active', 'disabled'])

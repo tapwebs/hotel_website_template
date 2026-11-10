@@ -10,17 +10,9 @@ import { hmsStaffFromGateway } from './integrations/hms.ts'
 import { hashPassword, verifyPassword } from './core/password.ts'
 import { registerQrHub } from './routes/qr-hub.ts'
 import type { QrStore } from './stores/qr-store.ts'
-import { OAuth2Client } from 'google-auth-library'
-import { googleAuthSchema, loginSchema, signupSchema } from './domain/schemas.ts'
+import { loginSchema, signupSchema } from './domain/schemas.ts'
 import { clearCookie, hashToken, newToken, readCookie, sessionCookie, sessionExpiry } from './core/session.ts'
 import type { SessionUser, UserStore } from './stores/store.ts'
-
-export interface GoogleTokenPayload {
-  sub: string
-  email: string
-  email_verified: boolean
-  name?: string
-}
 
 export interface AppOptions {
   store: UserStore
@@ -41,10 +33,6 @@ export interface AppOptions {
   publicRateLimit?: { max: number; windowMs: number }
   /** HMS integration endpoint: enables HMS staff bearer tokens on staff routes and locks website rate edits. */
   hms?: IntegrationEndpoint
-  /** Google OAuth Client ID for verifying customer ID tokens. */
-  googleClientId?: string
-  /** Optional custom token verifier for testing/mocking. */
-  verifyGoogleToken?: (idToken: string) => Promise<GoogleTokenPayload>
 }
 
 // Verified against when the email is unknown, so login time does not reveal which emails exist.
@@ -62,30 +50,8 @@ export function buildApp({
   siteUrl,
   publicRateLimit,
   hms,
-  googleClientId,
-  verifyGoogleToken,
 }: AppOptions): FastifyInstance {
   if (!allowedOrigin || allowedOrigin === '*') throw new Error('ALLOWED_ORIGIN must be a single explicit origin')
-  const defaultGoogleVerifier = googleClientId
-    ? async (idToken: string): Promise<GoogleTokenPayload> => {
-        const client = new OAuth2Client(googleClientId)
-        const ticket = await client.verifyIdToken({
-          idToken,
-          audience: googleClientId,
-        })
-        const payload = ticket.getPayload()
-        if (!payload || !payload.sub || !payload.email) {
-          throw new Error('invalid_token_payload')
-        }
-        return {
-          sub: payload.sub,
-          email: payload.email,
-          email_verified: Boolean(payload.email_verified),
-          name: payload.name,
-        }
-      }
-    : undefined
-  const verifyGoogle = verifyGoogleToken ?? defaultGoogleVerifier
 
   const app = Fastify({ logger, trustProxy, bodyLimit: 10 * 1024 })
 
@@ -137,10 +103,9 @@ export function buildApp({
       req.log.warn('X-Forwarded-For received while TRUST_PROXY is unset; request rejected')
       return reply.code(400).send({ error: 'untrusted_proxy_header' })
     }
-    // Signup and Google auth: every request counts, per IP. Login is throttled in the handler, on failures only.
-    if (req.url.startsWith('/auth/signup') || req.url.startsWith('/auth/google')) {
-      const prefix = req.url.startsWith('/auth/signup') ? 'signup' : 'google'
-      const wait = hit(`${prefix}:${req.ip}`)
+    // Signup: every request counts, per IP. Login is throttled in the handler, on failures only.
+    if (req.url.startsWith('/auth/signup')) {
+      const wait = hit(`signup:${req.ip}`)
       if (wait) {
         reply.header('Retry-After', wait)
         return reply.code(429).send({ error: 'rate_limited' })
@@ -255,80 +220,5 @@ export function buildApp({
     return { ok: true, user: { id: user.id, name: user.name, email: user.email, role: user.role } }
   })
 
-  app.post('/auth/google', async (req, reply) => {
-    if (!originOk(req)) return reply.code(403).send({ error: 'forbidden_origin' })
-    if (!verifyGoogle) return reply.code(503).send({ error: 'auth_not_configured' })
-
-    const parsed = googleAuthSchema.safeParse(req.body)
-    if (!parsed.success) return reply.code(400).send({ error: 'invalid_request' })
-
-    let tokenPayload: GoogleTokenPayload
-    try {
-      tokenPayload = await verifyGoogle(parsed.data.idToken)
-    } catch {
-      return reply.code(401).send({ error: 'invalid_token' })
-    }
-
-    const { sub, email: rawEmail, email_verified, name } = tokenPayload
-    if (!sub || typeof sub !== 'string' || !rawEmail || typeof rawEmail !== 'string') {
-      return reply.code(400).send({ error: 'invalid_token' })
-    }
-    if (email_verified !== true) {
-      return reply.code(400).send({ error: 'unverified_email' })
-    }
-
-    const email = rawEmail.trim().toLowerCase()
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254) {
-      return reply.code(400).send({ error: 'invalid_email' })
-    }
-
-    // 1. Look up existing user by googleSub
-    let user = await store.findByGoogleSub(sub)
-
-    if (user) {
-      // Role protection: Google identity must never acquire staff or admin privileges
-      if (user.role !== 'guest') return reply.code(403).send({ error: 'forbidden' })
-      if (user.status === 'disabled') return reply.code(403).send({ error: 'account_disabled' })
-    } else {
-      // 2. Look up existing user by verified email
-      const existingByEmail = await store.findByEmail(email)
-      if (existingByEmail) {
-        if (existingByEmail.role !== 'guest') return reply.code(403).send({ error: 'forbidden' })
-        if (existingByEmail.status === 'disabled') return reply.code(403).send({ error: 'account_disabled' })
-        // Account linking: if existing account already has another googleSub linked, refuse
-        if (existingByEmail.googleSub && existingByEmail.googleSub !== sub) {
-          return reply.code(409).send({ error: 'account_conflict' })
-        }
-        const linked = await store.linkGoogleSub(existingByEmail.id, sub)
-        if (!linked) return reply.code(409).send({ error: 'account_conflict' })
-        user = (await store.findById(existingByEmail.id)) ?? { ...existingByEmail, googleSub: sub }
-      } else {
-        // 3. Create new customer with role 'guest'
-        const id = randomUUID()
-        const customerName = name?.trim() || email.split('@')[0]
-        const created = await store.createWithGoogle({
-          id,
-          name: customerName,
-          email,
-          googleSub: sub,
-        })
-        if (!created) {
-          user = (await store.findByGoogleSub(sub)) ?? (await store.findByEmail(email))
-          if (!user) return reply.code(500).send({ error: 'internal_error' })
-          if (user.role !== 'guest') return reply.code(403).send({ error: 'forbidden' })
-          if (user.status === 'disabled') return reply.code(403).send({ error: 'account_disabled' })
-        } else {
-          user = created
-        }
-      }
-    }
-
-    const token = newToken()
-    const remember = true
-    await store.createSession(user.id, hashToken(token), sessionExpiry(remember))
-    await store.recordLogin(user.id)
-    reply.header('Set-Cookie', sessionCookie(token, { remember, secure }))
-    return { ok: true, user: { id: user.id, name: user.name, email: user.email, role: user.role } }
-  })
   return app
 }

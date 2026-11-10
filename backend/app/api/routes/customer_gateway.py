@@ -1,21 +1,16 @@
 """Public customer authentication and account gateway to the website backend (Fastify).
 
 The public website talks to the unified API domain (e.g. api.example.com).
-Customer authentication and guest account endpoints (/auth/google, /auth/me, /auth/login,
+Customer authentication and guest account endpoints (/auth/me, /auth/login,
 /auth/signup, /auth/logout, and /me/*) are forwarded directly to the website-api service
 where guest identities, password hashes, and sessions reside in the isolated 'website' schema.
 HMS staff authentication (/api/v1/auth/login) remains completely separate and untouched.
 """
 import httpx
 from fastapi import APIRouter, Request, Response
-from pydantic import BaseModel, Field
 from backend.app.core.config import settings
 
 router = APIRouter(tags=["Customer Authentication & Account"])
-
-
-class GoogleAuthRequest(BaseModel):
-    idToken: str = Field(..., min_length=10, max_length=8192, description="Google ID Token credential")
 
 
 _REQ_HEADERS = ("content-type", "accept", "cookie", "origin", "referer", "x-request-id")
@@ -70,11 +65,6 @@ async def _proxy_to_website(path: str, request: Request) -> Response:
     for cookie_val in up.headers.get_list("set-cookie"):
         response.headers.append("set-cookie", cookie_val)
     return response
-
-
-@router.post("/auth/google", summary="Customer Google Sign-In")
-async def customer_google_auth(body: GoogleAuthRequest, request: Request) -> Response:
-    return await _proxy_to_website("auth/google", request)
 
 
 @router.get("/auth/me", summary="Customer Session Restoration")

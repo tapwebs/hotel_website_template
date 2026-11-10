@@ -1,20 +1,12 @@
 interface AppEnv {
-  /** Base URL of the Express backend's /api routes, e.g.
-   * "https://tapmenu-backend.onrender.com/api". Empty string means
+  /** Base URL of the backend /api routes. Empty string means
    * relative "/api" (same-origin dev via Vite's proxy). */
   apiBaseUrl: string
-  googleClientId: string
 }
 
 function resolveTapMenuBase(raw?: string): string {
   const trimmed = (raw ?? '').trim().replace(/\/+$/, '');
   if (trimmed) return trimmed.replace(/\/api\/v1$/, '');
-  if (typeof window !== 'undefined' && window.location?.hostname) {
-    const host = window.location.hostname.toLowerCase();
-    if (host === 'hoteldreamheavens.in' || host === 'hms.hoteldreamheavens.in' || host.endsWith('.hoteldreamheavens.in')) {
-      return 'https://api.hoteldreamheavens.in';
-    }
-  }
   return '';
 }
 
@@ -22,7 +14,6 @@ export function loadEnv(source: Record<string, string | undefined> = import.meta
   return {
     // Trim any trailing slash so callers can always do `${apiBaseUrl}/path`.
     apiBaseUrl: resolveTapMenuBase(source?.VITE_API_BASE_URL),
-    googleClientId: source?.VITE_GOOGLE_CLIENT_ID ?? '',
   }
 }
 

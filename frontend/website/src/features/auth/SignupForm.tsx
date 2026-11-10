@@ -6,8 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Field, FieldError } from '@/components/forms/Field'
 import { AuthUnavailable } from './AuthUnavailable'
 import { PasswordInput } from './PasswordInput'
-import { googleClientId, signUp, type SessionUser } from './authService'
-import { GoogleSignInButton } from './GoogleSignInButton'
+import { signUp } from './authService'
 import { passwordStrength, signupSchema, type SignupValues } from './schemas'
 import { useAuthSubmit } from './useAuthSubmit'
 import { safeNext, useAuth } from './auth-context'
@@ -19,13 +18,6 @@ export function SignupForm() {
   const { setUser } = useAuth()
   const navigate = useNavigate()
   const location = useLocation()
-  const hasGoogleAuth = Boolean(googleClientId())
-  const onGoogleSuccess = (user: SessionUser) => {
-    setUser(user)
-    const next = safeNext(new URLSearchParams(location.search).get('next'))
-    const from = safeNext((location.state as { from?: unknown } | null)?.from)
-    void navigate(from ?? (user.role === 'admin' ? next : null) ?? (user.role === 'admin' ? '/admin' : '/account'), { replace: true })
-  }
   const { status, submit } = useAuthSubmit<SignupValues>((v) => signUp(v))
   const {
     register,

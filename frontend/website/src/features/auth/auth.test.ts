@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { authBaseUrl, DEFAULT_GOOGLE_CLIENT_ID, getSession, googleClientId, signIn, signInWithGoogle, signOut, signUp } from './authService'
+import { authBaseUrl, getSession, signIn, signOut, signUp } from './authService'
 import { safeNext } from './auth-context'
 import { loginSchema, passwordStrength, signupSchema } from './schemas'
 const valid = {
@@ -55,19 +55,6 @@ describe('authService', () => {
         { baseUrl: 'https://api.test', fetchImpl: vi.fn().mockRejectedValue(new TypeError('x')) },
       ),
     ).toEqual({ ok: false, code: 'NETWORK' })
-  })
-  it('POSTs idToken to /auth/google with credentials', async () => {
-    const fetchImpl = vi.fn().mockResolvedValue({
-      ok: true,
-      status: 200,
-      json: async () => ({ ok: true, user: { id: 'g1', name: 'G User', email: 'g@test.co', role: 'guest' } }),
-    })
-    const res = await signInWithGoogle('valid-token-123', { baseUrl: 'https://api.test', fetchImpl })
-    expect(res).toEqual({ ok: true, user: { id: 'g1', name: 'G User', email: 'g@test.co', role: 'guest' } })
-    expect(fetchImpl.mock.calls[0][0]).toBe('https://api.test/auth/google')
-    expect(fetchImpl.mock.calls[0][1].method).toBe('POST')
-    expect(fetchImpl.mock.calls[0][1].credentials).toBe('include')
-    expect(JSON.parse(fetchImpl.mock.calls[0][1].body)).toEqual({ idToken: 'valid-token-123' })
   })
 })
 describe('sessions', () => {
@@ -133,9 +120,5 @@ describe('sessions', () => {
     } finally {
       vi.unstubAllEnvs()
     }
-  })
-
-  it('googleClientId is disabled by default', () => {
-    expect(googleClientId()).toBe('')
   })
 })

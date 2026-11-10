@@ -34,7 +34,6 @@ export const authErrorMessage: Record<Exclude<AuthErrorCode, 'AUTH_NOT_CONFIGURE
   ACCOUNT_DISABLED: 'This account has been disabled. Please contact the hotel.',
   SERVER: 'Something went wrong on our side. Please try again in a moment.',
 }
-export const DEFAULT_GOOGLE_CLIENT_ID = 'demo-client-id.apps.googleusercontent.com'
 
 /** Normalised API base URL, or '' when the API is not configured. */
 export const authBaseUrl = (opts: AuthOptions = {}) => {
@@ -46,10 +45,7 @@ export const authBaseUrl = (opts: AuthOptions = {}) => {
   return ''
 }
 
-export const googleClientId = () => {
-  return ''
-}
-async function post(path: '/auth/login' | '/auth/signup' | '/auth/google', body: unknown, opts: AuthOptions): Promise<AuthResult> {
+async function post(path: '/auth/login' | '/auth/signup', body: unknown, opts: AuthOptions): Promise<AuthResult> {
   const base = authBaseUrl(opts)
   if (!base) return { ok: false, code: 'AUTH_NOT_CONFIGURED' }
   const controller = new AbortController()
@@ -80,9 +76,6 @@ async function post(path: '/auth/login' | '/auth/signup' | '/auth/google', body:
 }
 export const signIn = (v: LoginValues, opts: AuthOptions = {}) =>
   post('/auth/login', { email: v.email, password: v.password, remember: v.remember === true }, opts)
-
-export const signInWithGoogle = (idToken: string, opts: AuthOptions = {}) =>
-  post('/auth/google', { idToken }, opts)
 
 export type SessionResult =
   | { ok: true; user: SessionUser | null }

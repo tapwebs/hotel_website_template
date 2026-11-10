@@ -35,7 +35,7 @@ export default function Gallery() {
         {...galleryHero}
         breadcrumb="Gallery"
         title="Photo gallery"
-        lede={`Photographed at ${hotel.name}, ${hotel.address.street}, Jaipur: facade, lobby, corridors, banquet hall, lights and murals.`}
+        lede={`Photographed at ${hotel.name}, ${hotel.address.street}, ${hotel.address.city}: facade, lobby, corridors, banquet hall, lights and murals.`}
       />
       <div className={`${container} pb-10 lg:pb-16`}>
         <GalleryGrid />

@@ -60,13 +60,13 @@ export function fallbackSrc(image: SiteImage): string {
 
 export const images = {
   brand: {
-    logo: img('logo-badge', 'Hotel Dream Heaven’s logo: gold DH monogram in a round walnut-wood badge', 'brand'),
+    logo: img('logo-badge', 'TapMenu Grand Resort & Spa logo: gold TM monogram in a round walnut-wood badge', 'brand'),
   },
 
   home: {
     hero: img(
       'exterior-front-steps',
-      'Entrance of Hotel Dream Heaven’s on Agra Road, Bassi, Jaipur: a blue-glass and wood-clad facade with the vertical Hotel Dream Heavens & Restaurant sign, a marble forecourt, reflecting pools and a wide flight of stone steps under a blue sky',
+      'Entrance of TapMenu Grand Resort & Spa: modern architecture, stone steps and reflecting water features under a clear sky',
     ),
     roomsTeaser: img(
       'corridor-chandelier',
@@ -83,13 +83,13 @@ export const images = {
     ),
     location: img(
       'hotel-exterior-modern-day',
-      'Hotel Dream Heavens & Restaurant by day: a corner building with a wood-clad tower carrying the vertical hotel sign, a gold and blue-glass facade with the round DH logo, a canopied entrance with stone steps and potted palms, under a blue sky with clouds',
+      'TapMenu Grand Resort & Restaurant by day: architectural glass facade with decorative landscaping, grand entrance canopy and paved forecourt under open skies',
       'ai-representative',
       REPRESENTATIVE_CAPTION,
     ),
     explorerFallback: img(
       'illustration-exterior-golden-hour',
-      'Illustration of Hotel Dream Heaven’s at golden hour (artist’s impression, not a photograph)',
+      'Illustration of TapMenu Grand Resort at golden hour (artist’s impression, not a photograph)',
       'ai-illustration',
       'Illustration, not a photograph',
     ),
@@ -100,11 +100,11 @@ export const images = {
   rooms: {
     deluxe: img(
       'room-real-bed',
-      'Guest room at Hotel Dream Heaven’s, Bassi: bed with a padded headboard between two curtained windows, grey stone-finish wall panel, wall-mounted AC and a wooden ceiling fan in a cove-lit ceiling',
+      'Guest room at TapMenu Grand Resort: bed with a padded headboard between two curtained windows, grey stone-finish wall panel, wall-mounted AC and a wooden ceiling fan in a cove-lit ceiling',
     ),
     superDeluxe: img(
       'room-real-wide',
-      'Guest room at Hotel Dream Heaven’s, Bassi: large bed with a marble-finish frame, walnut door, wall-mounted AC and ceiling fan with cove lighting',
+      'Guest room at TapMenu Grand Resort: large bed with a marble-finish frame, walnut door, wall-mounted AC and ceiling fan with cove lighting',
     ),
     realRoom: img(
       'washroom-marble',
@@ -118,7 +118,7 @@ export const images = {
     hero: img('light-lantern-walkway', 'Row of pierced-brass lanterns along a glazed walkway, with greenery visible outside'),
     kitchen: img(
       'kitchen-steel-ranges',
-      'Restaurant kitchen at Hotel Dream Heaven’s: stainless-steel gas ranges under extraction hoods, a central prep counter, shelves of steel utensils and a tiled floor with a drain channel',
+      'Commercial kitchen at TapMenu Grand Resort: stainless-steel gas ranges under extraction hoods, a central prep counter, shelves of steel utensils and a tiled floor with a drain channel',
     ),
   },
 
@@ -133,7 +133,7 @@ export const images = {
   about: {
     hero: img(
       'exterior-angled-wing',
-      'Hotel Dream Heaven’s in Bassi seen from the corner, showing the glass tower with its vertical sign and the long two-storey wing beside it',
+      'TapMenu Grand Resort seen from the corner, showing the architectural tower with its vertical sign and the two-storey resort wing beside it',
     ),
     arrival: img(
       'lobby-reception-desk',
@@ -153,7 +153,7 @@ export const images = {
   contact: {
     arrival: img(
       'exterior-wide-forecourt',
-      'Hotel Dream Heaven’s seen across its large paved forecourt off the Agra Road in Bassi: the glass tower with the vertical hotel sign, the entrance steps and open space to park',
+      'TapMenu Grand Resort seen across its large paved forecourt: the modern tower with vertical hotel sign, the entrance steps and open space to park',
     ),
   },
 
@@ -176,7 +176,7 @@ export const gallery: GalleryItem[] = [
     category: 'Exterior',
     image: img(
       'exterior-gate-forecourt',
-      'Approach to Hotel Dream Heaven’s from the Agra Road gate: the paved forecourt where guests park, the entrance steps and the glass-fronted building',
+      'Approach to TapMenu Grand Resort from the main entrance gate: the paved forecourt where guests park, the entrance steps and the glass-fronted building',
     ),
   },
   {

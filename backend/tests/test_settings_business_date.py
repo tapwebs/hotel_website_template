@@ -34,7 +34,7 @@ async def test_settings_business_date_synchronization(client, auth_headers):
         json={
             "settings": {
                 "propertyIdentity": {
-                    "propertyName": "Dream Heavens Jaipur Palace & Spa"
+                    "propertyName": "TapMenu Grand Resort & Spa"
                 },
                 "businessDate": {
                     "currentBusinessDate": "2026-09-29",

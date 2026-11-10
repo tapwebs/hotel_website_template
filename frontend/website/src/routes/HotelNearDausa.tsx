@@ -16,9 +16,9 @@ export default function HotelNearDausa() {
       <Seo path="/hotel-near-dausa" />
       <PageIntro
         {...contactHero}
-        breadcrumb="Hotel near Dausa"
-        title="Hotel near Dausa, on the Agra Road in Bassi"
-        lede={`${hotel.name} is in Bassi, about 27 km from Dausa towards Jaipur: rooms from ${formatINR(hotel.priceFrom)} a night, a restaurant and event venues.`}
+        breadcrumb="Hotel near Highway"
+        title="Regional Resort & Highway Stay in Metropolis"
+        lede={`${hotel.name} is conveniently situated in Metropolis with easy highway access: rooms from ${formatINR(hotel.priceFrom)} a night, a restaurant and event venues.`}
       >
         <BookNowButton size="lg" className="justify-self-start" />
       </PageIntro>
@@ -26,17 +26,15 @@ export default function HotelNearDausa() {
       <section aria-labelledby="route-title" className={cn(container, 'relative isolate grid gap-4 pb-16')}>
         <PetalDecor variant="dots" side="left" />
         <h2 id="route-title" className="text-h2 text-burgundy-deep">
-          From Dausa to the hotel
+          Reaching the resort
         </h2>
         <p className="max-w-[64ch] text-walnut">
-          Bassi is about 27 km from Dausa, and the hotel is on the Agra Road, the highway between Dausa and Jaipur (distance approximate).
-          Drive towards Jaipur and look for the hotel opposite the Bharat Petroleum pump in Bassi. Turn in at the gate and park in the front
-          forecourt.
+          The resort is situated along the main metropolitan thoroughfare with direct road access. Turn in at the main gate and park in the secure front forecourt.
         </p>
         <p className="max-w-[64ch] text-walnut">
           The address is {hotel.address.street}, {hotel.address.city}, {hotel.address.region}. Open the{' '}
           <a href={hotel.directionsUrl} className={inlineLink} target="_blank" rel="noopener">
-            hotel on Google Maps
+            hotel on Maps
           </a>{' '}
           or see{' '}
           <Link to="/contact#directions" className={inlineLink}>
@@ -65,9 +63,9 @@ export default function HotelNearDausa() {
               on the ground floor, with room service.
             </li>
             <li>
-              A banquet hall and a wedding lawn: see our{' '}
-              <Link to="/wedding-venue-in-bassi" className={inlineLink}>
-                wedding venue in Bassi, near Dausa
+              A banquet hall and an event lawn: see our{' '}
+              <Link to="/weddings-events" className={inlineLink}>
+                weddings and celebrations venues
               </Link>
               .
             </li>
@@ -79,7 +77,7 @@ export default function HotelNearDausa() {
         </div>
       </section>
 
-      <PageFaqs path="/hotel-near-dausa" title="Questions about staying near Dausa" />
+      <PageFaqs path="/hotel-near-dausa" title="Questions about staying at the resort" />
     </>
   )
 }

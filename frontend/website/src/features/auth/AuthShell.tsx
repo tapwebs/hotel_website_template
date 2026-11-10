@@ -6,7 +6,7 @@ import { cn, container } from '@/lib/utils'
 const perks = [
   { icon: MessageCircle, text: 'Book by WhatsApp or phone' },
   { icon: Clock, text: 'Check-in and check-out at 11:00 AM' },
-  { icon: MapPin, text: 'Agra Road, Bassi, Jaipur' },
+  { icon: MapPin, text: '100 Hospitality Boulevard, Metropolis' },
 ]
 
 interface AuthShellProps {

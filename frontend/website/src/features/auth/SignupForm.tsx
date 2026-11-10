@@ -41,19 +41,6 @@ export function SignupForm() {
   if (status.state === 'unavailable') return <AuthUnavailable />
   return (
     <form noValidate onSubmit={handleSubmit(submit, playError)} aria-label="Create an account" className="grid gap-4 md:grid-cols-2">
-      {hasGoogleAuth && (
-        <div className="md:col-span-2 flex flex-col gap-3">
-          <GoogleSignInButton mode="signup" onSuccess={onGoogleSuccess} />
-          <div className="relative my-1 flex items-center justify-center">
-            <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t border-border" />
-            </div>
-            <span className="relative bg-ivory px-3 text-xs tracking-wider uppercase text-muted-foreground font-medium">
-              Or register with email
-            </span>
-          </div>
-        </div>
-      )}
       <Field id="su-name" label="Full name" error={errors.name?.message}>
         {(aria) => <Input {...aria} {...register('name')} className="h-12" autoComplete="name" placeholder="Enter your name" />}
       </Field>

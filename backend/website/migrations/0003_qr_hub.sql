@@ -121,7 +121,7 @@ INSERT INTO qr_organizations
 VALUES
   ('hotel-dream-heavens', 'TapMenu Grand Resort', 'Hotel',
    'Rooms, dining, and event spaces for modern hospitality.',
-   '+919876543210', '919876543210', 'contact@example.com',
+   '+910000000000', '910000000000', 'contact@example.com',
    '100 Hospitality Boulevard, Metropolis',
    'https://maps.google.com', 'http://localhost:5173',
    NULL, NULL, 'active', 'published');
@@ -131,8 +131,8 @@ SELECT o.id, v.title, v.title_hi, v.url, v.category, v.icon, v.ord, v.featured
 FROM qr_organizations o,
   (VALUES
     ('Book a Stay',        'ठहरने की बुकिंग',  'http://localhost:5173/book',            'Connect', 'calendar-check', 0, true),
-    ('WhatsApp',           'व्हाट्सऐप',          'https://wa.me/919876543210',                    'Connect', 'message-circle', 1, true),
-    ('Call',               'कॉल करें',          'tel:+919876543210',                             'Connect', 'phone',          2, false),
+    ('WhatsApp',           'व्हाट्सऐप',          'https://wa.me/910000000000',                    'Connect', 'message-circle', 1, true),
+    ('Call',               'कॉल करें',          'tel:+910000000000',                             'Connect', 'phone',          2, false),
     ('Instagram',          'इंस्टाग्राम',        'https://instagram.com/example',                 'Connect', 'instagram',      3, false),
     ('Directions',         'रास्ता देखें',       'https://maps.google.com',                       'Connect', 'map-pin',        4, false),
     ('Rooms',              'कमरे',              'http://localhost:5173/rooms',                   'Explore', 'bed',            5, false),

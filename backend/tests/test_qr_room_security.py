@@ -32,7 +32,7 @@ async def test_qr_room_security_comprehensive(client, auth_headers, db_session):
     org = QrOrganization(
         id=generate_uuid(),
         slug=org_slug,
-        name="Hotel Dream Heavens Security Test",
+        name="TapMenu Security Test",
         category="Hotel",
         qr_status="active",
         status="published",

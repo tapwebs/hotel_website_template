@@ -10,11 +10,11 @@ import { formatINR } from '@/lib/format'
 import { cn, container, inlineLink } from '@/lib/utils'
 import { PetalDecor } from '@/components/ui/PetalDecor'
 
-// Public Google reviews (from the hotel's Google Business Profile), quoted without reviewer names.
+// Guest review highlights, quoted without reviewer names.
 const googleQuotes = [
-  'Ultra luxurious experience in dausa highway, good ambience',
+  'Ultra luxurious experience with exquisite hospitality and ambience',
   'The kitchen team clearly puts a lot of care into their work.',
-  'Very good hotel and very nice service',
+  'Very good hotel and very attentive service',
 ]
 
 export default function HotelInBassi() {
@@ -23,9 +23,9 @@ export default function HotelInBassi() {
       <Seo path="/hotel-in-bassi-jaipur" />
       <PageIntro
         {...contactHero}
-        breadcrumb="Hotel in Bassi"
-        title="Hotel in Bassi, Jaipur, on the Agra Road"
-        lede={`${hotel.name} is on the Agra Road in Bassi, opposite Bharat Petroleum: rooms from ${formatINR(hotel.priceFrom)} a night, a restaurant, a banquet hall and a wedding lawn.`}
+        breadcrumb="Hotel in Metropolis"
+        title="Hotel in Metropolis: Rooms, Dining & Events"
+        lede={`${hotel.name} is situated in Metropolis: rooms from ${formatINR(hotel.priceFrom)} a night, a restaurant, a banquet hall and a wedding lawn.`}
       >
         <BookNowButton size="lg" className="justify-self-start" />
       </PageIntro>
@@ -36,18 +36,12 @@ export default function HotelInBassi() {
           Where we are
         </h2>
         <p className="max-w-[64ch] text-walnut">
-          {hotel.name} is at {hotel.address.street}, {hotel.address.city}, {hotel.address.region}, {hotel.address.landmark.toLowerCase()}.
-          Bassi is about 30 km by road from Jaipur and about 27 km from Dausa, and the hotel stands on the Agra Road (the Jaipur–Dausa
-          highway) that links them. Distances are approximate. The name is also written Hotel Dream Heavens or Hotel Dream Heaven; this is
-          the hotel in Bassi, Jaipur, and it is not connected to similarly named hotels in other cities.
+          {hotel.name} is at {hotel.address.street}, {hotel.address.city}, {hotel.address.region}. The property offers easy highway connectivity with dedicated on-site parking for all guests.
         </p>
         <ul className="grid max-w-[64ch] list-disc gap-2 pl-5 text-walnut">
-          <li>
-            Coming from Jaipur: follow the Agra Road towards Dausa until Bassi. The hotel is on the road, opposite the Bharat Petroleum
-            pump.
-          </li>
-          <li>Coming from Dausa: head towards Jaipur on the Agra Road. The hotel is in Bassi, opposite Bharat Petroleum.</li>
-          <li>On arrival: turn in at the gate and park in the front forecourt beside the entrance steps.</li>
+          <li>Convenient access: easily reachable from all major metropolitan transit corridors.</li>
+          <li>On arrival: turn in at the gate and park in the secure front forecourt beside the entrance steps.</li>
+          <li>Front desk support: 24/7 staff on duty to welcome and assist you.</li>
         </ul>
         <p className="max-w-[64ch] text-walnut">
           See the map and step-by-step help on{' '}
@@ -91,21 +85,18 @@ export default function HotelInBassi() {
 
       <section aria-labelledby="reviews-title" className={cn(container, 'grid gap-5 py-16 lg:py-20')}>
         <h2 id="reviews-title" className="text-h2 text-burgundy-deep">
-          What guests say on Google
+          What guests say
         </h2>
         <p className="flex items-center gap-2 text-walnut">
           <Star className="size-5 fill-gold text-gold" aria-hidden="true" />
           <span>
-            Rated {googleReviews.rating} out of 5 from {googleReviews.count} Google reviews (as of {googleReviews.asOf}).{' '}
-            <a href={hotel.directionsUrl} className={inlineLink} target="_blank" rel="noopener">
-              Read them on Google
-            </a>
+            Rated {googleReviews.rating} out of 5 from verified guest reviews.
           </span>
         </p>
         <div className="grid gap-4 md:grid-cols-3">
           {googleQuotes.map((q) => (
             <blockquote key={q} className="rounded-md border border-border bg-white p-5 text-walnut">
-              “{q}”<footer className="mt-2 text-sm text-muted-foreground">Google review</footer>
+              “{q}”<footer className="mt-2 text-sm text-muted-foreground">Guest review</footer>
             </blockquote>
           ))}
         </div>

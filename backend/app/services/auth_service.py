@@ -91,7 +91,7 @@ class AuthService:
             org_stmt = select(Organization).where(Organization.org_id == user.org_id)
             org_result = await db.execute(org_stmt)
             org = org_result.scalar_one_or_none()
-            org_name = org.name if org else "Dream Heavens Luxury Hospitality Group"
+            org_name = org.name if org else "TapMenu Luxury Hospitality Group"
             if user.org_id:
                 _org_name_cache[user.org_id] = (org_name, now + SESSION_CACHE_TTL)
 

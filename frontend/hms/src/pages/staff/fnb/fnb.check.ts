@@ -21,7 +21,7 @@ const order = {
   items: [{ menuItemId: 'm', name: 'Paneer Tikka', quantity: 2, pricePaise: 38000, station: 'MAIN_KITCHEN', variantName: 'Half', addOns: ['Extra mint'] }],
 } as POSOrder;
 const text = (b: Uint8Array) => String.fromCharCode(...b);
-const kot = text(kotBytes(order, { kind: 'ADDITIONAL', restaurant: 'Dream Heaven’s', width: '58mm', showPrices: false }));
+const kot = text(kotBytes(order, { kind: 'ADDITIONAL', restaurant: 'TapMenu Grand', width: '58mm', showPrices: false }));
 assert.ok(kot.startsWith('\x1b@'), 'starts with ESC @ (initialise)');
 assert.ok(kot.includes('ADDITIONAL KOT') && kot.includes('TABLE T4') && kot.includes('2 x Paneer Tikka'));
 assert.ok(kot.includes('Half, + Extra mint') && kot.includes('No onion - please'), 'extras and ASCII-safe notes');

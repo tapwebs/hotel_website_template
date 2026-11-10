@@ -49,7 +49,7 @@ export default function Dining() {
       <PageIntro
         {...diningHero}
         breadcrumb="Dining"
-        title="Restaurant on Agra Road, Bassi"
+        title="Gourmet Dining & Restaurant"
         lede="Home-style North Indian cooking and popular fast food, from breakfast to dinner, for guests and visitors alike."
       />
       <section aria-labelledby="restaurant-answer-title" className={cn(container, 'relative isolate grid gap-2 pb-6 md:pb-10')}>
@@ -58,7 +58,7 @@ export default function Dining() {
           Is there a restaurant at the hotel?
         </h2>
         <p className="max-w-[64ch] text-sm text-walnut max-md:text-base md:text-base">
-          Yes. {hotel.name} on {hotel.address.street}, Jaipur, has its own pure vegetarian restaurant serving North Indian dishes, tandoor breads and
+          Yes. {hotel.name} on {hotel.address.street}, {hotel.address.city}, has its own pure vegetarian restaurant serving North Indian dishes, tandoor breads and
           popular fast food for breakfast, lunch and dinner. It is open to visitors as well as staying guests, meals can be sent to your
           room, and the kitchen caters weddings and events. To stay the night,{' '}
           <Link to="/rooms" className={inlineLink}>

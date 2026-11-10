@@ -1,9 +1,9 @@
 {
-  "name": "hotel-dream-heavens",
+  "name": "tapmenu-website",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "description": "Marketing site for Hotel Dream Heaven’s, Bassi, Jaipur (Vite + React, prerendered).",
+  "description": "Marketing site for TapMenu Grand Resort (Vite + React, prerendered).",
   "engines": {
     "node": ">=24"
   },

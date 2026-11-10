@@ -12,7 +12,7 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="robots" content="noindex, follow"/>
-        <title>Sitemap · Hotel Dream Heaven’s, Bassi, Jaipur</title>
+        <title>Sitemap · TapMenu Grand Resort</title>
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
         <style>
           :root { --ivory:#fbf7f0; --burgundy:#6e1e2b; --deep:#4a111b; --gold:#c6a15b; --soft:#e3cf9f; --ink:#2b1a1d; }
@@ -35,9 +35,9 @@
       </head>
       <body>
         <header>
-          <img src="/logo.png" alt="Hotel Dream Heaven’s logo" width="72" height="72"/>
-          <h1>Hotel Dream Heaven’s</h1>
-          <p>Sitemap of every public page on hoteldreamheavens.in: rooms, dining, weddings and events in Bassi, Jaipur.</p>
+          <img src="/logo.png" alt="TapMenu Grand Resort logo" width="72" height="72"/>
+          <h1>TapMenu Grand Resort</h1>
+          <p>Sitemap of every public page on TapMenu Grand Resort: rooms, dining, weddings and events.</p>
         </header>
         <main>
           <p class="count"><xsl:value-of select="count(sm:urlset/sm:url)"/> pages</p>
@@ -48,8 +48,7 @@
           </ol>
         </main>
         <footer>
-          This file is for search engines; this page is just a readable view of it.
-          <a href="/llms.txt">llms.txt</a> · <a href="/robots.txt">robots.txt</a>
+          <p><a href="/">Back to TapMenu Grand Resort</a></p>
         </footer>
       </body>
     </html>

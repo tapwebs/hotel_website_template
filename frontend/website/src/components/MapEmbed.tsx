@@ -7,7 +7,7 @@ import { inlineLink } from '@/lib/utils'
 /** Click-to-load Google Maps: no third-party request until the guest asks for the map. */
 export function MapEmbed() {
   const [loaded, setLoaded] = useState(false)
-  const title = `Map showing ${hotel.name} on Agra Road, Bassi, Jaipur`
+  const title = `Map showing ${hotel.name}`
   return (
     <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-border bg-muted lg:aspect-auto lg:h-full lg:min-h-96">
       {loaded ? (
@@ -77,7 +77,7 @@ function MapArt() {
       <g stroke="#e2d4bf" strokeWidth="6" strokeLinecap="round">
         <path d="M0 90h400M0 186h400M96 0v300M240 0v300M322 0v300" />
       </g>
-      {/* Agra Road (main, diagonal) */}
+      {/* Main Avenue (main, diagonal) */}
       <path d="M-20 260C80 220 150 170 210 150S340 90 420 40" stroke="var(--color-gold-soft)" strokeWidth="16" strokeLinecap="round" />
       <path d="M-20 260C80 220 150 170 210 150S340 90 420 40" stroke="var(--color-gold)" strokeWidth="1.5" strokeDasharray="8 8" />
       {/* Hotel pin */}

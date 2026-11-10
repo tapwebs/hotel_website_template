@@ -52,7 +52,9 @@ export const LoginPage: React.FC = () => {
       <div className="w-full max-w-md relative z-10 space-y-8">
         {/* Brand Header */}
         <div className="text-center space-y-2">
-          <img src="/logo-badge-320.webp" alt="" width={72} height={72} className="mx-auto size-[72px] rounded-full ring-2 ring-gold/70 shadow-lg shadow-black/30 mb-2" />
+          <div className="mx-auto size-[72px] rounded-full ring-2 ring-gold/70 bg-burgundy-deep/80 shadow-lg shadow-black/30 mb-2 flex items-center justify-center">
+            <span className="font-display text-2xl font-bold tracking-wider text-gold">TM</span>
+          </div>
           <h1 className="font-display text-4xl font-semibold text-ivory tracking-tight">
             TapMenu
           </h1>

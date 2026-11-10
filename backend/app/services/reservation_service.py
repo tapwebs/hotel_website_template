@@ -294,7 +294,7 @@ class ReservationService:
         # 1. Fetch property ONCE
         prop_stmt = select(Property).where(Property.property_id == property_id)
         prop = (await db.execute(prop_stmt)).scalar_one_or_none()
-        prop_name = prop.name if prop else "Dream Heavens Palace"
+        prop_name = prop.name if prop else "TapMenu Grand Resort"
 
         # 2. Batch fetch all referenced guests in ONE query
         guest_ids = {r.guest_id for r in reservations if r.guest_id}
@@ -483,7 +483,7 @@ class ReservationService:
             id=reservation.reservation_id,
             bookingReference=reservation.booking_reference,
             propertyId=reservation.property_id,
-            propertyName=prop.name if prop else "Dream Heavens Palace",
+            propertyName=prop.name if prop else "TapMenu Grand Resort",
             guestId=reservation.guest_id,
             guestName=guest.full_name if guest else "Guest",
             guestEmail=(guest.email or "") if guest else "",

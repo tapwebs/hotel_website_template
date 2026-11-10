@@ -30,7 +30,7 @@ export const StaffTopNavbar: React.FC = () => {
     <header className="sticky top-0 z-20 border-b border-border bg-cream">
       <div className="flex h-14 items-center justify-between gap-3 px-4 md:h-16 md:px-8">
         <div className="flex min-w-0 items-center gap-3">
-          <img src="/logo-badge.webp" alt="" width={36} height={36} className="size-9 rounded-full md:hidden" />
+          <div className="size-9 rounded-full bg-burgundy-deep text-gold flex items-center justify-center font-display font-bold text-xs ring-1 ring-gold/50 md:hidden">TM</div>
           <div className="min-w-0 shrink-0">
             <h1 className="topbar-title truncate">{titleFor(pathname)}</h1>
             <p className="hidden items-center gap-1.5 whitespace-nowrap text-xs text-muted-foreground lg:flex">

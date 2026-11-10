@@ -31,7 +31,7 @@ export default function Rooms() {
           How much is a room at {hotel.name}?
         </h2>
         <p className="max-w-[64ch] text-walnut">
-          At {hotel.name} on {hotel.address.street}, Jaipur, the {rooms[0].name} costs {formatINR(rooms[0].rate)} a night and the{' '}
+          At {hotel.name} on {hotel.address.street}, {hotel.address.city}, the {rooms[0].name} costs {formatINR(rooms[0].rate)} a night and the{' '}
           {rooms[1].name} costs {formatINR(rooms[1].rate)} a night. Each room sleeps up to 2 adults, an extra bed is available on request,
           and taxes are added at confirmation. Check-in and check-out are both at {hotel.checkIn}.
         </p>
@@ -54,7 +54,7 @@ export default function Rooms() {
           </Link>{' '}
           or{' '}
           <Link to="/contact" className={inlineLink}>
-            get directions to Agra Road, Bassi
+            get directions to the resort
           </Link>
           .
         </p>
@@ -272,7 +272,7 @@ function RoomsHero() {
       eyebrow={<>Two room types · Check-in {hotel.checkIn}</>}
       title={
         <>
-          <span className="block">Rooms in Bassi, Jaipur,</span>
+          <span className="block">Suites and rooms,</span>
           <span className="block text-burgundy italic">made for a good night’s rest</span>
         </>
       }

@@ -135,23 +135,7 @@ describe('sessions', () => {
     }
   })
 
-  it('googleClientId returns default web client ID for localhost', () => {
-    vi.stubEnv('VITE_GOOGLE_CLIENT_ID', '')
-    const hadWindow = 'window' in globalThis
-    const originalWindow = (globalThis as Record<string, unknown>).window
-    try {
-      ;(globalThis as Record<string, unknown>).window = { location: { hostname: 'localhost' } }
-      expect(googleClientId()).toBe(DEFAULT_GOOGLE_CLIENT_ID)
-
-      ;(globalThis as Record<string, unknown>).window = { location: { hostname: 'unrelated-domain.com' } }
-      expect(googleClientId()).toBe('')
-    } finally {
-      vi.unstubAllEnvs()
-      if (hadWindow) {
-        (globalThis as Record<string, unknown>).window = originalWindow
-      } else {
-        delete (globalThis as Record<string, unknown>).window
-      }
-    }
+  it('googleClientId is disabled by default', () => {
+    expect(googleClientId()).toBe('')
   })
 })

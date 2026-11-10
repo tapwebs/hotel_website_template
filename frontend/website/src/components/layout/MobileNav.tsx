@@ -37,7 +37,7 @@ export function MobileNav() {
       >
         <div className="px-6 pt-6">
           <SheetTitle className="font-display text-2xl font-medium text-burgundy">Menu</SheetTitle>
-          <SheetDescription className="sr-only">Pages of the Hotel Dream Heaven’s website</SheetDescription>
+          <SheetDescription className="sr-only">Pages of the TapMenu Grand Resort website</SheetDescription>
           <LineDivider className="draw-now mt-3 h-4 w-36 text-gold" />
         </div>
         <nav aria-label="Mobile" className="px-4 pt-3">

@@ -90,31 +90,31 @@ export const pageFaqs: Record<
 > = {
   '/wedding-venue-in-bassi': [
     {
-      q: 'Is there a wedding venue in Bassi near Dausa?',
+      q: 'Is there a wedding venue at TapMenu Grand Resort?',
       a: 'Yes. TapMenu Grand Resort & Spa features an expansive outdoor lawn accommodating 1,500 to 2,000 guests alongside an elegant indoor banquet hall for 120 guests. Convenient highway access enables guests from nearby cities to arrive smoothly. Dedicated on-site parking and full power backup ensure complete celebration support throughout.',
     },
     {
-      q: 'Can I hold the baraat and the ceremony on the lawn at Bassi?',
-      a: 'Yes. The lawn has room for a full baraat, mandap, stage and dining for 1,500 to 2,000 guests, with power backup on hand. Smaller rituals such as engagement or haldi can use the banquet hall. Call or WhatsApp +91 98765 43210 to plan the dates and menu.',
+      q: 'Can I hold celebrations and ceremonies on the lawn?',
+      a: 'Yes. The lawn has room for a full wedding procession, mandap, stage and dining for 1,500 to 2,000 guests, with power backup on hand. Smaller rituals such as engagement or reception can use the banquet hall. Contact our front desk directly to plan the dates and menu.',
     },
   ],
   '/hotel-near-dausa': [
     {
-      q: 'How far is Hotel Dream Heaven’s from Dausa?',
+      q: 'How can guests reach TapMenu Grand Resort?',
       a: 'The property is located along the primary regional highway corridor with seamless road connectivity. Turn in at the main property gate, park in the spacious secure front forecourt, and proceed to reception where check-in commences from 11:00 AM daily with full hospitality staff ready to welcome you.',
     },
     {
-      q: 'Can I book a room near Dausa for one night?',
+      q: 'Can I book a room at the resort for one night?',
       a: 'Yes. Send your dates and room choice on WhatsApp or by phone and the hotel confirms availability and the final price. A Deluxe Room costs ₹2,000 a night and a Super Deluxe Room ₹2,200, both before taxes. Check-in is from 11:00 AM and check-out is by 11:00 AM.',
     },
   ],
   '/hotel-in-bassi-jaipur': [
     {
-      q: 'Where is Hotel Dream Heaven’s in Bassi, Jaipur?',
-      a: 'TapMenu Grand Resort & Spa is located at 100 Hospitality Boulevard, Metropolis. Turn in at the gate and park in the front forecourt beside the entrance steps. If you have trouble finding the hotel, call or WhatsApp +91 98765 43210 and the front desk will guide you.',
+      q: 'Where is TapMenu Grand Resort located?',
+      a: 'TapMenu Grand Resort & Spa is located at 100 Hospitality Boulevard, Metropolis. Turn in at the gate and park in the front forecourt beside the entrance steps. If you have trouble finding the hotel, message or call our front desk directly and our team will guide you.',
     },
     {
-      q: 'How far is Hotel Dream Heaven’s from Jaipur?',
+      q: 'How far is TapMenu Grand Resort from the city center?',
       a: 'The property is situated within easy driving distance across the metropolitan region along the main thoroughfare. Travel duration varies according to regional traffic conditions. Share your anticipated arrival details on messaging channels so front desk specialists can prepare your room for seamless check-in from 11:00 AM onwards.',
     },
   ],
@@ -174,7 +174,7 @@ export const pageFaqs: Record<
   ],
   '/about': [
     {
-      q: 'What facilities does Hotel Dream Heaven’s have?',
+      q: 'What facilities does the resort have?',
       a: 'TapMenu Grand Resort & Spa has a ground-floor restaurant, an indoor banquet hall for around 120 guests, an outdoor function lawn for 1,500 to 2,000 guests, on-site parking, a lift, room service, laundry, power backup, CCTV in common areas and wheelchair access. A swimming pool and EV charging are planned but not open yet.',
     },
     {

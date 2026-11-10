@@ -18,7 +18,7 @@ const faqs: [string, string][] = [
 export function Help() {
   const tiles = [
     { icon: Phone, label: 'Call', sub: `${hotel.phoneDisplay} / ${hotel.phoneDisplaySecondary}`, href: hotel.phoneHref },
-    { icon: MessageCircle, label: 'WhatsApp', sub: 'Chat with the hotel', href: buildWhatsAppUrl('Hello, I have a question about Hotel Dream Heaven’s.'), ext: true },
+    { icon: MessageCircle, label: 'WhatsApp', sub: 'Chat with the hotel', href: buildWhatsAppUrl('Hello, I have a question about TapMenu Grand Resort.'), ext: true },
     { icon: MapPin, label: 'Directions', sub: 'Open in Maps', href: hotel.directionsUrl, ext: true },
     { icon: Mail, label: 'Email', sub: hotel.email, href: `mailto:${hotel.email}` },
   ]

@@ -28,7 +28,7 @@ export default function WeddingsEvents() {
       <PageIntro
         {...weddingsHero}
         breadcrumb="Weddings & Events"
-        title="Banquet hall & wedding lawn in Bassi, Jaipur"
+        title="Banquet Hall & Grand Wedding Lawn"
         lede="A marble hall for 120, an open lawn for up to 2,000, a kitchen that caters both and rooms for the family upstairs."
       />
 
@@ -39,7 +39,7 @@ export default function WeddingsEvents() {
             How many guests can the venues hold?
           </h2>
           <p className="max-w-[64ch] text-walnut">
-            {hotel.name} on {hotel.address.street}, Jaipur, has two event venues. The indoor banquet hall seats around 120 guests, and the
+            {hotel.name} on {hotel.address.street}, {hotel.address.city}, has two event venues. The indoor banquet hall seats around 120 guests, and the
             outdoor function lawn hosts around 1,500 to 2,000. Our kitchen offers{' '}
             <Link to="/dining" className={inlineLink}>
               catering from our kitchen
@@ -172,7 +172,7 @@ export default function WeddingsEvents() {
               </a>{' '}
               or find{' '}
               <Link to="/contact" className={inlineLink}>
-                directions to the hotel on Agra Road
+                directions to the resort
               </Link>
               .
             </p>

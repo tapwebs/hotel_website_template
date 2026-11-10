@@ -189,7 +189,7 @@ async def test_settings_payload_stale_date_protection(client, auth_headers):
         headers=auth_headers,
         json={
             "settings": {
-                "propertyIdentity": {"propertyName": "Dream Heavens Palace"},
+                "propertyIdentity": {"propertyName": "TapMenu Grand Resort"},
                 "businessDate": {"currentBusinessDate": "2026-09-15"}
             }
         }

@@ -11,7 +11,7 @@ export function bookingIcs(b: Booking): string {
   return [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Hotel Dream Heavens//Booking//EN',
+    'PRODID:-//TapMenu Hospitality//Booking//EN',
     'BEGIN:VEVENT',
     `UID:${b.id}@${hotel.domain}`,
     `DTSTAMP:${stamp}`,

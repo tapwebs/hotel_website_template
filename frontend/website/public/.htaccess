@@ -1,4 +1,4 @@
-# Hotel Dream Heaven’s: Hostinger shared hosting (Apache / LiteSpeed). Upload to public_html with the rest of dist/.
+# TapMenu Grand Resort: Web server configuration (Apache / LiteSpeed). Upload to public_html with the rest of dist/.
 # Directives are ignored (or ignored per-block) if the server is not Apache/LiteSpeed. See docs/DEPLOY.md.
 #
 # If an inline script in dist/index.html changes (hydration, gtag init, GTM loader), recompute its sha256 in the CSP below (docs/DEPLOY.md).

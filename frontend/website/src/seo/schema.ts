@@ -92,17 +92,15 @@ const hotelNode: Node = {
   '@type': 'Hotel',
   '@id': HOTEL_ID,
   name: hotel.name,
-  alternateName: ['Hotel Dream Heavens', 'Hotel Dream Heaven', 'Hotel Dream Heavens & Restaurant', 'Dream Heaven'],
-  // Tells search and AI systems which "Dream Heaven" this is (other hotels share the name, e.g. in Udaipur).
-  disambiguatingDescription: 'Hotel and restaurant on Agra Road, Bassi, Jaipur, Rajasthan, opposite Bharat Petroleum.',
+  alternateName: ['TapMenu Grand', 'TapMenu Grand Resort', 'TapMenu Luxury Resort & Spa'],
+  disambiguatingDescription: 'Luxury resort and restaurant at 100 Hospitality Boulevard, Metropolis.',
   url: `${SITE_URL}/`,
   logo: `${SITE_URL}/icon-192.png`,
   image: [`${SITE_URL}/banner.jpeg`, imageObject(images.home.hero)],
   telephone: telephones,
   email: hotel.email,
   address,
-  // Pin from the Google Maps place link (!3d/!4d), not the map-view centre (@lat,lng).
-  geo: { '@type': 'GeoCoordinates', latitude: 26.8821594, longitude: 76.2272955 },
+  geo: { '@type': 'GeoCoordinates', latitude: 28.6139, longitude: 77.2090 },
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',

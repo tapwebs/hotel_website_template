@@ -337,10 +337,10 @@ const drawSignColumn: Draw = (ctx, w, h) => {
   ctx.shadowBlur = 8
   ctx.fillText('HOTEL', w / 2, 80)
 
-  // "DREAM HEAVENS" stacked vertically in bright gold with 3D drop shadow
+  // "TAPMENU" stacked vertically in bright gold with 3D drop shadow
   ctx.fillStyle = '#f7cb59'
   ctx.font = '800 78px Montserrat, Manrope, sans-serif'
-  const letters = 'DREAMHEAVENS'.split('')
+  const letters = 'TAPMENU'.split('')
   const startY = 200
   const letterSpacing = (h - 380) / letters.length
   letters.forEach((ch, i) => {
@@ -389,10 +389,10 @@ const drawGlassBand: Draw = (ctx, w, h) => {
   ctx.fillStyle = '#fae19c'
   ctx.shadowColor = 'rgba(0,0,0,0.9)'
   ctx.shadowBlur = 10
-  ctx.fillText('Hotel Dream Heavens', w / 2, h / 2 + 4)
+  ctx.fillText('TapMenu Grand Resort', w / 2, h / 2 + 4)
 }
 
-/** Round DH DREAM HEAVENS medallion badge */
+/** Round TM TAPMENU medallion badge */
 const drawBadge: Draw = (ctx, w, h) => {
   const cx = w / 2
   const cy = h / 2
@@ -432,20 +432,20 @@ const drawBadge: Draw = (ctx, w, h) => {
   ctx.arc(cx, cy, cx - 32, 0, Math.PI * 2)
   ctx.stroke()
 
-  // "DH" Monogram
+  // "TM" Monogram
   ctx.textAlign = 'center'
   ctx.textBaseline = 'middle'
   ctx.font = '800 125px Montserrat, Manrope, sans-serif'
 
-  // Gold 'D'
+  // Gold 'T'
   ctx.fillStyle = '#caa34e'
   ctx.shadowColor = 'rgba(0,0,0,0.3)'
   ctx.shadowBlur = 4
-  ctx.fillText('D', cx - 38, cy - 22)
+  ctx.fillText('T', cx - 38, cy - 22)
 
-  // Navy 'H'
+  // Navy 'M'
   ctx.fillStyle = '#162238'
-  ctx.fillText('H', cx + 36, cy - 22)
+  ctx.fillText('M', cx + 36, cy - 22)
 
   // Gold swoosh arc with 4-point star
   ctx.strokeStyle = '#d4ad52'
@@ -462,13 +462,13 @@ const drawBadge: Draw = (ctx, w, h) => {
   ctx.arc(sx, sy, 8, 0, Math.PI * 2)
   ctx.fill()
 
-  // "DREAM HEAVENS" bold serif text
+  // "TAPMENU GRAND" bold serif text
   ctx.shadowBlur = 0
   ctx.fillStyle = '#111827'
   ctx.font = '800 32px "Cormorant Garamond", Georgia, serif'
-  ctx.fillText('D R E A M', cx, cy + 50)
+  ctx.fillText('T A P M E N U', cx, cy + 50)
   ctx.font = '800 38px "Cormorant Garamond", Georgia, serif'
-  ctx.fillText('HEAVENS', cx, cy + 86)
+  ctx.fillText('G R A N D', cx, cy + 86)
 }
 
 /** "COMING SOON" luxury preview badge */

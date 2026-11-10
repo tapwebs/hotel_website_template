@@ -1,5 +1,4 @@
-// Owner-supplied guest reviews, shown anonymously (no names, dates or platform attribution).
-// Verbatim: the owner wrote "Hotel Dream Heaven" (singular). Never emit rating JSON-LD or an average.
+// Fictional demonstration guest reviews, shown anonymously (no names, dates or platform attribution).
 
 export interface Review {
   quote: string
@@ -10,61 +9,61 @@ export interface Review {
 export const reviews: Review[] = [
   {
     quote:
-      'Bassi, Jaipur mein budget hotel dhoondh rahe the aur Hotel Dream Heaven ek perfect choice nikla. Rooms bahut clean the, bedsheets fresh the aur bathroom ekdum saaf. Paise ke hisaab se best budget hotel in Bassi Jaipur. Highly recommended!',
+      'TapMenu Grand Resort ek perfect choice nikla. Rooms bahut clean the, bedsheets fresh the aur bathroom ekdum saaf. Highly recommended for comfortable luxury stays!',
     lang: 'hi-Latn',
     rating: 5,
   },
   {
     quote:
-      'Hum apni family ke saath Hotel Dream Heaven mein ruke the. Kids ko bhi bahut pasand aaya. Staff itna friendly hai ki ghar jaisa feel hua. Bassi Jaipur mein family ke liye safe aur clean hotel chahiye toh yahi best hai.',
+      'Hum apni family ke saath TapMenu Grand Resort mein ruke the. Kids ko bhi bahut pasand aaya. Staff itna friendly hai ki ghar jaisa feel hua. Safe aur clean hotel experience.',
     lang: 'hi-Latn',
     rating: 5,
   },
   {
     quote:
-      'Honeymoon ke liye humne Hotel Dream Heaven, Bassi Jaipur book kiya tha. Room neat aur peaceful tha, couples ke liye ekdum sahi. Budget mein itni acchi stay milna mushkil hai. Couple friendly hotel in Jaipur ki talash ho toh yahan zaroor aaiye!',
+      'Vacation ke liye humne TapMenu Grand Resort book kiya tha. Room neat aur peaceful tha. Great hospitality and lovely amenities.',
     lang: 'hi-Latn',
     rating: 5,
   },
   {
     quote:
-      'Hotel Dream Heaven ka restaurant kamaal ka hai! Khana ekdum swadisht aur ghar jaisa tha, especially dal baati churma aur paneer dishes. Bassi mein hotel with restaurant dhoondh rahe ho toh bina soche yahan jao.',
+      'TapMenu Grand ka restaurant kamaal ka hai! Khana ekdum swadisht aur fresh tha, especially vegetarian and continental dishes.',
     lang: 'hi-Latn',
     rating: 5,
   },
   {
     quote:
-      'Staff ka behaviour bahut accha tha. Check-in smooth tha aur har request pe turant help mili. Room clean tha aur sasta bhi. Bassi, Jaipur mein affordable hotel with clean rooms ke liye Hotel Dream Heaven ko 5 mein se 5!',
+      'Staff ka behaviour bahut accha tha. Check-in smooth tha aur har request pe turant help mili. Rooms clean the aur well-maintained.',
     lang: 'hi-Latn',
     rating: 4,
   },
   {
     quote:
-      'Jaipur trip pe budget mein achhi stay chahiye thi, aur Hotel Dream Heaven ne dil jeet liya. Saaf-suthre rooms, tasty food aur helpful staff, aur kya chahiye? Bassi Jaipur ka best budget hotel for couples and families. Dobara zaroor aayenge!',
+      'Trip pe comfortable stay chahiye thi, aur TapMenu Grand Resort ne dil jeet liya. Saaf-suthre rooms, tasty food aur helpful staff. Dobara zaroor aayenge!',
     lang: 'hi-Latn',
     rating: 5,
   },
   {
     quote:
-      'Stayed at Hotel Dream Heaven in Bassi, Jaipur with my family and loved it. The rooms were spotless, the beds comfortable, and the staff went out of their way to help. Easily one of the best budget hotels in Bassi Jaipur for families.',
+      'Stayed at TapMenu Grand Resort with my family and loved every moment. The rooms were spotless, the beds comfortable, and the staff went out of their way to help.',
     lang: 'en',
     rating: 5,
   },
   {
     quote:
-      'We chose Hotel Dream Heaven for our honeymoon trip near Jaipur, and it was a lovely, peaceful stay. Clean room, warm hospitality and great value for money. A truly couple-friendly budget hotel in Bassi, Jaipur.',
+      'A wonderful, peaceful stay at TapMenu Grand Resort. Clean rooms, warm hospitality and great value for modern travelers.',
     lang: 'en',
     rating: 5,
   },
   {
     quote:
-      "The in-house restaurant at Hotel Dream Heaven pleasantly surprised us. The food was fresh, flavorful and reasonably priced. Combined with clean rooms and courteous staff, it's a great hotel with restaurant in Bassi, Jaipur.",
+      "The in-house dining at TapMenu Grand Resort pleasantly surprised us. The cuisine was fresh, flavorful and artfully served. Highly recommended.",
     lang: 'en',
     rating: 5,
   },
   {
     quote:
-      'Looking for an affordable hotel in Bassi, Jaipur with clean rooms and friendly service? Hotel Dream Heaven ticks every box. Smooth check-in, tidy rooms and delicious meals. Highly recommended for families and couples.',
+      'Looking for a relaxing resort with clean rooms and friendly service? TapMenu Grand Resort ticks every box. Smooth check-in, tidy rooms and delicious meals.',
     lang: 'en',
     rating: 4,
   },

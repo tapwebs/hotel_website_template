@@ -8,15 +8,15 @@ import { hotel } from '@/data/hotel'
 
 describe('fitTitle', () => {
   it('adds the site name to a short title', () => {
-    expect(fitTitle(['Rooms in Bassi, Jaipur'])).toBe(`Rooms in Bassi, Jaipur | ${SITE_NAME}`)
+    expect(fitTitle(['Luxury Rooms & Suites'])).toBe(`Luxury Rooms & Suites | ${SITE_NAME}`)
   })
   it('drops the site name when it would push the title past 60', () => {
     const long = 'A headline that is already fifty-three characters long'
     expect(fitTitle([long])).toBe(long)
   })
   it('picks the candidate closest to the range', () => {
-    expect(fitTitle(['x'.repeat(80), 'Contact & Directions: Agra Road, Bassi'])).toBe(
-      `Contact & Directions: Agra Road, Bassi | ${SITE_NAME}`,
+    expect(fitTitle(['x'.repeat(80), 'Contact & Guest Services'])).toBe(
+      `Contact & Guest Services | ${SITE_NAME}`,
     )
   })
 })
@@ -51,7 +51,7 @@ describe('schema', () => {
   it('home has a Hotel with telephone and address, and the TAPWEBS creator', () => {
     const graph = schemaFor('/')!['@graph'] as Record<string, unknown>[]
     const hotelNode = graph.find((n) => n['@type'] === 'Hotel')!
-    expect(hotelNode.telephone).toEqual(['+91-9876543210', '+91-9876543211'])
+    expect(hotelNode.telephone).toEqual(['+91-0000000000', '+91-0000000001'])
     expect(hotelNode.address).toMatchObject({ addressLocality: hotel.address.city, addressRegion: hotel.address.region })
     expect(graph.find((n) => n['@type'] === 'WebSite')?.creator).toMatchObject({ name: 'TAPWEBS' })
   })

@@ -96,7 +96,7 @@ async def test_cross_tenant_access_denied_for_owner_and_manager(client: AsyncCli
     db_session.add_all([competitor_org, competitor_prop, competitor_settings])
     await db_session.commit()
 
-    # Dream Heavens GM (admin) attempts to access Competitor Property
+    # TapMenu GM (admin) attempts to access Competitor Property
     admin_headers = await login(client, "admin")
     resp_gm = await client.get(
         "/api/v1/reports/dashboard-kpis",
@@ -104,7 +104,7 @@ async def test_cross_tenant_access_denied_for_owner_and_manager(client: AsyncCli
     )
     assert resp_gm.status_code == 403, f"Expected 403 for GM cross-tenant access, got {resp_gm.status_code}"
 
-    # Dream Heavens Superadmin (Owner) attempts to access Competitor Property
+    # TapMenu Superadmin (Owner) attempts to access Competitor Property
     super_headers = await login(client, "superadmin")
     resp_super = await client.get(
         "/api/v1/reports/dashboard-kpis",

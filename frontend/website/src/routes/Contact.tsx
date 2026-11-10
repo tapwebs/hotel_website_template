@@ -44,7 +44,7 @@ export default function Contact() {
         title="Contact & directions"
         lede={
           <>
-            {hotel.name}, {hotel.address.street}, {hotel.address.city}, {hotel.address.region}. Opposite the Bharat Petroleum pump. Park in
+            {hotel.name}, {hotel.address.street}, {hotel.address.city}, {hotel.address.region}. Conveniently located near {hotel.address.landmark}. Park in
             the front forecourt.{' '}
             <a href="#faqs" className={inlineLink}>
               Check-in, policies and FAQs
@@ -85,7 +85,7 @@ export default function Contact() {
           />
           <p className="flex gap-3 text-walnut">
             <MapPin className="mt-1 size-5 shrink-0 text-burgundy" aria-hidden="true" />
-            Turn in at the gate opposite Bharat Petroleum. Parking is in the forecourt, right by the entrance steps.
+            Turn in at the main gate. Dedicated guest parking is in the forecourt, right by the entrance steps.
           </p>
         </div>
       </section>
@@ -100,12 +100,12 @@ export default function Contact() {
             How do I get to {hotel.name}?
           </h2>
           <p className="max-w-[60ch] text-walnut">
-            {hotel.name} is on {hotel.address.street}, {hotel.address.city}, directly opposite the Bharat Petroleum pump. Look for the lit
+            {hotel.name} is situated on {hotel.address.street}, {hotel.address.city}, near {hotel.address.landmark}. Look for the lit
             sign, turn in at the gate and park in the front forecourt beside the entrance steps.
           </p>
           <ol className="grid max-w-[60ch] list-decimal gap-2 pl-5 text-walnut marker:font-semibold marker:text-burgundy">
-            <li>Follow Agra Road (NH-21) to Bassi, {hotel.address.city}.</li>
-            <li>Find the Bharat Petroleum pump: the hotel is directly opposite.</li>
+            <li>Follow {hotel.address.street} to {hotel.address.landmark}.</li>
+            <li>Arrive at the main resort entrance.</li>
             <li>Turn in at the gate and park on site in the front forecourt.</li>
             <li>Walk up the entrance steps to reception.</li>
           </ol>

@@ -13,7 +13,7 @@ ACTIVITY = f"{settings.API_V1_PREFIX}/website/admin/activity"
 
 async def seed_hub(db):
     org_id = generate_uuid()
-    db.add(QrOrganization(id=org_id, slug=SLUG, name="Hotel Dream Heaven’s", category="Hotel", qr_status="active", status="published"))
+    db.add(QrOrganization(id=org_id, slug=SLUG, name="TapMenu Grand Resort", category="Hotel", qr_status="active", status="published"))
     for code, label in PLACEMENTS.items():
         db.add(QrPlacement(id=generate_uuid(), organization_id=org_id, code=code, label=label, kind="other", status="active"))
     db.add(QrPlacement(id=generate_uuid(), organization_id=org_id, code="off", label="Off", kind="other", status="disabled"))

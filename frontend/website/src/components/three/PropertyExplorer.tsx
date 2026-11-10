@@ -120,7 +120,7 @@ export default function PropertyExplorer({ inView }: { inView: boolean }) {
         )}
       >
         <p className="sr-only">
-          An interactive 3D model of Hotel Dream Heaven’s. Features the taller &amp; larger main building with upper floor rooms, ground floor
+          An interactive 3D model of TapMenu Grand Resort & Spa. Features the taller &amp; larger main building with upper floor rooms, ground floor
           restaurant, basement banquet hall, and expansive 2X function lawn with wedding mandap and fountain.
         </p>
 

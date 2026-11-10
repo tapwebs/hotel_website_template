@@ -19,7 +19,7 @@ async def test_qr_hub_public_and_redirects(client, db_session):
     org = QrOrganization(
         id=org_id,
         slug="hotel-dream-heavens-test",
-        name="Hotel Dream Heavens Test",
+        name="TapMenu Grand Test",
         category="Hotel",
         qr_status="active",
         status="published",

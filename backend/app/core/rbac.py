@@ -24,7 +24,7 @@ class AccountType(str, Enum):
     OWNER = "OWNER"                    # Super Admin
     MANAGER = "MANAGER"                # Admin
     STAFF = "STAFF"                    # Staff member with a job role
-    PLATFORM_ADMIN = "PLATFORM_ADMIN"  # Internal Dream Heavens Platform Super Admin (hidden from hotel UI)
+    PLATFORM_ADMIN = "PLATFORM_ADMIN"  # Internal TapMenu Platform Super Admin (hidden from hotel UI)
 
 
 class JobRole(str, Enum):

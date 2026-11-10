@@ -65,7 +65,7 @@ export const StaffSidebar: React.FC = () => {
     >
       <div className="flex h-16 shrink-0 items-center justify-between gap-2 border-b border-border px-3">
         <div className="flex min-w-0 items-center gap-3">
-          <img src="/logo-badge.webp" alt="" width={40} height={40} className="size-10 shrink-0 rounded-full" />
+          <div className="size-10 shrink-0 rounded-full bg-burgundy-deep text-gold flex items-center justify-center font-display font-bold text-sm ring-1 ring-gold/50">TM</div>
           {sidebarOpen && (
             <span className="grid min-w-0 leading-none">
               <span className="truncate font-display text-xl font-semibold text-burgundy">TapMenu</span>

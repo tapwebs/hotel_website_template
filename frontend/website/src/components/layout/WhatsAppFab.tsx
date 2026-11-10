@@ -3,7 +3,7 @@ import { MessageCircle, Phone, X } from 'lucide-react'
 import { hotel } from '@/data/hotel'
 import { buildWhatsAppUrl } from '@/components/booking/buildWhatsAppUrl'
 
-const defaultMsg = 'Hello, I have a question about Hotel Dream Heaven’s.'
+const defaultMsg = 'Hello, I have a question about TapMenu Grand Resort.'
 
 export function WhatsAppFab() {
   const [open, setOpen] = useState(false)

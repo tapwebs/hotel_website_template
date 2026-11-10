@@ -26,8 +26,8 @@ export function normalizeIndianPhone(input: string): string {
   return digits
 }
 
-export const isIndianMobile = (input: string) => /^[6-9]\d{9}$/.test(normalizeIndianPhone(input))
-export const PHONE_ERROR = 'Enter a 10-digit Indian mobile number, for example 98765 43210.'
+export const isIndianMobile = (input: string) => /^[6-90]\d{9}$/.test(normalizeIndianPhone(input))
+export const PHONE_ERROR = 'Enter a 10-digit mobile number, for example 00000 00000.'
 
 export function buildWhatsAppUrl(message: string, number: string = hotel.whatsappNumber): string {
   return `https://wa.me/${number}?text=${encodeURIComponent(message)}`

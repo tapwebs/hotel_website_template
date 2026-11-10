@@ -43,19 +43,6 @@ export function LoginForm() {
   if (status.state === 'unavailable') return <AuthUnavailable />
   return (
     <form noValidate onSubmit={handleSubmit(submit, playError)} aria-label="Log in" className="grid gap-4">
-      {hasGoogleAuth && (
-        <div className="flex flex-col gap-3">
-          <GoogleSignInButton mode="signin" onSuccess={onGoogleSuccess} />
-          <div className="relative my-1 flex items-center justify-center">
-            <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t border-border" />
-            </div>
-            <span className="relative bg-ivory px-3 text-xs tracking-wider uppercase text-muted-foreground font-medium">
-              Or continue with password
-            </span>
-          </div>
-        </div>
-      )}
       <Field id="li-email" label="Email" error={errors.email?.message}>
         {(aria) => <Input {...aria} {...register('email')} className="h-12" type="email" inputMode="email" autoComplete="email" placeholder="Enter your email address" />}
       </Field>

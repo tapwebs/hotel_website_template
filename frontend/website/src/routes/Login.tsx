@@ -12,7 +12,7 @@ export default function Login() {
         eyebrow="Welcome back"
         title="Log in"
         intro="Log in to see your bookings and manage your profile."
-        tagline="Welcome back to Dream Heaven’s"
+        tagline="Welcome back to TapMenu Grand"
         image={images.about.wood}
         focal="50% 40%"
       >

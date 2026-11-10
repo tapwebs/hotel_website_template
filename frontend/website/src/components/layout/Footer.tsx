@@ -11,7 +11,7 @@ import { play } from '@/lib/sounds'
 import { Logo } from './Logo'
 
 const year = new Date().getFullYear()
-const whatsapp = buildWhatsAppUrl('Hello, I would like to plan a stay at Hotel Dream Heaven’s.')
+const whatsapp = buildWhatsAppUrl('Hello, I would like to plan a stay at TapMenu Grand Resort.')
 
 const label = (to: (typeof nav)[number]['to']) => nav.find((n) => n.to === to)?.label ?? to
 
@@ -21,9 +21,6 @@ const footerLinks = [
     to,
     label: to === '/' ? 'Home' : label(to),
   })),
-  { to: '/hotel-in-bassi-jaipur', label: 'Hotel in Bassi' },
-  { to: '/hotel-near-dausa', label: 'Hotel near Dausa' },
-  { to: '/wedding-venue-in-bassi', label: 'Wedding venue in Bassi' },
   // Policies and FAQs live on the Contact page.
   { to: '/contact#faqs', label: 'FAQs & Policies' },
 ]
@@ -46,7 +43,7 @@ export function Footer() {
             <h2 id="footer-cta" className="font-display text-xl text-ivory md:text-3xl">
               Plan your stay
             </h2>
-            <p className="hidden text-sm text-cream/80 md:block">Rooms from ₹{hotel.priceFrom} a night, on Agra Road, Bassi.</p>
+            <p className="hidden text-sm text-cream/80 md:block">Rooms from ₹{hotel.priceFrom} a night. Premium hospitality & dining.</p>
           </div>
           <div className="flex gap-2">
             <BookNowButton variant="gold" className="h-11 px-4">

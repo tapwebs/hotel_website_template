@@ -14,9 +14,9 @@ export default function WeddingVenueBassi() {
       <Seo path="/wedding-venue-in-bassi" />
       <PageIntro
         {...weddingsHero}
-        breadcrumb="Wedding venue in Bassi"
-        title="Wedding venue in Bassi, near Dausa and Jaipur"
-        lede={`${hotel.name} has a banquet hall and an open lawn for weddings on the Agra Road in Bassi, with catering and rooms for your guests.`}
+        breadcrumb="Wedding venue in Metropolis"
+        title="Grand Wedding Venue & Celebrations in Metropolis"
+        lede={`${hotel.name} features an indoor banquet hall and a grand open lawn for weddings and celebrations, with full catering and luxury accommodation for your guests.`}
       >
         <Link to="/weddings-events" className={cn(inlineLink, 'justify-self-start text-lg')}>
           Plan your event and send an enquiry
@@ -26,11 +26,11 @@ export default function WeddingVenueBassi() {
       <section aria-labelledby="venues-title" className={cn(container, 'relative isolate grid gap-5 pb-16')}>
         <PetalDecor variant="dots" side="left" />
         <h2 id="venues-title" className="text-h2 text-burgundy-deep">
-          Two venues for a Bassi wedding
+          Two venues for weddings and celebrations
         </h2>
         <p className="max-w-[64ch] text-walnut">
-          {hotel.name} is a wedding venue on {hotel.address.street}, {hotel.address.city}, {hotel.address.landmark.toLowerCase()}. You can
-          hold the main function on the lawn and the smaller rituals in the hall.
+          {hotel.name} is an ideal venue at {hotel.address.street}, {hotel.address.city}. You can
+          hold the main function on the lawn and the smaller rituals in the banquet hall.
         </p>
         <dl className="grid max-w-4xl gap-6 md:grid-cols-2">
           {venues.map((v) => (
@@ -69,31 +69,22 @@ export default function WeddingVenueBassi() {
 
       <section aria-labelledby="guests-title" className={cn(container, 'grid gap-4 py-16 lg:py-20')}>
         <h2 id="guests-title" className="text-h2 text-burgundy-deep">
-          For families in Bassi, Dausa and Jaipur
+          For visiting families and event guests
         </h2>
         <p className="max-w-[64ch] text-walnut">
-          The hotel stands on the Agra Road, about 27 km from Dausa and about 30 km from Jaipur by road (approximate), so guests from all
-          three can reach it on one highway. Parking is in the front forecourt, and guests who want to stay can book{' '}
+          The hotel stands in an accessible regional location with convenient highway connectivity. Dedicated parking is available in the spacious front forecourt, and event attendees can easily reserve{' '}
           <Link to="/rooms" className={inlineLink}>
             rooms at the hotel
           </Link>
-          . Menus come from our{' '}
+          . Custom menus are prepared by our{' '}
           <Link to="/dining" className={inlineLink}>
-            pure vegetarian kitchen
-          </Link>
-          . See{' '}
-          <Link to="/hotel-in-bassi-jaipur" className={inlineLink}>
-            how to find the hotel in Bassi
-          </Link>{' '}
-          or{' '}
-          <Link to="/hotel-near-dausa" className={inlineLink}>
-            how to reach us from Dausa
+            multi-cuisine kitchen
           </Link>
           .
         </p>
       </section>
 
-      <PageFaqs path="/wedding-venue-in-bassi" title="Questions about weddings in Bassi" />
+      <PageFaqs path="/wedding-venue-in-bassi" title="Questions about weddings & celebrations" />
     </>
   )
 }

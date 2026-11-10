@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
         {...privacyHero}
         breadcrumb="Privacy Policy"
         title="Privacy policy"
-        lede="How Hotel Dream Heaven’s handles the details you share on this website and at the hotel. We only say what is true today."
+        lede="How TapMenu Grand Resort handles the details you share on this website and at the hotel. We only say what is true today."
       >
         <p className="text-sm text-muted-foreground">
           Last updated: <time dateTime={privacyUpdated.iso}>{privacyUpdated.label}</time>

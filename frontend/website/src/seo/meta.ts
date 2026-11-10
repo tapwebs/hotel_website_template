@@ -7,7 +7,7 @@ import { socialImageFor } from './schema'
 
 const DEFAULT_IMAGE = {
   url: `${SITE_URL}/banner.jpeg`,
-  alt: 'Hotel Dream Heaven’s banner - Luxury rooms, restaurant, banquet hall, and lawn in Bassi, Jaipur',
+  alt: 'TapMenu Grand Resort & Spa banner - Luxury rooms, restaurant, banquet hall, and lawn in Metropolis',
 }
 
 export interface HeadTag {

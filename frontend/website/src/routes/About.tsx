@@ -68,7 +68,7 @@ export default function About() {
         {...aboutHero}
         breadcrumb="About"
         title={`About ${hotel.name}`}
-        lede="We built Dream Heaven’s for travellers and families who want the feel of a grand Rajasthani stay, without a grand bill."
+        lede="We built TapMenu Grand for travellers and families who want the feel of a luxury resort stay, without a grand bill."
       />
 
       <section aria-labelledby="what-is-title" className={cn(container, 'relative isolate grid gap-3 pb-16')}>
@@ -77,8 +77,8 @@ export default function About() {
           What is {hotel.name}?
         </h2>
         <p className="max-w-[64ch] text-walnut">
-          {hotel.name} is a hotel with a restaurant and event venues on {hotel.address.street}, {hotel.address.city}, {hotel.address.region}
-          , opposite Bharat Petroleum. It offers{' '}
+          {hotel.name} is a premier resort and hotel with fine dining and event venues on {hotel.address.street}, {hotel.address.city}, {hotel.address.region}.
+          It offers{' '}
           <Link to="/rooms" className={inlineLink}>
             Deluxe and Super Deluxe rooms
           </Link>{' '}
@@ -93,10 +93,6 @@ export default function About() {
           , with wheelchair access, a lift and on-site parking.{' '}
           <Link to="/contact" className={inlineLink}>
             Find us and get directions
-          </Link>
-          , or read how to reach our{' '}
-          <Link to="/hotel-in-bassi-jaipur" className={inlineLink}>
-            hotel in Bassi, Jaipur
           </Link>
           .
         </p>
@@ -116,12 +112,12 @@ export default function About() {
         />
         <div className="grid gap-5">
           <h2 id="story-title" className="text-h2 text-burgundy-deep">
-            A landmark on the Agra Road
+            A contemporary luxury destination
           </h2>
           <p className="max-w-[56ch] text-walnut">
-            Our glass tower, with its tall wood-clad strip and burgundy sign, stands opposite Bharat Petroleum in Bassi. Beside it runs a
-            long two-storey wing. The restaurant is on the ground floor, the banquet hall is in the basement, and a large open lawn made for
-            celebrations lies beside the hotel.
+            Our architectural tower, with its elegant wood-clad strip and gold trim, offers serene views of the central gardens.
+            Beside it runs a modern two-storey wing. The restaurant is on the ground floor, the banquet hall is in the basement,
+            and a large open lawn made for celebrations lies beside the resort.
           </p>
           <p className="max-w-[56ch] text-walnut">
             Inside, the idea is simple: premium interiors at accessible prices. Rooms start at ₹2,000 a night, and every one comes with a

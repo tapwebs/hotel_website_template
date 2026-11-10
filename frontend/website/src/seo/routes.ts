@@ -41,22 +41,22 @@ export const routeMeta: Record<string, RouteMeta> = {
     label: label('/rooms'),
   },
   '/hotel-in-bassi-jaipur': {
-    title: fitTitle(['Hotel in Bassi, Jaipur on Agra Road: Rooms, Dining, Events', 'Hotel in Bassi, Jaipur on Agra Road']),
+    title: fitTitle(['Metropolis Hotel & Suites']),
     description: fitDescription([
       `${hotel.name} is a premier resort in the region: rooms from ${minRate}, a restaurant, banquet hall and lawn. Rated 4.3 on Google.`,
       `A comfortable resort in the region: rooms from ${minRate} a night, a restaurant, a banquet hall and a wedding lawn.`,
     ]),
     indexable: true,
-    label: 'Hotel in Bassi',
+    label: 'Hotel in Metropolis',
   },
   '/wedding-venue-in-bassi': {
-    title: fitTitle(['Wedding Venue in Bassi, Near Dausa & Jaipur', 'Wedding Venue in Bassi, Jaipur']),
+    title: fitTitle(['Grand Wedding Venue & Lawns']),
     description: fitDescription([
       `Wedding venue on main highway: a lawn for 1,500 to 2,000 guests, a banquet hall for about ${hall.capacity}, catering and rooms.`,
       `Wedding venue with an event lawn for 1,500 to 2,000 guests, banquet hall for about ${hall.capacity}, complete catering and accommodation rooms.`,
     ]),
     indexable: true,
-    label: 'Wedding venue in Bassi',
+    label: 'Wedding venue in Metropolis',
   },
   '/hotel-near-dausa': {
     title: fitTitle(['Hotel Near Regional Highway Corridor & Metropolis City', 'Hotel Near Major Highway Corridor & Metropolis']),
@@ -64,7 +64,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       `${hotel.name} is conveniently situated near regional highways: rooms from ${minRate} a night, a pure veg restaurant, a banquet hall and a lawn.`,
     ]),
     indexable: true,
-    label: 'Hotel near Dausa',
+    label: 'Hotel near Metropolis',
   },
   '/dining': {
     title: fitTitle(['Multi-Cuisine Vegetarian Restaurant & Dining', 'Fine Dining & Banquet Catering']),
@@ -75,7 +75,7 @@ export const routeMeta: Record<string, RouteMeta> = {
     label: label('/dining'),
   },
   '/weddings-events': {
-    title: fitTitle(['Wedding Lawn & Banquet Hall on Agra Road, Bassi, Jaipur', 'Banquet Hall & Wedding Lawn in Bassi']),
+    title: fitTitle(['Wedding Lawn & Banquet Hall']),
     description: fitDescription([
       `Weddings, haldi, mehndi, sangeet, birthdays and corporate events: banquet hall for about ${hall.capacity} guests, lawn for 2,000, and catering.`,
     ]),
@@ -150,7 +150,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   // /app/... only forwards to the HMS host. Never indexed.
   '/app': {
     title: fitTitle(['Staff console']),
-    description: 'Staff-only console for Hotel Dream Heaven’s.',
+    description: 'Staff-only console for TapMenu Hospitality.',
     indexable: false,
     robots: 'noindex, nofollow',
     prerender: false,
@@ -159,7 +159,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   // Signed-in guest area and booking flow: client-rendered behind login, never prerendered, noindex+nofollow, out of the sitemap.
   '/account': {
     title: fitTitle(['My account']),
-    description: 'Your Hotel Dream Heaven’s account overview.',
+    description: 'Your TapMenu Grand Resort account overview.',
     indexable: false,
     robots: 'noindex, nofollow',
     prerender: false,
@@ -167,7 +167,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   },
   '/account/bookings': {
     title: fitTitle(['My bookings']),
-    description: 'Your Hotel Dream Heaven’s bookings.',
+    description: 'Your TapMenu Grand Resort bookings.',
     indexable: false,
     robots: 'noindex, nofollow',
     prerender: false,
@@ -175,7 +175,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   },
   '/account/profile': {
     title: fitTitle(['My profile']),
-    description: 'Your Hotel Dream Heaven’s profile and preferences.',
+    description: 'Your TapMenu Grand Resort profile and preferences.',
     indexable: false,
     robots: 'noindex, nofollow',
     prerender: false,
@@ -191,7 +191,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   },
   '/account/security': {
     title: fitTitle(['Account security']),
-    description: 'Change your password or delete your Hotel Dream Heaven’s account.',
+    description: 'Change your password or delete your TapMenu Grand Resort account.',
     indexable: false,
     robots: 'noindex, nofollow',
     prerender: false,
@@ -199,7 +199,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   },
   '/book': {
     title: fitTitle(['Reserve a room']),
-    description: 'Reserve a room at Hotel Dream Heaven’s.',
+    description: 'Reserve a room at TapMenu Grand Resort.',
     indexable: false,
     robots: 'noindex, nofollow',
     prerender: false,
@@ -207,15 +207,15 @@ export const routeMeta: Record<string, RouteMeta> = {
   },
   '/book/confirmation': {
     title: fitTitle(['Booking received']),
-    description: 'Your Hotel Dream Heaven’s booking request.',
+    description: 'Your TapMenu Grand Resort booking request.',
     indexable: false,
     robots: 'noindex, nofollow',
     prerender: false,
     label: 'Booking received',
   },
   '/404': {
-    title: fitTitle(['Page Not Found: Hotel in Bassi']),
-    description: `This page does not exist. Find rooms, dining and events at ${hotel.name}, Agra Road, Bassi, Jaipur. Use the links below to keep browsing.`,
+    title: fitTitle(['Page Not Found: TapMenu']),
+    description: `This page does not exist. Find luxury rooms, fine dining and event spaces at ${hotel.name}. Use the links below to keep browsing.`,
     indexable: false,
     label: 'Page not found',
   },

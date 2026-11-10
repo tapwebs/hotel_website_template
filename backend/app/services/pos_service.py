@@ -645,7 +645,7 @@ async def apply_status(db: AsyncSession, order: POSOrder, new_status: str) -> No
 
 async def property_name(db: AsyncSession, property_id: str) -> str:
     p = await db.get(Property, property_id)
-    return p.name if p else "Dream Heavens"
+    return p.name if p else "TapMenu Grand"
 
 
 def _with_id(d: dict) -> dict:

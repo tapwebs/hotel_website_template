@@ -6,7 +6,7 @@ import { buildWhatsAppUrl } from '@/components/booking/buildWhatsAppUrl'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '@/components/ui/sheet'
 import { hotel } from '@/data/hotel'
 
-const defaultMsg = 'Hello, I have a question about Hotel Dream Heaven’s.'
+const defaultMsg = 'Hello, I have a question about TapMenu Grand Resort.'
 
 /** Press feedback: a slight scale-down on tap (Tailwind v4 `scale` is its own property, so list it in the transition). */
 const tap =

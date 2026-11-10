@@ -12,12 +12,12 @@ export const HOTEL = {
   website: 'https://example.com',
   menuUrl: 'https://example.com/dining',
   tapwebsUrl: 'https://example.com',
-  phoneDisplay: '+91 98765 43210',
-  phoneE164: '+919876543210',
-  whatsappDigits: '919876543210',
-  phoneDisplaySecondary: '+91 98765 43211',
-  phoneE164Secondary: '+919876543211',
-  whatsappDigitsSecondary: '919876543211',
+  phoneDisplay: '+91 00000 00000',
+  phoneE164: '+910000000000',
+  whatsappDigits: '910000000000',
+  phoneDisplaySecondary: '+91 00000 00001',
+  phoneE164Secondary: '+910000000001',
+  whatsappDigitsSecondary: '910000000001',
 
   /** TODO(owner): check-in time was not provided. Empty hides the row. Check-out was given as 11 AM. */
   checkIn: { en: '', hi: '' } as Bi,

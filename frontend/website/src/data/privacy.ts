@@ -2,7 +2,7 @@
 import { hotel } from './hotel'
 export const privacyUpdated = { iso: '2026-10-15', label: 'October 15, 2026' }
 export const googlePrivacyUrl = 'https://policies.google.com/privacy'
-const brand = 'Hotel Dream Heaven’s'
+const brand = 'TapMenu Grand Resort & Spa'
 export interface PrivacySection {
   id: string
   title: string

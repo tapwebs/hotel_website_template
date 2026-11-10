@@ -48,7 +48,7 @@ export function Overview() {
     { icon: CalendarDays, label: 'My stays', to: '/account/bookings' },
     { icon: MapPin, label: 'Directions', href: hotel.directionsUrl },
     { icon: Phone, label: 'Call hotel', href: hotel.phoneHref },
-    { icon: MessageCircle, label: 'WhatsApp', href: buildWhatsAppUrl('Hello, I have a question about Hotel Dream Heaven’s.') },
+    { icon: MessageCircle, label: 'WhatsApp', href: buildWhatsAppUrl('Hello, I have a question about TapMenu Grand Resort.') },
     { icon: UserRound, label: 'Profile', to: '/account/profile' },
     { icon: CircleHelp, label: 'Help', to: '/account/help' },
   ]

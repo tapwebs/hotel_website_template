@@ -1,7 +1,7 @@
 {
-  "name": "Hotel Dream Heaven’s",
-  "short_name": "Dream Heaven’s",
-  "description": "Hotel on Agra Road, Bassi, Jaipur, opposite Bharat Petroleum.",
+  "name": "TapMenu Grand Resort & Spa",
+  "short_name": "TapMenu Grand",
+  "description": "Luxury resort and hotel offering premium rooms, multi-cuisine dining and event venues.",
   "start_url": "/",
   "scope": "/",
   "display": "browser",

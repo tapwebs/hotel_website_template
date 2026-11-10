@@ -47,16 +47,6 @@ export const authBaseUrl = (opts: AuthOptions = {}) => {
 }
 
 export const googleClientId = () => {
-  const envVal = (import.meta.env.VITE_GOOGLE_CLIENT_ID ?? '').trim()
-  if (envVal) {
-    return envVal === 'disabled' || envVal === 'false' ? '' : envVal
-  }
-  if (typeof window !== 'undefined' && window.location?.hostname) {
-    const host = window.location.hostname.toLowerCase()
-    if (host === 'localhost' || host === '127.0.0.1') {
-      return DEFAULT_GOOGLE_CLIENT_ID
-    }
-  }
   return ''
 }
 async function post(path: '/auth/login' | '/auth/signup' | '/auth/google', body: unknown, opts: AuthOptions): Promise<AuthResult> {

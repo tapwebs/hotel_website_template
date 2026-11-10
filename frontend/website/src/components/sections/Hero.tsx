@@ -43,7 +43,7 @@ export function Hero() {
               {...rise(0.1, 'mb-3 md:mb-7 flex items-center gap-3 font-sans text-sm font-medium tracking-normal text-muted-foreground')}
             >
               <span className="hairline animate-grow w-10 shrink-0" style={{ '--delay': '0.3s' } as CSSProperties} aria-hidden="true" />
-              Hotel Dream Heaven’s · Bassi, Agra Road, Jaipur
+              TapMenu Grand Resort & Spa · Luxury Hospitality
             </span>
             {headline.map((line, i) => (
               <span key={line} {...rise(0.2 + i * 0.12, cn('block', i === 1 && 'italic text-burgundy'))}>
@@ -52,7 +52,7 @@ export function Hero() {
             ))}
           </h1>
           <p {...rise(0.5, 'max-w-[34rem] text-lede text-walnut')}>
-            Wood, marble and hand-painted murals on Agra Road, Bassi. Rooms from {formatINR(hotel.priceFrom)} a night.
+            Wood, marble and hand-painted architecture. Rooms from {formatINR(hotel.priceFrom)} a night.
           </p>
           <div {...rise(0.62, 'flex flex-wrap gap-3')}>
             <BookNowButton size="lg" />

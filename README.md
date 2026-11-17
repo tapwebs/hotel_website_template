@@ -1,204 +1,155 @@
 <div align="center">
-  <img src="docs/favicon.png" width="110" height="110" alt="TAPWEBS TapMenu Logo" />
-  <h1>TapMenu — Open Hospitality Platform</h1>
-  <p><strong>An Integrated Digital Ecosystem for Modern Hotel Operations &amp; Guest Experiences</strong></p>
-  <p><em>Developed and maintained by <a href="https://tapwebs.in">TAPWEBS</a></em></p>
+  <img src="docs/favicon.png" width="130" height="130" alt="TAPWEBS TapMenu Logo" />
+
+  # TapMenu — Open Hospitality Platform
+
+  <p><strong>MADE BY TAPWEBS • ALL RIGHTS ARE OF TAPWEBS</strong><br>
+  Enterprise Hospitality Architecture &amp; Guest Experience • Designed &amp; Engineered by <a href="https://tapwebs.in">TAPWEBS</a></p>
 
   <p>
-    <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-0D9488?style=for-the-badge" alt="MIT License" /></a>
-    <img src="https://img.shields.io/badge/Architecture-Modular%20Monolith-7C3AED?style=for-the-badge" alt="Modular Monolith" />
-    <img src="https://img.shields.io/badge/Status-Production--Ready-2563EB?style=for-the-badge" alt="Production Ready" />
+    <a href="https://tapwebs.in"><img src="https://img.shields.io/badge/AGENCY-TAPWEBS.IN-0070F3?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Agency Website" /></a>
+    <a href="https://tapwebs.space"><img src="https://img.shields.io/badge/PORTFOLIO-TAPWEBS.SPACE-7928CA?style=for-the-badge&logo=safari&logoColor=white" alt="Portfolio" /></a>
+    <a href="https://github.com/tapwebs"><img src="https://img.shields.io/badge/GITHUB-TAPWEBS-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+  </p>
+
+  <p>
+    <img src="https://img.shields.io/badge/STATUS-PRODUCTION%20READY-00C853?style=for-the-badge" alt="Status" />
+    <img src="https://img.shields.io/badge/ARCHITECTURE-MODULAR%20MONOLITH-7C3AED?style=for-the-badge" alt="Architecture" />
+    <a href="LICENSE"><img src="https://img.shields.io/badge/LICENSE-MIT-F5A623?style=for-the-badge" alt="License" /></a>
   </p>
 
   <p>
     <img src="https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React 19" />
     <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Tailwind%20CSS-v4-38B2AC?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS v4" />
     <img src="https://img.shields.io/badge/FastAPI-0.110+-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />
     <img src="https://img.shields.io/badge/Fastify-5.2+-000000?style=flat-square&logo=fastify&logoColor=white" alt="Fastify" />
-    <img src="https://img.shields.io/badge/Node.js-24+-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js 24+" />
-    <img src="https://img.shields.io/badge/Python-3.12+-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.12+" />
+    <img src="https://img.shields.io/badge/Python-3.12+-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.12" />
+    <img src="https://img.shields.io/badge/Node.js-24+-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js 24" />
     <img src="https://img.shields.io/badge/PostgreSQL-16+-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
-    <img src="https://img.shields.io/badge/TailwindCSS-v4-38B2AC?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS v4" />
+    <img src="https://img.shields.io/badge/Three.js-3D%20Spatial-000000?style=flat-square&logo=threedotjs&logoColor=white" alt="Three.js" />
+    <img src="https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
+  </p>
+
+  <p>
+    <img src="https://img.shields.io/badge/SEO-Schema.org%20JSON--LD-FF6F00?style=flat-square" alt="Schema.org JSON-LD" />
+    <img src="https://img.shields.io/badge/Architecture-Modular%20PMS%20%7C%20POS%20%7C%20KDS-0284C7?style=flat-square" alt="Modular Architecture" />
+    <img src="https://img.shields.io/badge/Compliance-DPDP%20%7C%20GST%20Invoicing-16A34A?style=flat-square" alt="Compliance" />
   </p>
 </div>
 
 ---
 
-## Table of Contents
+## 📑 Table of Contents
 
-- [1. Overview](#1-overview)
-- [2. Platform Capabilities](#2-platform-capabilities)
-- [3. Visual Showcase](#3-visual-showcase)
-- [4. System Architecture](#4-system-architecture)
-- [5. Core Modules](#5-core-modules)
-- [6. Technology Stack](#6-technology-stack)
-- [7. Security & Engineering Standards](#7-security--engineering-standards)
-- [8. Project Structure](#8-project-structure)
-- [9. Getting Started](#9-getting-started)
-- [10. Environment Configuration](#10-environment-configuration)
-- [11. Development & Testing](#11-development--testing)
-- [12. Deployment](#12-deployment)
-- [13. Documentation & Specifications](#13-documentation--specifications)
-- [14. Project Philosophy](#14-project-philosophy)
-- [15. Authors & Maintainers](#15-authors--maintainers)
-- [16. License & Ownership](#16-license--ownership)
-
----
-
-## 1. Overview
-
-**TapMenu Open Hospitality Platform** is an enterprise-grade, privacy-first, independently deployable hotel management and guest experience ecosystem. Designed from the ground up to replace fragmented legacy hospitality software, TapMenu combines direct guest acquisition with operational back-office automation into a cohesive, synchronized architecture.
-
-The platform unifies:
-1. **Guest-Facing Channels:** A high-performance marketing website, interactive 3D spatial hotel tour, instant room availability engine, and self-service in-room dining via dynamic QR codes.
-2. **Operational Core:** A centralized Hotel Management System (HMS) managing front-desk check-ins, reservations, room inventories, housekeeping tasks, and guest profiles.
-3. **Dining & Culinary Operations:** An integrated Point of Sale (POS) and real-time Kitchen Display System (KDS) managing order lifecycle from table/room placement through delivery.
-4. **Financial Engineering:** Comprehensive folios, deposit tracking, multi-payment reconciliation, GST-compliant tax invoicing, and nightly audit closing routines.
-
-Rather than stitching disparate third-party tools together with brittle webhooks, TapMenu unifies staff workflows and guest touchpoints across hardened, authenticated REST APIs backed by ACID-compliant PostgreSQL persistence.
+- [🌐 Quick Access & Live Resources](#-quick-access--live-resources)
+- [⚡ Performance & Engineering Metrics](#-performance--engineering-metrics)
+- [📸 Visual Showcase & Platform Highlights](#-visual-showcase--platform-highlights)
+- [📌 Executive Summary & Case Study](#-executive-summary--case-study)
+- [🏨 Core Platform Modules & Guest Journey](#-core-platform-modules--guest-journey)
+- [🏗️ System Architecture & Data Flow](#-system-architecture--data-flow)
+- [⚙️ Technology & Engineering Decisions](#-technology--engineering-decisions)
+- [📁 Public Showcase Repository Structure](#-public-showcase-repository-structure)
+- [🛡️ Security & Public Repository Guidelines](#-security--public-repository-guidelines)
+- [🚀 Getting Started & Local Development](#-getting-started--local-development)
+- [🔧 Environment Configuration](#-environment-configuration)
+- [🧪 Development & Testing Verification](#-development--testing-verification)
+- [🚢 Production Deployment](#-production-deployment)
+- [📚 Technical Documentation & Specifications](#-technical-documentation--specifications)
+- [💡 Project Philosophy](#-project-philosophy)
+- [🏢 About the Developer — TAPWEBS](#-about-the-developer--tapwebs)
+- [📄 Ownership, License & Intellectual Property Notice](#-ownership-license--intellectual-property-notice)
 
 ---
 
-## 2. Platform Capabilities
+## 🌐 Quick Access & Live Resources
 
-| Capability | Scope & Functionality | Target Users |
+| Resource | Direct Link | Description |
 |---|---|---|
-| **Public Hotel Website** | Luxury property showcase, dynamic room rates, rich amenity tours, and SEO pre-rendering | Prospective Guests & Travelers |
-| **Direct Booking Engine** | Instant availability search, rate plan selection, reservation holds, and direct confirmation | Guests & Travel Bookers |
-| **Hotel Management System** | Front-desk management, check-in/out workflows, interactive room rack, and guest registry | Front Desk, Duty Managers, Admins |
-| **Point of Sale (POS)** | Table & room order entry, billing splits, discount controls, and immediate kitchen dispatch | Restaurant Captains, Cashiers |
-| **Kitchen Display System (KDS)** | Real-time kitchen tickets, order pacing, ticket timers, and fulfillment controls | Executive Chefs, Line Cooks |
-| **QR In-Room Dining** | Guest self-ordering, dietary filtering, real-time ticket tracking, and folio posting | In-House Hotel Guests |
-| **Financial Ledger & Folios** | Transaction recording, incidentals routing, payment reconciliation, and ledger closing | Night Auditors, Accountants |
-| **GST Tax Invoicing** | Automated CGST/SGST/IGST breakdown, financial-year sequencing, and tax reporting | Accounts & Compliance Staff |
-| **Housekeeping & Maintenance** | Live room status dirty/clean/inspected, maintenance work orders, and maid assignment | Housekeeping Supervisors, Engineering |
-| **Analytics & Reporting** | RevPAR, ADR, occupancy percentages, daily revenue summaries, and F&B sales metrics | General Managers, Hotel Owners |
+| 🏢 **Agency Homepage** | [tapwebs.in](https://tapwebs.in) | Digital agency solutions, enterprise web development, and cloud systems |
+| 💼 **Agency Portfolio** | [tapwebs.space](https://tapwebs.space) | Interactive portfolio showcase of web platforms engineered by TAPWEBS |
+| 🐙 **GitHub Repository** | [tapwebs/hotel_website_template](https://github.com/tapwebs/hotel_website_template) | Open-source public repository and architecture showcase |
+| 📚 **System Specifications** | [docs/specs](docs/specs/) | 20 comprehensive architectural, domain, and data-flow specifications |
+| 🚢 **Deployment Guide** | [docs/DEPLOYMENT_GUIDE.md](docs/DEPLOYMENT_GUIDE.md) | Production VPS, Coolify, Nginx, and SSL deployment walkthrough |
+| 🔒 **Security Policy** | [SECURITY.md](SECURITY.md) | DevSecOps policies, threat model, and vulnerability reporting |
+| ✉️ **Agency Inquiries** | [contact@tapwebs.in](mailto:contact@tapwebs.in) | Direct commercial inquiries, customizations, and enterprise deployments |
 
 ---
 
-## 3. Visual Showcase
+## ⚡ Performance & Engineering Metrics
 
-<div align="center">
-<table>
-  <tr>
-    <td width="50%" align="center">
-      <img src="docs/home.png" alt="Public Hotel Website" style="max-width:100%; border-radius:6px;" />
-      <br />
-      <strong>Public Hotel Website &amp; Booking Experience</strong>
-      <br />
-      <em>High-conversion guest portal featuring property presentation, amenities, and direct booking.</em>
-    </td>
-    <td width="50%" align="center">
-      <img src="docs/room.png" alt="Room Discovery & Booking" style="max-width:100%; border-radius:6px;" />
-      <br />
-      <strong>Room Discovery &amp; Real-Time Inventory</strong>
-      <br />
-      <em>Granular room category showcase with pricing, availability, and instant reservation holds.</em>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" align="center">
-      <img src="docs/dining.png" alt="Guest Dining Interface" style="max-width:100%; border-radius:6px;" />
-      <br />
-      <strong>Guest Dining &amp; QR Ordering Interface</strong>
-      <br />
-      <em>In-room dining &amp; restaurant digital menu with seamless ordering to POS and kitchen display.</em>
-    </td>
-    <td width="50%" align="center">
-      <img src="docs/3dhotelview.png" alt="3D Hotel Visualization" style="max-width:100%; border-radius:6px;" />
-      <br />
-      <strong>Interactive 3D Architectural Experience</strong>
-      <br />
-      <em>Spatial Three.js architectural visualizer providing prospective guests an immersive hotel tour.</em>
-    </td>
-  </tr>
-</table>
-</div>
+The frontend and backend architecture is engineered for low latency, high concurrency, and rapid first-paint execution across guest mobile devices and staff terminals:
 
----
-
-## 4. System Architecture
-
-TapMenu adopts a **modular monolith** topology with distinct frontend and backend boundaries. Applications communicate across hardened internal contracts, decoupling customer-facing marketing traffic from core operational workloads while maintaining unified data integrity.
-
-```mermaid
-flowchart TD
-    subgraph GuestLayer["Guest Experience Layer (Client-Side)"]
-        WEB["Public Hotel Website<br/>(React 19 + Vite + Tailwind v4)<br/>Port: 5173"]
-        DINE["QR In-Room Dining<br/>(React 19 + Tailwind v4)<br/>Port: 5174/dine/:token"]
-        THREE["3D Spatial Experience<br/>(Three.js / WebGL)"]
-    end
-
-    subgraph StaffLayer["Staff Operations Layer"]
-        CONSOLE["Hotel Staff Console<br/>(React 19 + TypeScript + Zustand)<br/>Port: 5174/app"]
-        POS["Point of Sale (POS)<br/>(Register & Dining Orders)"]
-        KDS["Kitchen Display (KDS)<br/>(Live Order Tickets)"]
-    end
-
-    subgraph GatewayLayer["API & Application Gateway"]
-        SITE_API["Website API<br/>(Node.js 24 + Fastify 5)<br/>Port: 3001"]
-        HMS_API["HMS Core API<br/>(Python 3.12 + FastAPI 0.110+)<br/>Port: 8001"]
-    end
-
-    subgraph PersistenceLayer["Data & Persistence Layer"]
-        PG[("Primary Database<br/>(PostgreSQL 16+)")]
-        ALEMBIC["Schema Migrations<br/>(Alembic + Fastify Migrations)"]
-    end
-
-    WEB -->|"Direct Booking & Inquiries (HTTPS)"| SITE_API
-    DINE -->|"QR Order Placement (Session Token)"| HMS_API
-    SITE_API -->|"SQL Pool (pg)"| PG
-    HMS_API -->|"Async ORM (SQLAlchemy 2.0)"| PG
-    ALEMBIC -.->|"DDL Evolution"| PG
-
-    CONSOLE -->|"REST / JWT Auth"| HMS_API
-    POS -->|"Order Dispatch"| HMS_API
-    KDS -->|"Live Ticket Polling"| HMS_API
-
-    SITE_API <-->|"HMAC Authenticated Sync"| HMS_API
-
-    classDef guest fill:#1E293B,stroke:#38BDF8,stroke-width:1.5px,color:#F8FAFC;
-    classDef staff fill:#3B0764,stroke:#C084FC,stroke-width:1.5px,color:#FAF5FF;
-    classDef api fill:#064E3B,stroke:#34D399,stroke-width:1.5px,color:#ECFDF5;
-    classDef data fill:#78350F,stroke:#FBBF24,stroke-width:1.5px,color:#FFFBEB;
-
-    class WEB,DINE,THREE guest;
-    class CONSOLE,POS,KDS staff;
-    class SITE_API,HMS_API api;
-    class PG,ALEMBIC data;
+```text
+┌─────────────────────────┬─────────────────────────┬─────────────────────────┐
+│     ⚡ Core Architecture │     ♿ Accessibility     │     🛡️ Best Practices   │
+│       Sub-Second TTFB   │     WCAG AA Compliant   │       Strict DevSecOps  │
+└─────────────────────────┴─────────────────────────┴─────────────────────────┘
+• Static Pre-Rendering (SSG):  Fast marketing route delivery with pre-compiled HTML
+• Asynchronous FastAPI Core:   High-throughput async SQLAlchemy 2.0 query execution
+• Fastify Website API:         Optimized low-latency JSON serialization (<10ms local)
+• Client Bundle Splitting:     Lazy-loaded React 19 chunks with optimized code splitting
+• Three.js WebGL Optimization: Procedural geometry pooling and GPU-accelerated rendering
 ```
 
-### Application Topology & Network Surface
+---
 
-| Subsystem | Stack | Default Port | Production Route | Description |
-|---|---|---|---|---|
-| **Public Website** | React 19, Vite, Tailwind v4 | `5173` | `https://example.com` | Guest marketing, room catalog & direct booking |
-| **Website API** | Fastify 5, TypeScript | `3001` | `https://api.example.com/site` | Booking dispatch, QR Hub routing, inquiry handling |
-| **Staff Console (HMS)** | React 19, Vite, Zustand | `5174` | `https://hms.example.com/app` | Operations, front desk, POS register, and KDS |
-| **Guest In-Room Dining**| React 19, Vite | `5174` | `https://hms.example.com/dine/:token` | QR-based tokenized guest menu & order dispatch |
-| **HMS Core API** | Python 3.12, FastAPI | `8001` | `https://api.example.com/api/v1` | Multi-tenant core, folios, inventory, and auth |
-| **PostgreSQL Database** | PostgreSQL 16+ | `5432` | Internal Private Network | Relational storage for reservations, ledger, and users |
+## 📸 Visual Showcase & Platform Highlights
+
+| 🏨 Public Guest Portal & Booking | 🛏️ Room Discovery & Inventory |
+|:---:|:---:|
+| <img src="docs/home.png" alt="Public Hotel Website" width="100%" /> | <img src="docs/room.png" alt="Room Discovery & Booking" width="100%" /> |
+| **Public Hotel Website & Guest Booking**<br><em>High-conversion guest portal featuring property presentation, amenities, and direct booking.</em> | **Room Discovery & Real-Time Inventory**<br><em>Granular room category showcase with live pricing, availability, and instant holds.</em> |
+
+| 🍽️ In-Room Dining & QR Orders | 🌐 Interactive 3D Spatial Experience |
+|:---:|:---:|
+| <img src="docs/dining.png" alt="Guest Dining Interface" width="100%" /> | <img src="docs/3dhotelview.png" alt="3D Hotel Visualization" width="100%" /> |
+| **Guest Dining & QR Ordering Interface**<br><em>In-room dining & restaurant digital menu with seamless ordering to POS and kitchen display.</em> | **Interactive 3D Architectural Experience**<br><em>Spatial Three.js architectural visualizer providing prospective guests an immersive hotel tour.</em> |
 
 ---
 
-## 5. Core Modules
+## 📌 Executive Summary & Case Study
 
-### 1. Public Hotel Website & Booking Portal
-- **High-Performance Presentation:** Server-side static pre-rendering for major marketing pages, ensuring exceptional SEO indexing and sub-second load times.
-- **Interactive 3D Experience:** Three.js architectural rendering with custom shaders, lighting, and camera positions allowing guests to explore the property visually.
-- **Direct Reservation Engine:** Date-picker availability checks, room type comparisons, amenity highlights, and automated booking confirmation emails.
-- **QR Hub & Smart Link Resolution:** Built-in dynamic shortlink and QR redirect router mapping physical property touchpoints to contextual digital flows.
+This repository is a **Public Architecture & Showcase Portfolio** published by [TAPWEBS](https://tapwebs.in) to illustrate modern hospitality platform engineering.
+
+**TapMenu Open Hospitality Platform** is an enterprise-grade, privacy-first, independently deployable hotel management and guest experience ecosystem designed to replace fragmented legacy hospitality software. It synchronizes guest acquisition, reservation management, front-desk operations, dining workflows, and back-office accounting into a cohesive, production-grade ecosystem.
+
+### The Challenge
+
+- **Fragmented Hotel Systems:** Traditional hotels operate across disconnected software silos—an external marketing site, a third-party booking engine, a desktop-only Property Management System (PMS), a standalone restaurant POS, and physical kitchen paper tickets.
+- **Operational Lag & Lost Revenue:** When room availability, billing folios, and restaurant charges fail to communicate in real time, hotels experience double-bookings, delayed folio updates at checkout, and unrecorded dining charges.
+- **Manual Night Audits & Billing Errors:** Reconciling cash registers, credit card settlements, room taxes, and GST invoices at the close of business often requires hours of manual ledger auditing and error-prone spreadsheet work.
+- **High Commissions & Intermediary Lock-In:** Reliance on third-party aggregators and cloud PMS vendors burdens independent hoteliers with recurring subscription fees and high booking commission cuts.
+
+### The Solution by TAPWEBS
+
+TAPWEBS engineered a unified, high-performance hospitality ecosystem powered by **React 19**, **FastAPI (Python 3.12)**, **Fastify (Node.js 24)**, and **PostgreSQL 16**, featuring:
+
+- **Unified Data Plane:** A single source of truth where guest reservations, room inventory, dining orders, folios, and housekeeping states update in real time via authenticated APIs.
+- **Direct-to-Guest Digital Touchpoints:** High-speed marketing pages with static pre-rendering, interactive Three.js 3D tours, and frictionless in-room QR dining that requires zero mobile app installation.
+- **Automated Front-Desk & Ledger Operations:** Live room rack calendar, instant check-in/out, automated folio routing, and an idempotent night-audit closing routine that prevents billing discrepancies.
+- **Production-Hardened Security:** Built-in Role-Based Access Control (RBAC), JWT validation, non-root container isolation, and automated database backups with SHA-256 checksum verification.
+
+---
+
+## 🏨 Core Platform Modules & Guest Journey
+
+### 1. Public Hotel Website & Direct Booking Portal
+- **High-Performance Marketing:** Server-side pre-rendering for major marketing routes, delivering instant load times and optimal SEO discovery.
+- **Interactive 3D Visualization:** Spatial Three.js architectural rendering with custom shaders, lighting, and camera paths.
+- **Direct Reservation Engine:** Real-time date-picker availability checks, room tier comparisons, and instant reservation hold requests.
+- **QR Hub & Smart Link Routing:** Built-in dynamic shortlink redirect router mapping physical property touchpoints to contextual digital flows.
 
 ### 2. Centralized Hotel Management System (HMS)
-- **Front-Desk Room Rack:** Visual calendar matrix showing real-time occupancy, upcoming arrivals, departures, and out-of-order maintenance flags.
+- **Visual Front-Desk Room Rack:** Matrix grid showing live occupancy, upcoming arrivals, departures, and maintenance holds.
 - **Guest Registry:** Comprehensive profile management tracking historical stays, guest preferences, identification documents, and notes.
-- **Inventory & Rate Management:** Dynamic pricing rules, seasonal rate plans, minimum-stay restrictions, and room allocation policies.
-- **Housekeeping Management:** Real-time dirty/clean/inspected status board, automated turnover queues triggered on checkout, and maid assignment tracking.
+- **Inventory & Rate Plans:** Dynamic pricing rules, seasonal rate modifiers, minimum-stay restrictions, and room allocation policies.
+- **Housekeeping & Maintenance:** Live dirty/clean/inspected room status board, automated turnover queues, and repair work orders.
 
 ### 3. Point of Sale (POS) & Restaurant Operations
-- **Floor & Table Management:** Visual table maps, capacity indicators, active session counters, and bill settlement workflows.
-- **Menu Management:** Nested category hierarchies, modifier options (spice levels, preparation styles), and price overrides.
-- **Direct Folio Charging:** Seamless one-click posting of restaurant and room-service charges to the guest's active room folio with audit trails.
+- **Table & Shift Management:** Floor layout mapping, open table orders, shift cash reconciliation, and receipt generation.
+- **Menu Hierarchy:** Multi-category menus with modifier sets (spice levels, preparation styles), price overrides, and tax classification.
+- **Direct Folio Billing:** Seamless one-click posting of restaurant and banquet charges to the guest's active room folio.
 
 ### 4. Kitchen Display System (KDS)
 - **Live Ticket Queues:** Real-time order dispatch from both POS terminals and in-room QR dining apps with visual color-coded urgency timers.
@@ -206,7 +157,7 @@ flowchart TD
 - **Station Routing:** Multi-printer and station-specific routing (e.g., Main Kitchen vs. Beverage Bar).
 
 ### 5. In-Room QR Dining (TapMenu Dining)
-- **Zero-Friction Access:** Guests scan an encrypted, room-specific QR code without requiring native mobile application downloads or account creation.
+- **Zero-Friction Access:** Guests scan an encrypted, room-specific QR code without requiring native mobile app downloads or login credentials.
 - **Session-Bound Cart:** Secure session token validation ensuring orders originate strictly from authorized active rooms.
 - **Real-Time Order Tracking:** Live progress indicators informing guests when their meal is preparing and on its way.
 
@@ -217,135 +168,202 @@ flowchart TD
 
 ---
 
-## 6. Technology Stack
-
-### Frontend Architecture
-- **Framework:** [React 19](https://react.dev/) with modern hooks and concurrent mode.
-- **Build Tool:** [Vite](https://vitejs.dev/) with optimized Rollup code splitting and pre-rendering plugins.
-- **Language:** [TypeScript 5.x](https://www.typescriptlang.org/) configured with strict type-safety.
-- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) with custom design tokens, luxury typography, and dark-mode support.
-- **State Management:** [Zustand](https://github.com/pmndrs/zustand) for predictable, boilerplate-free state.
-- **3D Visualization:** [Three.js](https://threejs.org/) and `@react-three/fiber` for real-time WebGL rendering.
-- **Icons & Motion:** [Lucide React](https://lucide.dev/) and [Framer Motion](https://www.framer.com/motion/).
-
-### Backend Architecture
-- **HMS Core Engine:** [Python 3.12+](https://www.python.org/) with [FastAPI](https://fastapi.tiangolo.com/) for high-throughput asynchronous execution.
-- **Website API Engine:** [Node.js 24+](https://nodejs.org/) with [Fastify 5.x](https://fastify.dev/) for low-latency JSON handling.
-- **Data Access:** [SQLAlchemy 2.0 (AsyncIO)](https://www.sqlalchemy.org/) with `asyncpg` driver for Python; native connection pooling via `pg` for Node.js.
-- **Validation:** [Pydantic v2](https://docs.pydantic.dev/) (FastAPI) and [Zod](https://zod.dev/) (Fastify) for compile-time and runtime boundary validation.
-- **Database Evolution:** [Alembic](https://alembic.sqlalchemy.org/) for Python data models; structured SQL migrations for Fastify.
-
-### Persistence & Storage
-- **Primary Database:** [PostgreSQL 16+](https://www.postgresql.org/) utilizing relational constraints, foreign keys, and indexes.
-- **Development Fallback:** SQLite with `aiosqlite` for zero-configuration local testing and CI runners.
-
-### Testing & Verification
-- **Python Suites:** [Pytest](https://pytest.org/) with `pytest-asyncio` covering unit, integration, and security test suites.
-- **Frontend Suites:** [Vitest](https://vitest.dev/) with React Testing Library.
-- **API Verification:** Node.js native test runner (`node --test`).
-- **Performance & Load:** [k6](https://k6.io/) and [Locust](https://locust.io/) suites for latency and concurrency profiling.
-
----
-
-## 7. Security & Engineering Standards
-
-The codebase has undergone comprehensive DevSecOps and Application Security audits to ensure production safety and privacy compliance.
-
-### Hardened Security Controls
-- **JWT Secret Enforcement:** Strict rejection of default, weak, or development JWT secrets in production and staging environments (`backend/app/core/config.py`).
-- **Information Disclosure Prevention:** Health check endpoints (`/health/ready`) return generic error codes (`database_unavailable`) rather than reflecting raw database connection strings or stack traces.
-- **Non-Root Container Isolation:** Backend Docker images execute under unprivileged user and group accounts (`appuser:appgroup`, UID 10001) to eliminate container breakout risks.
-- **Role-Based Access Control (RBAC):** Default-deny authorization policies enforcing explicit permission checks across all administrative and staff endpoints.
-- **Safe Demo Seeding:** Demo seed scripts (`backend/app/seed/demo_seed.py`) use fictionalized contact information and RFC 2606 reserved domains (`@example.com`), protected by a strict production startup guard.
-- **SQL Injection Immunization:** All database operations utilize parameterized queries through SQLAlchemy ORM or parameterized SQL statements.
-- **Rate Limiting & Abuse Defense:** IP-based and credential-based rate limiting on sensitive routes (authentication, booking requests, dining sessions).
-- **Transport Security & Headers:** Pre-configured HTTP security headers including Content Security Policy (CSP), Strict-Transport-Security (HSTS), X-Frame-Options, and X-Content-Type-Options.
-
----
-
-## 8. Project Structure
+### The Unified Guest & Operational Journey
 
 ```text
-HOTEL_DREAM_HEAVENS_PROJECT/
-├── backend/
-│   ├── alembic/                 # HMS database migrations and version history
-│   ├── app/
-│   │   ├── api/routes/          # FastAPI routers (auth, rooms, bookings, folios, POS)
-│   │   ├── core/                # App config, database session, security, exceptions
-│   │   ├── models/              # SQLAlchemy 2.0 ORM database entities
-│   │   ├── schemas/             # Pydantic input/output validation models
-│   │   ├── seed/                # Demo data generator and production bootstrap
-│   │   └── services/            # Core business logic (billing, night audit, reservations)
-│   ├── tests/                   # Pytest test suite (unit, integration, security)
-│   ├── website/
-│   │   ├── migrations/          # Fastify website SQL migration files
-│   │   ├── src/                 # Fastify source code (routes, domain, auth, core)
-│   │   ├── package.json         # Node.js backend dependencies
-│   │   └── .env.example         # Website API environment template
-│   ├── requirements.txt         # Python dependencies
-│   └── .env.example             # HMS API environment template
-├── docs/
-│   ├── DEPLOYMENT_GUIDE.md      # Step-by-step production rollout guide
-│   ├── WEBSITE.md               # Technical notes for public website
-│   ├── specs/                   # 20 architectural & functional specifications
-│   └── favicon.png              # Official TAPWEBS brand asset
-├── frontend/
-│   ├── hms/                     # Staff Console, POS, KDS & QR Dining
-│   │   ├── src/
-│   │   │   ├── components/      # UI components (buttons, dialogs, tables)
-│   │   │   ├── pages/guest/     # QR In-Room Dining customer screens
-│   │   │   ├── pages/staff/     # Staff operations (front desk, folios, KDS, POS)
-│   │   │   └── stores/          # Zustand client state stores
-│   │   └── package.json
-│   └── website/                 # Guest Marketing Portal & Direct Booking
-│       ├── src/
-│       │   ├── components/      # Marketing UI components and booking bar
-│       │   ├── data/            # Localized hotel profiles, room tiers, FAQs
-│       │   ├── routes/          # Route views (Home, Rooms, Dining, Weddings)
-│       │   └── seo/             # Structured JSON-LD schema & meta handlers
-│       └── package.json
-├── scripts/
-│   ├── backup-db.sh             # Encrypted, checksummed PostgreSQL backup script
-│   ├── restore-db.sh            # Checksum-verified database restoration utility
-│   ├── check.sh                 # Unified lint, build, and test validation
-│   ├── dev.sh                   # Multi-service development launcher
-│   ├── load-test-k6.js          # k6 load testing scenario
-│   └── locustfile.py            # Locust user journey load simulation
-├── docker-compose.prod.yml       # Production container orchestration
-├── SECURITY.md                  # Security policies and audit checklist
-├── package.json                 # Monorepo root npm workspace manifest
-└── README.md                    # Primary repository documentation
+Availability Search (Public Website)
+       │
+       ▼
+Direct Reservation Hold & Confirmation
+       │
+       ▼
+Arrival & Front-Desk Check-In (HMS Console)
+       │
+       ▼
+In-Room Dining via QR Code / Restaurant POS Order
+       │
+       ▼
+Kitchen Display Dispatch (KDS) & Order Preparation
+       │
+       ▼
+Automatic Folio Posting (Room Account Ledger)
+       │
+       ▼
+Guest Check-Out & GST Invoice Generation
+       │
+       ▼
+Automated Housekeeping Turnover Task
+       │
+       ▼
+Night Audit Financial Reconciliation & Date Rollover
 ```
 
 ---
 
-## 9. Getting Started
+## 🏗️ System Architecture & Data Flow
+
+TapMenu adopts a **modular monolith** topology with distinct frontend and backend boundaries. Applications communicate across hardened internal contracts, decoupling customer-facing marketing traffic from core operational workloads while maintaining unified data integrity.
+
+```mermaid
+flowchart TD
+    subgraph ClientLayer["Client & Guest Entrypoint"]
+        GUEST["Guest Browser / Mobile Device"]
+        STAFF["Staff Terminal / POS Tablet"]
+        QR["In-Room QR Code Scan"]
+    end
+
+    subgraph EdgeLayer["Edge Delivery & Routing"]
+        WEB["Public Hotel Website<br/>(React 19 + Vite + Tailwind v4)<br/>Port: 5173"]
+        DINE["QR Dining Application<br/>(React 19 + Tailwind v4)<br/>Port: 5174/dine/:token"]
+        CONSOLE["Hotel Staff Console<br/>(React 19 + TypeScript + Zustand)<br/>Port: 5174/app"]
+    end
+
+    subgraph GatewayLayer["Protected API Gateways"]
+        SITE_API["Website API<br/>(Node.js 24 + Fastify 5)<br/>Port: 3001"]
+        HMS_API["HMS Core API<br/>(Python 3.12 + FastAPI 0.110+)<br/>Port: 8001"]
+    end
+
+    subgraph PersistenceLayer["Data & Persistence Layer"]
+        PG[("Primary Database<br/>(PostgreSQL 16+)")]
+        ALEMBIC["Schema Migrations<br/>(Alembic + Fastify Migrations)"]
+    end
+
+    GUEST -->|"Direct Booking & Inquiries (HTTPS)"| WEB
+    QR -->|"Tokenized Order Session (HTTPS)"| DINE
+    STAFF -->|"Staff Operations & POS (HTTPS)"| CONSOLE
+
+    WEB -->|"REST Dispatch"| SITE_API
+    DINE -->|"Order Placement / Session Auth"| HMS_API
+    CONSOLE -->|"REST / JWT Auth"| HMS_API
+
+    SITE_API -->|"SQL Pool (pg)"| PG
+    HMS_API -->|"Async ORM (SQLAlchemy 2.0)"| PG
+    ALEMBIC -.->|"DDL Evolution"| PG
+
+    SITE_API <-->|"HMAC Authenticated Sync"| HMS_API
+
+    classDef client fill:#1E293B,stroke:#38BDF8,stroke-width:1.5px,color:#F8FAFC;
+    classDef edge fill:#3B0764,stroke:#C084FC,stroke-width:1.5px,color:#FAF5FF;
+    classDef api fill:#064E3B,stroke:#34D399,stroke-width:1.5px,color:#ECFDF5;
+    classDef data fill:#78350F,stroke:#FBBF24,stroke-width:1.5px,color:#FFFBEB;
+
+    class GUEST,STAFF,QR client;
+    class WEB,DINE,CONSOLE edge;
+    class SITE_API,HMS_API api;
+    class PG,ALEMBIC data;
+```
+
+---
+
+## ⚙️ Technology & Engineering Decisions
+
+| Layer | Technologies | Architectural Rationale |
+|---|---|---|
+| **Public Website** | React 19, Vite, TypeScript | Ultra-fast client-side hydration, strict typing, and component modularity |
+| **Styling & Design** | Tailwind CSS v4 | CSS-first configuration, zero-runtime overhead, and luxury design tokens |
+| **Staff Console** | React 19, Zustand | Lightweight, predictable state management without Redux boilerplate |
+| **Website API** | Node.js 24, Fastify 5 | High-throughput JSON routing, low memory footprint, and Zod validation |
+| **HMS Core API** | Python 3.12, FastAPI | Native asynchronous I/O, Pydantic v2 validation, and OpenAPI documentation |
+| **Database & ORM** | PostgreSQL 16+, SQLAlchemy 2.0 | ACID compliance for financial folios, relation integrity, and connection pooling |
+| **Migrations** | Alembic, Fastify SQL Runner | Version-controlled schema evolutions with bidirectional rollbacks |
+| **3D Rendering** | Three.js, React Three Fiber | Procedural WebGL rendering enabling spatial architectural exploration |
+| **Containerization** | Docker, Docker Compose | Reproducible non-root container deployment across VPS and cloud hosts |
+| **Testing** | Pytest, Vitest, Node Test Runner | Multi-layer test automation spanning unit, integration, and security checks |
+
+---
+
+## 📁 Public Showcase Repository Structure
+
+```text
+HOTEL_DREAM_HEAVENS_PROJECT/
+├── backend/                             # Asynchronous backend services
+│   ├── alembic/                         # HMS database migrations and schema versions
+│   ├── app/                             # FastAPI core HMS application
+│   │   ├── api/routes/                  # Modular endpoints (auth, bookings, folios, POS)
+│   │   ├── core/                        # Configuration, security, exceptions, and database
+│   │   ├── models/                      # SQLAlchemy 2.0 ORM database entities
+│   │   ├── schemas/                     # Pydantic validation schemas
+│   │   ├── seed/                        # Demo data generator and production bootstrap
+│   │   └── services/                    # Domain services (billing, night audit, rooms)
+│   ├── tests/                           # Pytest comprehensive test suite (289 tests)
+│   ├── website/                         # Fastify website backend service
+│   │   ├── migrations/                  # Fastify SQL migration files
+│   │   ├── src/                         # Fastify source code (routes, domain, auth)
+│   │   └── package.json                 # Node.js backend manifest
+│   ├── requirements.txt                 # Python runtime dependencies
+│   └── .env.example                     # HMS API environment template
+├── docs/                                # Technical documentation and assets
+│   ├── DEPLOYMENT_GUIDE.md              # Production VPS and Coolify rollout guide
+│   ├── WEBSITE.md                       # Website architecture and SEO notes
+│   ├── specs/                           # 20 detailed functional & technical specifications
+│   └── favicon.png                      # Official TAPWEBS brand logo asset
+├── frontend/                            # Client-side applications
+│   ├── hms/                             # Staff Console, POS, KDS & QR Dining
+│   │   ├── src/
+│   │   │   ├── components/              # Shared UI components
+│   │   │   ├── pages/guest/             # QR In-Room Dining customer screens
+│   │   │   ├── pages/staff/             # Front desk, reservations, folios, POS, KDS
+│   │   │   └── stores/                  # Zustand client state stores
+│   │   └── package.json                 # Staff frontend manifest
+│   └── website/                         # Public Guest Marketing Portal & Booking
+│       ├── src/
+│       │   ├── components/              # Marketing UI and Three.js 3D models
+│       │   ├── data/                    # Room catalog and pricing configurations
+│       │   ├── routes/                  # Marketing views (Home, Rooms, Dining)
+│       │   └── seo/                     # Structured JSON-LD schema & meta tags
+│       └── package.json                 # Website frontend manifest
+├── scripts/                             # DevOps and database utilities
+│   ├── backup-db.sh                     # Checksum-verified PostgreSQL backup script
+│   ├── restore-db.sh                    # Automated database restoration utility
+│   ├── check.sh                         # Unified multi-workspace validation runner
+│   ├── dev.sh                           # Multi-process development launcher
+│   ├── load-test-k6.js                  # k6 load testing scenarios
+│   └── locustfile.py                    # Locust user journey load simulation
+├── docker-compose.prod.yml               # Multi-container production orchestration
+├── SECURITY.md                          # DevSecOps policies and threat model
+├── package.json                         # Root npm workspace manifest
+└── README.md                            # Primary repository documentation
+```
+
+---
+
+## 🛡️ Security & Public Repository Guidelines
+
+The repository has undergone rigorous DevSecOps auditing and sensitive information sanitization to ensure complete public safety:
+
+- **JWT Secret Enforcement:** Application startup fails safely in non-local environments if a default or weak JWT secret is detected (`backend/app/core/config.py`).
+- **Information Disclosure Prevention:** The `/health/ready` endpoint returns generic status identifiers (`database_unavailable`) rather than reflecting raw connection strings or stack traces.
+- **Non-Root Container Security:** Docker builds enforce unprivileged user execution (`appuser:appgroup`, UID 10001) to eliminate container privilege escalation risks.
+- **Fictionalized Demo Data:** The demo seed generator (`backend/app/seed/demo_seed.py`) utilizes RFC 2606 reserved domains (`@example.com`) and dummy identifiers, protected by a production environment guard.
+- **Role-Based Access Control (RBAC):** Default-deny authorization policies enforce explicit permissions across all administrative and staff endpoints.
+- **SQL Injection Immunization:** 100% of database interactions execute through parameterized ORM statements or parameterized queries.
+
+---
+
+## 🚀 Getting Started & Local Development
 
 ### Prerequisites
 
-Ensure the following tools are installed in your development environment:
-- **Node.js:** `v24.x` (LTS recommended)
+- **Node.js:** `v24.x` (LTS)
 - **Python:** `3.12+`
-- **PostgreSQL:** `16+` (or use local SQLite mode for rapid prototyping)
+- **PostgreSQL:** `16+` (or SQLite fallback for quick testing)
 - **npm:** `v10+`
 - **Git:** Latest release
 
-### Step 1: Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/tapwebs/hotel_website_template.git
 cd hotel_website_template
 ```
 
-### Step 2: Install Node.js Dependencies
-
-Install all dependencies across root and nested npm workspaces:
+### 2. Install Node.js Workspace Dependencies
 
 ```bash
 npm install
 ```
 
-### Step 3: Configure Python Virtual Environment
+### 3. Set Up Python Virtual Environment
 
 ```bash
 python3 -m venv backend/.venv
@@ -359,21 +377,14 @@ source backend/.venv/bin/activate
 pip install -r backend/requirements.txt
 ```
 
-### Step 4: Initialize Environment Files
-
-Create local configuration files from safe templates:
+### 4. Initialize Local Environment Files
 
 ```bash
-# HMS Core API
 cp backend/.env.example backend/.env
-
-# Website API
 cp backend/website/.env.example backend/website/.env
 ```
 
-### Step 5: Execute Database Migrations
-
-Apply database schemas for the Website API and HMS Core:
+### 5. Run Database Migrations
 
 ```bash
 # Website API Migrations
@@ -385,15 +396,13 @@ cd ../..
 alembic -c backend/alembic.ini upgrade head
 ```
 
-### Step 6: Launch Development Services
-
-Run all frontend and backend services concurrently:
+### 6. Launch Development Stack
 
 ```bash
 npm run dev:all
 ```
 
-Alternatively, use the orchestration shell script:
+Or run via the helper script:
 
 ```bash
 bash scripts/dev.sh
@@ -401,106 +410,81 @@ bash scripts/dev.sh
 
 ---
 
-## 10. Environment Configuration
+## 🔧 Environment Configuration
 
-### HMS Core API (`backend/.env`)
+### HMS Core API Configuration (`backend/.env`)
 
 | Variable | Default Value | Description |
 |---|---|---|
-| `APP_ENV` | `development` | Environment mode (`development`, `test`, `production`) |
+| `APP_ENV` | `development` | Runtime environment (`development`, `test`, `production`) |
 | `DATABASE_URL` | `postgresql+asyncpg://postgres:postgres@localhost:5432/open_hospitality_db` | Asynchronous database connection string |
-| `SECRET_KEY` | *(Random 64-char hex)* | JWT signing key (default rejected in production) |
-| `ALGORITHM` | `HS256` | JWT signing algorithm |
+| `SECRET_KEY` | *(Random 64-char hex)* | JWT signing key (weak secrets rejected in production) |
+| `ALGORITHM` | `HS256` | JWT cryptographic algorithm |
 | `ACCESS_TOKEN_EXPIRE_MINUTES` | `480` | Staff session token duration (8 hours) |
-| `CORS_ORIGINS` | `["http://localhost:5173","http://localhost:5174"]` | Authorized frontend origins |
-| `ENABLE_DEMO_SEED` | `false` | Allows seed script execution in local dev |
+| `CORS_ORIGINS` | `["http://localhost:5173","http://localhost:5174"]` | Allowed client origins |
+| `ENABLE_DEMO_SEED` | `false` | Enables test data seeding in local development |
 
-### Website API (`backend/website/.env`)
+### Website API Configuration (`backend/website/.env`)
 
 | Variable | Default Value | Description |
 |---|---|---|
 | `NODE_ENV` | `development` | Node runtime environment |
 | `PORT` | `3001` | Fastify HTTP listening port |
-| `DATABASE_URL` | `postgres://postgres:postgres@localhost:5432/open_hospitality_db` | Relational connection pool URL |
-| `CORS_ORIGIN` | `http://localhost:5173` | Allowed origin for booking requests |
-
-> [!IMPORTANT]
-> Never commit production `.env` files or hardcoded credentials to version control. Always configure production secrets via deployment platforms (Coolify, Docker secrets, or cloud key vaults).
+| `DATABASE_URL` | `postgres://postgres:postgres@localhost:5432/open_hospitality_db` | PostgreSQL connection pool URL |
+| `CORS_ORIGIN` | `http://localhost:5173` | Allowed origin for public booking requests |
 
 ---
 
-## 11. Development & Testing
+## 🧪 Development & Testing Verification
 
-TapMenu provides comprehensive verification scripts to validate linting, type definitions, unit tests, and production builds across all packages.
+TapMenu includes a unified verification suite testing TypeScript types, unit tests, integration contracts, and production builds across all workspaces.
 
-### Run All Checks
+### Execute Full Verification Suite
 
 ```bash
 npm run check:all
 ```
 
-Or execute the verification script directly:
+### Individual Subsystem Tests
 
 ```bash
-bash scripts/check.sh
-```
-
-### Targeted Test Suites
-
-```bash
-# 1. Run Python HMS Core Tests (Pytest)
+# 1. Run HMS Backend Tests (Pytest - 289 tests)
 pytest backend/tests
 
-# 2. Run Public Website Tests (Vitest)
+# 2. Run Public Website Tests (Vitest - 144 tests)
 npm run test:website
 
-# 3. Run Website API Tests (Node.js test runner)
+# 3. Run Website API Tests (Node.js test runner - 69 tests)
 npm run test:website-api
 
-# 4. Validate TypeScript Across All Workspaces
+# 4. Run TypeScript Compilation Across All Workspaces
 npm run typecheck --workspaces
-```
-
-### Performance & Concurrency Profiling
-
-Evaluate endpoint latency under synthetic load:
-
-```bash
-# Execute k6 load scenario
-k6 run scripts/load-test-k6.js
-
-# Execute Locust interactive simulation
-locust -f scripts/locustfile.py --host http://127.0.0.1:8001
 ```
 
 ---
 
-## 12. Deployment
+## 🚢 Production Deployment
 
-TapMenu is engineered for flexible deployment across modern VPS instances, container clusters, or dedicated cloud infrastructure.
-
-### Production Docker Deployment
-
-A battle-tested Docker Compose file is provided for multi-container deployments:
+### Production Docker Compose
 
 ```bash
-# Launch full stack with isolated networking
+# Build and launch all containerized services
 docker compose -f docker-compose.prod.yml up -d --build
 ```
 
 ### Production Checklist
-1. **Secrets:** Generate cryptographically secure `SECRET_KEY` values via `openssl rand -hex 32`.
-2. **Reverse Proxy:** Configure Nginx, Caddy, or Traefik with automatic TLS (Let's Encrypt), HTTP/2, and gzip/brotli compression.
-3. **Database Maintenance:** Set up automated cron executions for `scripts/backup-db.sh` targeting offsite S3-compatible storage.
-4. **Environment Isolation:** Verify `APP_ENV=production` and `ENABLE_DEMO_SEED=false` in container environments.
+1. **Cryptographic Secrets:** Generate production `SECRET_KEY` via `openssl rand -hex 32`.
+2. **Reverse Proxy:** Configure Nginx, Caddy, or Traefik with automated TLS certificates (Let's Encrypt), HTTP/2, and gzip/brotli compression.
+3. **Database Backups:** Schedule automated cron jobs for `scripts/backup-db.sh` targeting offsite S3 or Cloudflare R2 storage.
+4. **Environment Isolation:** Verify `APP_ENV=production` and `ENABLE_DEMO_SEED=false` across all production instances.
 
-For a comprehensive walkthrough of Coolify, VPS setup, and Nginx configurations, consult [`docs/DEPLOYMENT_GUIDE.md`](docs/DEPLOYMENT_GUIDE.md).
+Refer to [`docs/DEPLOYMENT_GUIDE.md`](docs/DEPLOYMENT_GUIDE.md) for detailed deployment walkthroughs.
 
 ---
 
-## 13. Documentation & Specifications
+## 📚 Technical Documentation & Specifications
 
-The repository includes detailed architectural and operational specifications in [`docs/specs/`](docs/specs/):
+The repository includes 20 comprehensive technical specifications located in [`docs/specs/`](docs/specs/):
 
 - [`00-PROJECT-CONTEXT-AND-GLOSSARY.md`](docs/specs/00-PROJECT-CONTEXT-AND-GLOSSARY.md) — Platform context and domain glossary.
 - [`01-OVERVIEW.md`](docs/specs/01-OVERVIEW.md) — High-level functional architecture.
@@ -525,63 +509,54 @@ The repository includes detailed architectural and operational specifications in
 
 ---
 
-## 14. Project Philosophy
+## 💡 Project Philosophy
 
 TapMenu Open Hospitality Platform is built around an uncompromising engineering standard:
 
 > **"One connected platform. One operational ecosystem. A consistent guest experience."**
 
-Hospitality technology has suffered for decades from disjointed point solutions — reservation software that fails to communicate with restaurant POS, kitchen tickets lost in manual communication, and guest data fragmented across siloed databases. 
+Hospitality technology has suffered for decades from disjointed point solutions—reservation software that fails to communicate with restaurant POS, kitchen tickets lost in manual communication, and guest data fragmented across siloed databases. 
 
 TapMenu eliminates this friction through a unified data plane. When a guest books a room, orders dinner via in-room QR, requests extra towels, or settles their invoice, every interaction updates a single synchronized operational model.
 
 ---
 
-## 15. Authors & Maintainers
-
-**TapMenu Open Hospitality Platform is developed and maintained by [TAPWEBS](https://tapwebs.in).**
-
-TAPWEBS builds robust, scalable web platforms, intelligent automation systems, and security-hardened open-source software solutions.
+## 🏢 About the Developer — TAPWEBS
 
 <div align="center">
-  <br />
-  <a href="https://tapwebs.in">
-    <img src="docs/favicon.png" width="56" height="56" alt="TAPWEBS Logo" />
-  </a>
-  <br />
-  <strong>TapMenu · Powered by TAPWEBS</strong>
-  <br />
-  <em>Integrated Hospitality. Smarter Operations. Better Experiences.</em>
-  <br /><br />
-  🌐 <a href="https://tapwebs.in">Website</a> &nbsp;|&nbsp; 📧 <a href="mailto:contact@tapwebs.in">Contact Us</a> &nbsp;|&nbsp; 💼 <a href="https://tapwebs.in">Enterprise Services</a>
+  <img src="docs/favicon.png" width="120" height="120" alt="TAPWEBS Logo" />
 </div>
+
+**TAPWEBS is a premier digital engineering and web development agency specializing in:**
+
+- ⚡ **High-Performance Web Platforms:** Next.js, React, and TypeScript enterprise applications.
+- 🏨 **Hospitality & Enterprise Systems:** Unified PMS, POS, KDS, automated folios, and direct booking engines.
+- 🎨 **Bespoke UI/UX Design:** Modern aesthetics, spatial 3D experiences, mobile-first design, and conversion-focused flows.
+- 📈 **Growth & DevSecOps Engineering:** Core Web Vitals optimization, semantic schema markup, and hardened container infrastructure.
+
+### Connect with TAPWEBS
+
+- 🌐 **Agency Website:** [tapwebs.in](https://tapwebs.in)
+- 💼 **Portfolio Showcase:** [tapwebs.space](https://tapwebs.space)
+- 🏨 **Product Documentation:** [docs/specs](docs/specs/)
+- ✉️ **Inquiries & Consultations:** [contact@tapwebs.in](mailto:contact@tapwebs.in)
+- 🐙 **GitHub Organization:** [@tapwebs](https://github.com/tapwebs)
 
 ---
 
-## 16. License & Ownership
+## 📄 Ownership, License & Intellectual Property Notice
 
-This project is open-source software licensed under the **[MIT License](LICENSE)**.
-
-```text
-MIT License
-
-Copyright (c) 2026 TAPWEBS
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
+> 🛡️ **MADE BY TAPWEBS • ALL RIGHTS ARE OF TAPWEBS**
+>
+> **Developed and Maintained by:** [TAPWEBS](https://tapwebs.in)
+>
+> • **Agency Website:** [tapwebs.in](https://tapwebs.in)  
+> • **Agency Portfolio:** [tapwebs.space](https://tapwebs.space)  
+> • **GitHub Organization:** [@tapwebs](https://github.com/tapwebs)  
+>
+> **Licensing & Intellectual Property Notice:**
+>
+> This software is published under the **[MIT License](LICENSE)**.  
+> Copyright (c) 2026 TAPWEBS. All rights reserved.  
+>
+> TAPWEBS maintains full authorship and intellectual property over the platform architecture, custom design tokens, software implementations, and showcase materials.

@@ -11,12 +11,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
+RUN groupadd -g 10001 appgroup && \
+    useradd -u 10001 -g appgroup -s /bin/false -m appuser
+
 COPY requirements.txt /app/backend/
 RUN pip install --no-cache-dir -r /app/backend/requirements.txt
 
-COPY . /app/backend/
+COPY --chown=appuser:appgroup . /app/backend/
+RUN chown -R appuser:appgroup /app
 
 WORKDIR /app/backend
+
+USER appuser
 
 EXPOSE 8001
 

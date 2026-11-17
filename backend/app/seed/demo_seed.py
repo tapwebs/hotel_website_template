@@ -19,6 +19,8 @@ from backend.app.core.timezone import get_kolkata_calendar_date
 
 async def seed_demo_data(db: AsyncSession):
     """Seed the core demo data once, then make sure the demo restaurant (tables + menu) is complete."""
+    if settings.APP_ENV == "production":
+        raise RuntimeError("Demo seed execution is strictly prohibited in production environment.")
     await _seed_core(db)
     from backend.app.seed.fnb_seed import ensure_fnb_demo
     await ensure_fnb_demo(db)
@@ -408,8 +410,8 @@ async def _seed_core(db: AsyncSession):
         first_name="Rahul",
         last_name="Sharma",
         full_name="Rahul Sharma",
-        email="rahul.sharma@techcorp.in",
-        phone="+91 98201 44521",
+        email="guest.sharma@example.com",
+        phone="+91 98765 00001",
         nationality="Indian",
         vip_tier="GOLD",
         total_stays=4,
@@ -422,8 +424,8 @@ async def _seed_core(db: AsyncSession):
         first_name="Kavita",
         last_name="Chawla",
         full_name="Kavita Chawla",
-        email="kavita.c@gmail.com",
-        phone="+91 97112 89912",
+        email="guest.chawla@example.com",
+        phone="+91 98765 00002",
         nationality="Indian",
         vip_tier="PLATINUM",
         total_stays=7,
@@ -436,8 +438,8 @@ async def _seed_core(db: AsyncSession):
         first_name="Rohit",
         last_name="Khandelwal",
         full_name="Rohit Khandelwal",
-        email="rohit.k@apexcap.com",
-        phone="+91 99870 12345",
+        email="guest.khandelwal@example.com",
+        phone="+91 98765 00003",
         nationality="Indian",
         vip_tier="REGULAR",
         total_stays=2,
@@ -581,7 +583,7 @@ async def _seed_core(db: AsyncSession):
         payment_method="UPI",
         provider="RAZORPAY",
         status="SUCCESS",
-        upi_id="sharma.r@okhdfcbank"
+        upi_id="guest@examplebank"
     )
     db.add_all([f_item1, f_item1_b, f_item1_c, f_item2, f_item3, p1])
 

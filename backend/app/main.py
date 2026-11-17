@@ -140,9 +140,10 @@ async def readiness_check(db = Depends(get_db)):
             "environment": settings.APP_ENV
         }
     except Exception as e:
+        logging.getLogger("backend.health").warning("Database readiness probe failed: %s", e)
         return JSONResponse(
             status_code=503,
-            content={"status": "unhealthy", "database": "disconnected", "error": str(e)}
+            content={"status": "unhealthy", "database": "disconnected", "error": "database_unavailable"}
         )
 
 

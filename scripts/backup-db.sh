@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# Automated Database Backup Script for Hotel Dream Heaven's (PostgreSQL)
+# Automated Database Backup Script for TapMenu Open Hospitality Platform (PostgreSQL)
 # ==============================================================================
 # Features:
 # 1. Dumps PostgreSQL schema and data using pg_dump.
@@ -14,7 +14,7 @@ set -euo pipefail
 
 BACKUP_DIR="${BACKUP_DIR:-$(pwd)/backups}"
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
-BACKUP_FILE="${BACKUP_DIR}/dh_db_${TIMESTAMP}.sql.gz"
+BACKUP_FILE="${BACKUP_FILE:-${BACKUP_DIR}/tapmenu_db_${TIMESTAMP}.sql.gz}"
 CHECKSUM_FILE="${BACKUP_FILE}.sha256"
 
 mkdir -p "${BACKUP_DIR}"
@@ -42,8 +42,8 @@ else
   else
     PGHOST="${PGHOST:-127.0.0.1}"
     PGPORT="${PGPORT:-5432}"
-    PGUSER="${PGUSER:-postgres}"
-    PGDATABASE="${PGDATABASE:-dreamheavens}"
+    PGUSER="${PGUSER:-open_admin}"
+    PGDATABASE="${PGDATABASE:-open_hospitality_db}"
     pg_dump -h "${PGHOST}" -p "${PGPORT}" -U "${PGUSER}" -d "${PGDATABASE}" --clean --if-exists --no-owner --no-privileges | gzip -9 > "${BACKUP_FILE}"
   fi
 fi
@@ -67,6 +67,6 @@ fi
 
 # Retention policy: Delete local backups older than 30 days
 echo "==> Purging local backups older than 30 days..."
-find "${BACKUP_DIR}" -name "dh_db_*.sql.gz*" -mtime +30 -delete
+find "${BACKUP_DIR}" \( -name "tapmenu_db_*.sql.gz*" -o -name "dh_db_*.sql.gz*" \) -mtime +30 -delete
 
 echo "==> Database backup workflow completed successfully at $(date)."

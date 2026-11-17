@@ -56,8 +56,8 @@ else
   else
     PGHOST="${PGHOST:-127.0.0.1}"
     PGPORT="${PGPORT:-5432}"
-    PGUSER="${PGUSER:-postgres}"
-    PGDATABASE="${PGDATABASE:-dreamheavens}"
+    PGUSER="${PGUSER:-open_admin}"
+    PGDATABASE="${PGDATABASE:-open_hospitality_db}"
     gunzip -c "${BACKUP_FILE}" | psql -h "${PGHOST}" -p "${PGPORT}" -U "${PGUSER}" -d "${PGDATABASE}" --single-transaction
   fi
 fi

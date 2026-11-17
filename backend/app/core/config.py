@@ -65,10 +65,11 @@ class Settings(BaseSettings):
     @classmethod
     def validate_secret_key(cls, v: str) -> str:
         env = os.environ.get("APP_ENV", "development").lower()
-        if env == "production":
-            # "change_me" catches the docker-compose placeholder, which is long enough to pass the length check.
-            if "dev" in v.lower() or "change_me" in v.lower() or len(v) < 32:
-                raise ValueError("SECRET_KEY must be a secure, random string of at least 32 characters in production.")
+        if env not in ("development", "test"):
+            # Non-local environments (production, staging, etc.) require a secure, non-default secret
+            insecure_markers = ("dev", "change_me", "secret", "password", "tapmenu_hms_jwt", "default", "example")
+            if not v or any(marker in v.lower() for marker in insecure_markers) or len(v) < 32:
+                raise ValueError("SECRET_KEY must be a secure, random string of at least 32 characters in non-development environments.")
         return v
 
     @field_validator("CORS_ORIGINS", mode="before")

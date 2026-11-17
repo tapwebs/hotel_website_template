@@ -35,7 +35,7 @@ async def test_all_five_qr_destinations(client, db_session, code):
 
     hub = (await client.get(f"/qr-hub/public/hub/{SLUG}{q}")).json()
     # Shape the website's HotelHub page reads (frontend/website/src/features/qrhub/lib/types.ts PublicHub)
-    assert hub["organization"]["slug"] == SLUG and hub["organization"]["name"].startswith("Hotel Dream")
+    assert hub["organization"]["slug"] == SLUG and hub["organization"]["name"].startswith("TapMenu")
     assert [l["title"] for l in hub["links"]] == ["Book a Stay", "Restaurant"]
     assert {"destination_url", "title_hi", "is_featured", "open_now", "opens_at", "hours"} <= set(hub["links"][0])
     assert hub["links"][0]["open_now"] is True
